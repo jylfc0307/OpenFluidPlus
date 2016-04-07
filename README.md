@@ -82,3 +82,4 @@ Detailed informations about building OpenFLUID from sources for Linux and Window
 are available on the community site: 
 http://www.openfluid-project.org/community/index.php/How_to_build_OpenFLUID
 
+Modified by WHU
