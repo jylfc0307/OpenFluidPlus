@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<openfluid>
+
+    <model>
+
+   
+      <simulator ID="tests.messages">
+        <param name="rptmsgs" value="100" />
+      </simulator>                  
+    
+  </model>
+</openfluid>

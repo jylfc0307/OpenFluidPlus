@@ -1,0 +1,198 @@
+/*
+
+  This file is part of OpenFLUID software
+  Copyright(c) 2007, INRA - Montpellier SupAgro
+
+
+ == GNU General Public License Usage ==
+
+  OpenFLUID is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  OpenFLUID is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with OpenFLUID. If not, see <http://www.gnu.org/licenses/>.
+
+
+ == Other Usage ==
+
+  Other Usage means a use of OpenFLUID that is inconsistent with the GPL
+  license, and requires a written agreement between You and INRA.
+  Licensees for Other Usage of OpenFLUID may use this file in accordance
+  with the terms contained in the written agreement between You and INRA.
+  
+*/
+
+
+/**
+  @file config.hpp
+ 
+  @author Jean-Christophe FABRE <jean-christophe.fabre@supagro.inra.fr>
+*/
+
+
+
+#ifndef __OPENFLUID_CONFIG_HPP__
+#define __OPENFLUID_CONFIG_HPP__
+
+
+#include <string>
+
+
+// Definitions based on build options
+#define OPENFLUID_GUI_ENABLED @OPENFLUID_ENABLE_GUI@
+#define OPENFLUID_LANDR_ENABLED @OPENFLUID_ENABLE_LANDR@
+#define OPENFLUID_MARKET_ENABLED @OPENFLUID_ENABLE_MARKET@
+
+
+namespace openfluid { namespace config {
+
+// App Name
+const std::string APPNAME = "@OPENFLUID_MAIN_NAME@";
+
+
+// default config file
+const std::string DEFAULT_CONFIGFILE = "@OPENFLUID_DEFAULT_CONFIGFILE@";
+
+
+// Relative openfluid directory
+const std::string RELATIVEDIR = "@OPENFLUID_RELATIVEDIR@";
+
+
+// Default directories
+const std::string DEFAULT_INDIR = "@OPENFLUID_INPUTDIR@";
+const std::string DEFAULT_OUTDIR = "@OPENFLUID_OUTPUTDIR@";
+
+const std::string PROJECTS_SUBDIR = "@OPENFLUID_PROJECTSDIR@";
+const std::string WARESDEV_SUBDIR = "@OPENFLUID_WARESDEVDIR@";
+const std::string WARESBIN_SUBDIR = "@OPENFLUID_WARESBINDIR@";
+const std::string WORKSPACE_SUBDIR = "@OPENFLUID_WORKSPACEDIR@";
+
+
+// Install prefix
+const std::string INSTALL_PREFIX = "@CMAKE_INSTALL_PREFIX@";
+
+
+// Plugins extension
+const std::string PLUGINS_EXT = "@PLUGINS_BINARY_EXTENSION@";
+
+
+// Plugins suffixes
+const std::string SIMULATORS_PLUGINS_SUFFIX = "@OPENFLUID_SIMULATORS_SUFFIX@";
+const std::string OBSERVERS_PLUGINS_SUFFIX = "@OPENFLUID_OBSERVERS_SUFFIX@";
+const std::string BUILDEREXTS_PLUGINS_SUFFIX = "@OPENFLUID_BUILDEREXTS_SUFFIX@";
+
+// Ghosts suffixes
+const std::string SIMULATORS_GHOSTS_SUFFIX = "@OPENFLUID_GHOSTSIMULATORS_SUFFIX@";
+
+// Ghosts extension
+const std::string GHOSTS_EXT = "@PLUGINS_GHOST_EXTENSION@";
+
+
+// Simulators plugins dirs
+const std::string SIMULATORS_PLUGINS_SUBDIR = "@OPENFLUID_SIMPLUGSDIR@";
+const std::string SIMULATORS_PLUGINS_USRDIR = "@OPENFLUID_WARESBINDIR@/@OPENFLUID_SIMPLUGSDIR@";
+const std::string SIMULATORS_PLUGINS_STDDIR = "@LIB_INSTALL_PATH@/@OPENFLUID_MAIN_NAME@/@OPENFLUID_SIMPLUGSDIR@";
+
+
+// Observers plugins dirs
+const std::string OBSERVERS_PLUGINS_SUBDIR = "@OPENFLUID_OBSPLUGSDIR@";
+const std::string OBSERVERS_PLUGINS_USRDIR = "@OPENFLUID_WARESBINDIR@/@OPENFLUID_OBSPLUGSDIR@";
+const std::string OBSERVERS_PLUGINS_STDDIR = "@LIB_INSTALL_PATH@/@OPENFLUID_MAIN_NAME@/@OPENFLUID_OBSPLUGSDIR@";
+
+
+// Builder-extensions plugins dirs
+const std::string BUILDEREXTS_PLUGINS_SUBDIR = "@OPENFLUID_BEXTPLUGSDIR@";
+const std::string BUILDEREXTS_PLUGINS_USRDIR = "@OPENFLUID_WARESBINDIR@/@OPENFLUID_BEXTPLUGSDIR@";
+const std::string BUILDEREXTS_PLUGINS_STDDIR = "@LIB_INSTALL_PATH@/@OPENFLUID_MAIN_NAME@/@OPENFLUID_BEXTPLUGSDIR@";
+
+
+// Examples dirs
+const std::string EXAMPLES_SUBDIR = "@OPENFLUID_EXAMPLESDIR@";
+const std::string EXAMPLES_STDDIR = "@EXAMPLES_INSTALL_PATH@";
+
+
+// Translations dirs
+const std::string SHARE_TRANSLATIONS_PATH = "@SHARE_TRANSLATIONS_PATH@";
+const std::string TRANSLATIONS_FILEROOT = "@OPENFLUID_TRANSLATIONS_FILEROOT@";
+
+
+// log files
+const std::string MESSAGES_LOG_FILE = "@OPENFLUID_MESSAGES_LOG_FILE@";
+
+
+// profiling files
+const std::string CUMULATIVE_PROFILE_FILE = "@OPENFLUID_CUMULATIVE_PROFILE_FILE@";
+const std::string SCHEDULE_PROFILE_FILE = "@OPENFLUID_SCHEDULE_PROFILE_FILE@";
+const std::string TIMEINDEX_PROFILE_FILE = "@OPENFLUID_TIMEINDEX_PROFILE_FILE@";
+
+
+// Market
+const std::string MARKETBAG_SUBDIR = "@OPENFLUID_MARKETBAGDIR@";
+const std::string MARKETPLACE_SITEFILE = "@OPENFLUID_MARKETPLACE_SITEFILE@";
+const std::string MARKETPLACE_CATALOGFILE = "@OPENFLUID_MARKETPLACE_CATALOGFILE@";
+const std::string MARKET_COMMONBUILDOPTS = "@OPENFLUID_MARKET_COMMONBUILDOPTS@";
+
+
+// Waresdev
+const std::string WARESDEV_CMAKE_USERFILE = "@OPENFLUID_WARESDEV_CMAKE_USERFILE@";
+const std::string WARESDEV_CMAKE_SIMCPPVAR = "@OPENFLUID_WARESDEV_CMAKE_SIMCPPVAR@";
+const std::string WARESDEV_CMAKE_OBSCPPVAR = "@OPENFLUID_WARESDEV_CMAKE_OBSCPPVAR@";
+const std::string WARESDEV_CMAKE_BEXTCPPVAR = "@OPENFLUID_WARESDEV_CMAKE_BEXTCPPVAR@";
+
+
+// Project
+const std::string PROJECT_FILE = "@OPENFLUID_PROJECT_FILE@";
+const std::string PROJECT_INPUTDIR = "@OPENFLUID_PROJECT_INPUTDIR@";
+const std::string PROJECT_OUTPUTDIRPREFIX = "@OPENFLUID_PROJECT_OUTPUTDIRPREFIX@";
+
+
+// Shared ressources paths
+const std::string SHARE_OPENFLUID_INSTALL_PATH = "@SHARE_OPENFLUID_INSTALL_PATH@";
+const std::string SHARE_COMMON_INSTALL_PATH = "@SHARE_COMMON_INSTALL_PATH@";
+const std::string SHARE_APPS_INSTALL_PATH = "@SHARE_APPS_INSTALL_PATH@";
+const std::string SHARE_WARESDEV_INSTALL_PATH = "@SHARE_WARESDEV_INSTALL_PATH@";
+
+
+// sim2doc default template file path  
+const std::string SIM2DOC_TPLFILE_NAME = "sim2doc_tpl.tex";
+
+
+// Version information
+const std::string VERSION_MAJOR = "@VERSION_MAJOR@";
+const std::string VERSION_MINOR = "@VERSION_MINOR@";
+const std::string VERSION_PATCH = "@VERSION_PATCH@";
+const std::string VERSION_STATUS = "@VERSION_STATUS@";
+const std::string FULL_VERSION = "@FULL_VERSION@";
+const std::string VERSION = "@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@";
+
+
+// debug information
+const std::string DEBUG_PREFIX = "@DEBUG_PREFIX@";
+
+
+// Simulators threads
+const unsigned int SIMULATORS_MAXNUMTHREADS = @OPENFLUID_SIMSMAXNUMTHREADS@;
+
+
+// URLs
+const std::string WEBSITE_DOMAIN = "www.watsave.cn/";/*www.openfluid-project.org  界面链接修改为水科院农水所网站 */
+const std::string WEBSITE_URL = "http://"+WEBSITE_DOMAIN;
+const std::string COMMUNITY_URL = "http://www.openfluid-project.org/community";
+const std::string DEVSITE_URL = "https://github.com/OpenFLUID/";
+const std::string BUG_URL = "https://github.com/OpenFLUID/openfluid/issues";
+const std::string CONTACTEMAIL_ADDRESS = "contact@openfluid-project.org";
+const std::string CONTACTEMAIL_URL = "mailto:"+CONTACTEMAIL_ADDRESS;
+const std::string APIDOC_URL = "http://www.openfluid-project.org/resources/docs/manuals/en/openfluid/"
+                               "@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@/main/html/";
+
+} } //namespaces
+
+#endif  /* __OPENFLUID_CONFIG_HPP__ */
+

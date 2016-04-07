@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="yes"?>
+<openfluid>
+  <model>
+  
+    <generator varname="tests.fixed" unitsclass="SU" method="fixed">
+      <param name="fixedvalue" value="13" />
+    </generator>
+
+    <generator varname="tests.random" unitsclass="SU" method="random">
+      <param name="min" value="50" />
+      <param name="max" value="100" />
+    </generator>
+
+
+    <generator varname="tests.fixed" unitsclass="RS" method="fixed">
+      <param name="fixedvalue" value="27" />
+    </generator>
+
+    <generator varname="tests.random" unitsclass="RS" method="random">
+      <param name="min" value="10" />
+      <param name="max" value="30" />
+    </generator>
+
+  
+  </model>
+
+</openfluid>
+

@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/openfluid_official.png</file>
+        <file>images/openfluid_splash_builder.png</file>
+        <file>images/dot.png</file>
+        <file>images/check-ok.png</file>
+        <file>images/check-warn.png</file>
+        <file>images/check-error.png</file>
+        <file>images/check-disabled.png</file>
+        <file>images/warn-pattern-lightgray.png</file>
+        <file>images/status-experimental.png</file>
+        <file>images/status-beta.png</file>
+        <file>images/status-stable.png</file>
+        <file>images/ware-sim-ghost.png</file>
+        <file>images/ware-sim-plugged.png</file>
+        <file>images/ware-obs-plugged.png</file>
+        <file>icons/openfluid_icon.png</file>
+        <file>icons/openfluid_icon_builder.png</file>
+        <file>icons/file-open-example.png</file>
+        <file>icons/market.png</file>
+        <file>icons/wares-development.png</file>
+        <file>icons/rename-attribute.png</file>
+        <file>icons/ghost2sim.png</file>
+        <file>images/watsave_logo.png</file>
+        <file>images/watsav_splash.png</file>
+    </qresource>
+</RCC>

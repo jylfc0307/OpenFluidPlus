@@ -1,0 +1,36 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+  <qresource prefix="/ui/common">
+    <file>images/openfluid_title.png</file>
+    <file>images/openfluid_icon_about.png</file>
+    <file>icons/add.png</file>
+    <file>icons/remove.png</file>
+    <file>icons/go-up.png</file>
+    <file>icons/go-down.png</file>
+    <file>icons/file-new.png</file>
+    <file>icons/file-open.png</file>
+    <file>icons/file-close.png</file>
+    <file>icons/file-save.png</file>
+    <file>icons/file-save-as.png</file>
+    <file>icons/refresh.png</file>
+    <file>icons/modify.png</file>
+    <file>icons/start.png</file>
+    <file>icons/stop.png</file>
+    <file>icons/pause.png</file>
+    <file>icons/magic.png</file> 
+    <file>icons/cmake.png</file>
+    <file>icons/cmakelists.png</file>
+    <file>icons/cpp.png</file>
+    <file>icons/fortran.png</file>
+    <file>icons/hpp.png</file>
+    <file>icons/notype.png</file>
+    <file>icons/qt-ui.png</file>
+    <file>icons/waredir.png</file>
+    <file>icons/wareshub.png</file>
+    <file>icons/build.png</file>
+    <file>icons/configure.png</file>
+    <file>icons/menu.png</file>
+    <file>icons/cppcode.png</file>
+    <file>icons/OFcode.png</file>
+  </qresource>
+</RCC>

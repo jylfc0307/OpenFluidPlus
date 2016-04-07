@@ -1,0 +1,75 @@
+/*
+
+  This file is part of OpenFLUID software
+  Copyright(c) 2007, INRA - Montpellier SupAgro
+
+
+ == GNU General Public License Usage ==
+
+  OpenFLUID is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  OpenFLUID is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with OpenFLUID. If not, see <http://www.gnu.org/licenses/>.
+
+
+ == Other Usage ==
+
+  Other Usage means a use of OpenFLUID that is inconsistent with the GPL
+  license, and requires a written agreement between You and INRA.
+  Licensees for Other Usage of OpenFLUID may use this file in accordance
+  with the terms contained in the written agreement between You and INRA.
+  
+*/
+
+/**
+  @file tests-config.hpp
+
+  @author Jean-Christophe FABRE <jean-christophe.fabre@supagro.inra.fr>
+*/
+
+
+#ifndef __OPENFLUID_TESTSCONFIG_IN_HPP__
+#define __OPENFLUID_TESTSCONFIG_IN_HPP__
+
+
+#include <string>
+
+// Directories
+const std::string CONFIGTESTS_OUTPUT_BINARY_DIR = "@TEST_OUTPUT_PATH@";
+const std::string CONFIGTESTS_OUTPUT_DATA_DIR = "@TESTS_OUTPUTDATA_PATH@";
+const std::string CONFIGTESTS_INPUT_DATASETS_DIR = "@TESTS_DATASETS_PATH@";
+const std::string CONFIGTESTS_INPUT_MISCDATA_DIR = "@TESTS_MISCDATA_PATH@";
+const std::string CONFIGTESTS_SRC_DIR = "@CMAKE_SOURCE_DIR@";
+const std::string CONFIGTESTS_DISTBIN_DIR = "@BIN_OUTPUT_PATH@";
+const std::string CONFIGTESTS_LIB_OUTPUT_PATH = "@LIB_OUTPUT_PATH@";
+const std::string CONFIGTESTS_INCLUDE_DIRS = "@CMAKE_SOURCE_DIR@/src";
+const std::string CONFIGTESTS_CMAKE_GENERATOR = "@CMAKE_GENERATOR@";
+const std::string CONFIGTESTS_OPTIONS_FOR_CMAKE = "-G \"@CMAKE_GENERATOR@\" "
+                                                  "-DOpenFLUIDHelpers_DIR=@CMAKE_MODULES_OUTPUT_PATH@ "
+                                                  "-DOpenFLUID_DIR=@CMAKE_MODULES_OUTPUT_PATH@ "
+                                                  "-DOpenFLUID_ROOT_DIR=@BUILD_OUTPUT_PATH@ "
+                                                  "-DSIM_INCLUDE_DIRS=@CMAKE_SOURCE_DIR@/src "
+                                                  "-DOBS_INCLUDE_DIRS=@CMAKE_SOURCE_DIR@/src "
+                                                  "-DOpenFLUID_EXTRA_SEARCH_PATHS=@CMAKE_BINARY_DIR@/src";
+
+// Plugins extension
+const std::string CONFIGTESTS_PLUGINS_EXT = "@SIMULATORS_BINARY_EXTENSION@";
+
+// Version
+const std::string CONFIGTESTS_VERSION_MAJOR = "@VERSION_MAJOR@";
+const std::string CONFIGTESTS_VERSION_MINOR = "@VERSION_MINOR@";
+const std::string CONFIGTESTS_VERSION_PATCH = "@VERSION_PATCH@";
+const std::string CONFIGTESTS_VERSION_STATUS = "@VERSION_STATUS@";
+const std::string CONFIGTESTS_FULL_VERSION = "@FULL_VERSION@";
+
+
+#endif  /* __OPENFLUID_TESTSCONFIG_IN_HPP__ */
+
