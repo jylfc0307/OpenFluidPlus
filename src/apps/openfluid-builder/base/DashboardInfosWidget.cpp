@@ -111,21 +111,21 @@ void DashboardInfosWidget::refresh()
 
   openfluid::base::SimulationStatus::SchedulingConstraint SchedConst =
       m_AdvFluidxDesc.runDescriptor().getSchedulingConstraint();
-  QString SchedConstStr = tr("no constraint");
+  QString SchedConstStr = tr("没有限制");
 
   if (SchedConst == openfluid::base::SimulationStatus::SCHED_DTCHECKED)
-    SchedConstStr = tr("checked default DeltaT");
+    SchedConstStr = tr("检验缺省ΔT值");
   if (SchedConst == openfluid::base::SimulationStatus::SCHED_DTFORCED)
-    SchedConstStr = tr("forced default DeltaT");
+    SchedConstStr = tr("强制缺省ΔT值");
 
 
-  ui->ModelLabel->setText(tr("<u>Coupled model:</u> %1 simulator(s) and %2 generator(s)").arg(SimCount).arg(GenCount));
-  ui->SpatialLabel->setText(tr("<u>Spatial domain:</u> %1 spatial unit(s) in %2 units class(es)")
+  ui->ModelLabel->setText(tr("<u>耦合模型:</u> %1 个模拟器和 %2 个生成器").arg(SimCount).arg(GenCount));
+  ui->SpatialLabel->setText(tr("<u>空间领域:</u> 在 %2 个空间类中有共计 %1 个空间单元")
                             .arg(UnitsCount).arg(UnitsClassesCount));
-  ui->DatastoreLabel->setText(tr("<u>Datastore:</u> %1 item(s)").arg(DStoreCount));
-  ui->MonitoringLabel->setText(tr("<u>Monitoring:</u> %1 observer(s)").arg(MonitoringCount));
-  ui->SimConfigLabel->setText(tr("<u>Run configuration:</u> total duration of %1 seconds "
-                                 "with a default DeltaT of %2 seconds and %3")
+  ui->DatastoreLabel->setText(tr("<u>数据存储:</u> %1 个项目").arg(DStoreCount));
+  ui->MonitoringLabel->setText(tr("<u>监控:</u> %1 监控器(s)").arg(MonitoringCount));
+  ui->SimConfigLabel->setText(tr("<u>运行设置:</u> 总共持续 %1 秒， "
+                                 "ΔT值为 %2 秒，%3")
                               .arg(Duration).arg(DeltaT).arg(SchedConstStr));
 }
 

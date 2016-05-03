@@ -245,7 +245,7 @@ bool AppCoordinator::setProjectModule(const QString& ProjectPath)
 
 
     if (mp_DockWidget == NULL)
-      mp_DockWidget = new QDockWidget(tr("Project dashboard"),&m_MainWindow);
+      mp_DockWidget = new QDockWidget(tr("项目面板"),&m_MainWindow);
 
     DashboardFrame* DockedWidget =
       static_cast<DashboardFrame*>(static_cast<ProjectModule*>(Module)->dockWidgetRebuilt(mp_DockWidget));
@@ -292,7 +292,7 @@ bool AppCoordinator::setProjectModule(const QString& ProjectPath)
   catch (openfluid::base::Exception& E)
   {
     QApplication::restoreOverrideCursor();
-    QMessageBox::critical(NULL,tr("Project error"),QString(E.getMessage().c_str()));
+    QMessageBox::critical(NULL,tr("项目错误"),QString(E.getMessage().c_str()));
     return false;
   }
 
@@ -374,8 +374,8 @@ bool AppCoordinator::closeProject()
   {
     QMessageBox::StandardButton Ret =
         QMessageBox::question(&m_MainWindow,
-                              tr("Close project"),
-                              tr("Do you want to save the current project before closing?"),
+                              tr("关闭项目"),
+                              tr("你希望保存当前的项目吗？"),
                               QMessageBox::Cancel | QMessageBox::Save | QMessageBox::Discard);
     if (Ret != QMessageBox::Cancel)
     {
@@ -401,8 +401,8 @@ void AppCoordinator::whenQuitAsked()
   {
     if (closeProject())
     {
-      if (QMessageBox::question(&m_MainWindow,tr("Quit"),
-                                tr("Are you sure you want to quit OpenFLUID-Builder?"),
+      if (QMessageBox::question(&m_MainWindow,tr("退出"),
+                                tr("你真的要退出OpenFLUID-Builder吗?"),
                                 QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
       {
         QCoreApplication::exit(0);
@@ -441,16 +441,16 @@ void AppCoordinator::whenNewAsked()
         {
           QApplication::restoreOverrideCursor();
           QMessageBox::critical(&m_MainWindow,
-                                tr("Project error"),
-                                tr("Error creating project %1 in\n%2").arg(NewPrjDlg.getProjectName(),
+                                tr("项目错误"),
+                                tr("创建项目 %1 于\n%2 失败").arg(NewPrjDlg.getProjectName(),
                                                                            NewPrjDlg.getProjectFullPath()));
         }
       }
       catch (openfluid::base::Exception& E)
       {
         QMessageBox::critical(&m_MainWindow,
-                              tr("Project error"),
-                              tr("Error creating project %1 in\n%2").arg(NewPrjDlg.getProjectName(),
+                              tr("项目错误"),
+                              tr("创建项目 %1 于\n%2 失败").arg(NewPrjDlg.getProjectName(),
                                                                          NewPrjDlg.getProjectFullPath()));
         QApplication::restoreOverrideCursor();
       }
@@ -489,7 +489,7 @@ void AppCoordinator::whenOpenAsked()
         {
           openfluid::base::ProjectManager::instance()->close();
           QApplication::restoreOverrideCursor();
-          QMessageBox::critical(&m_MainWindow,tr("Project error"),QString(E.what()));
+          QMessageBox::critical(&m_MainWindow,tr("项目错误"),QString(E.what()));
           return;
         }
       }
@@ -497,8 +497,8 @@ void AppCoordinator::whenOpenAsked()
       {
         QApplication::restoreOverrideCursor();
         QMessageBox::critical(&m_MainWindow,
-                              tr("Project error"),
-                              tr("%1\n\nis not a valid OpenFLUID project").arg(SelectedDir));
+                              tr("项目错误"),
+                              tr("%1\n\n不是合法的OpenFLUID项目").arg(SelectedDir));
       }
     }
   }
@@ -532,7 +532,7 @@ void AppCoordinator::whenOpenRecentAsked()
         {
           openfluid::base::ProjectManager::instance()->close();
           QApplication::restoreOverrideCursor();
-          QMessageBox::critical(&m_MainWindow,tr("Project error"),QString(E.what()));
+          QMessageBox::critical(&m_MainWindow,tr("项目错误"),QString(E.what()));
           return;
         }
       }
@@ -540,8 +540,8 @@ void AppCoordinator::whenOpenRecentAsked()
       {
         QApplication::restoreOverrideCursor();
         QMessageBox::critical(&m_MainWindow,
-                              tr("Project error"),
-                              tr("%1\n\nis not a valid OpenFLUID project").arg(ProjectPath));
+                              tr("项目错误"),
+                              tr("%1\n\n不是合法的OpenFLUID项目").arg(ProjectPath));
       }
     }
   }
@@ -579,7 +579,7 @@ void AppCoordinator::whenReloadAsked()
         {
           openfluid::base::ProjectManager::instance()->close();
           QApplication::restoreOverrideCursor();
-          QMessageBox::critical(&m_MainWindow,tr("Project error"),QString(E.what()));
+          QMessageBox::critical(&m_MainWindow,tr("项目错误"),QString(E.what()));
           return;
         }
       }
@@ -587,8 +587,8 @@ void AppCoordinator::whenReloadAsked()
       {
         QApplication::restoreOverrideCursor();
         QMessageBox::critical(&m_MainWindow,
-                              tr("Project error"),
-                              tr("%1\n\nis not a valid OpenFLUID project").arg(ProjectDir));
+                              tr("项目错误"),
+                              tr("%1\n\n不是合法的OpenFLUID项目").arg(ProjectDir));
       }
     }
     else
@@ -813,7 +813,7 @@ void AppCoordinator::whenOpenExampleAsked()
         {
           openfluid::base::ProjectManager::instance()->close();
           QApplication::restoreOverrideCursor();
-          QMessageBox::critical(&m_MainWindow,tr("Project error"),QString(E.what()));
+          QMessageBox::critical(&m_MainWindow,tr("项目错误"),QString(E.what()));
           return;
         }
       }
@@ -821,8 +821,8 @@ void AppCoordinator::whenOpenExampleAsked()
       {
         QApplication::restoreOverrideCursor();
         QMessageBox::critical(&m_MainWindow,
-                              tr("Project error"),
-                              tr("%1\n\nis not a valid OpenFLUID project").arg(SelectedDir));
+                              tr("项目错误"),
+                              tr("%1\n\n不是合法的OpenFLUID项目").arg(SelectedDir));
       }
     }
   }
@@ -835,11 +835,11 @@ void AppCoordinator::whenOpenExampleAsked()
 
 void AppCoordinator::whenRestoreExamplesAsked()
 {
-  if (QMessageBox::question(&m_MainWindow,tr("Reinstall examples projects"),
-                            tr("Reinstalling will overwrite all modifications "
-                                "and delete simulations results associated to these examples.")+
+  if (QMessageBox::question(&m_MainWindow,tr("重新安装示例工程"),
+                            tr("重装将会覆盖所有的更改 "
+                                "并且会删除所有与之关联的数据。")+
                             "\n\n"+
-                            tr("Proceed anyway?"),
+                            tr("无论如何都要继续吗？"),
                             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
   {
     openfluid::buddies::ExamplesBuddy Buddy(NULL);
@@ -853,8 +853,8 @@ void AppCoordinator::whenRestoreExamplesAsked()
     catch (openfluid::base::Exception& e)
     {
       QApplication::restoreOverrideCursor();
-      QMessageBox::critical(&m_MainWindow,tr("Restore examples projects"),
-                            tr("Error restoring example projects"));
+      QMessageBox::critical(&m_MainWindow,tr("恢复示例工程"),
+                            tr("恢复示例工程错误"));
     }
   }
 }

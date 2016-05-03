@@ -35,13 +35,13 @@
       <item>
        <widget class="QGroupBox" name="LayoutGroupBox">
         <property name="title">
-         <string>Graph layout</string>
+         <string>图形输出</string>
         </property>
         <layout class="QGridLayout" name="gridLayout" columnstretch="0,0">
          <item row="0" column="0">
           <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>Direction</string>
+            <string>方向</string>
            </property>
           </widget>
          </item>
@@ -52,22 +52,22 @@
            </property>
            <item>
             <property name="text">
-             <string>Top to Bottom</string>
+             <string>由上至下</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Bottom to Top</string>
+             <string>由下至上</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Left to Right</string>
+             <string>从左至右</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Right to Left</string>
+             <string>从右至左</string>
             </property>
            </item>
           </widget>
@@ -78,13 +78,13 @@
       <item>
        <widget class="QGroupBox" name="ViewGroupBox">
         <property name="title">
-         <string>View</string>
+         <string>视图</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <widget class="QPushButton" name="FitViewButton">
            <property name="text">
-            <string>Fit view to full graph</string>
+            <string>适合显示区域</string>
            </property>
           </widget>
          </item>
@@ -113,7 +113,7 @@
          <string notr="true">color : #909090;</string>
         </property>
         <property name="text">
-         <string>Use Ctrl key + mouse wheel for zooming</string>
+         <string>用 Ctrl 键 + 鼠标滚轮进行缩放</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -139,20 +139,20 @@
       <item>
        <widget class="QGroupBox" name="ExportGroupBox">
         <property name="title">
-         <string>Export</string>
+         <string>导出</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
           <widget class="QPushButton" name="PNGExportButton">
            <property name="text">
-            <string>Export as PNG...</string>
+            <string>导出为 PNG...</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="SVGExportButton">
            <property name="text">
-            <string>Export as SVG...</string>
+            <string>导出为 SVG...</string>
            </property>
           </widget>
          </item>

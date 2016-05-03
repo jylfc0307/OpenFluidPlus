@@ -280,7 +280,7 @@
                  <string notr="true">color : #909090;</string>
                 </property>
                 <property name="text">
-                 <string>Use Ctrl key + mouse wheel for zooming</string>
+                 <string>用 Ctrl 键 + 鼠标滚轮进行缩放</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>

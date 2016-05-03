@@ -110,25 +110,25 @@ void AppActions::updateRecentProjectsActions()
 void AppActions::createActions()//汉化菜单
 {
   // Project menu
-  m_Actions["ProjectNew"] = new QAction(tr("&新建..."), this);
+  m_Actions["ProjectNew"] = new QAction(tr("新建(&N)..."), this);
   m_Actions["ProjectNew"]->setShortcuts(QKeySequence::New);
   m_Actions["ProjectNew"]->setIcon(QIcon(":/ui/common/icons/file-new.png"));
 
-  m_Actions["ProjectOpen"] = new QAction(tr("&打开..."), this);
+  m_Actions["ProjectOpen"] = new QAction(tr("打开(&O)..."), this);
   m_Actions["ProjectOpen"]->setShortcuts(QKeySequence::Open);
   m_Actions["ProjectOpen"]->setIcon(QIcon(":/ui/common/icons/file-open.png"));
 
-  m_Actions["ProjectReload"] = new QAction(tr("重载"), this);
+  m_Actions["ProjectReload"] = new QAction(tr("重新加载"), this);
   m_Actions["ProjectReload"]->setIcon(QIcon(":/ui/common/icons/refresh.png"));
 
-  m_Actions["ProjectSave"] = new QAction(tr("&保存"), this);
+  m_Actions["ProjectSave"] = new QAction(tr("保存(&S)"), this);
   m_Actions["ProjectSave"]->setShortcuts(QKeySequence::Save);
   m_Actions["ProjectSave"]->setIcon(QIcon(":/ui/common/icons/file-save.png"));
 
-  m_Actions["ProjectSaveAs"] = new QAction(tr("另存..."), this);
+  m_Actions["ProjectSaveAs"] = new QAction(tr("另存为..."), this);
   m_Actions["ProjectSaveAs"]->setIcon(QIcon(":/ui/common/icons/file-save-as.png"));
 
-  m_Actions["ProjectProperties"] = new QAction(tr("特性"), this);
+  m_Actions["ProjectProperties"] = new QAction(tr("属性"), this);
 
   m_Actions["ProjectClose"] = new QAction(tr("关闭"), this);
   m_Actions["ProjectClose"]->setShortcuts(QKeySequence::Close);
@@ -140,33 +140,33 @@ void AppActions::createActions()//汉化菜单
 
 
   // Edit menu
-  m_Actions["EditCut"] = new QAction(tr("&Cut"), this);
+  m_Actions["EditCut"] = new QAction(tr("剪切(&X)"), this);
   m_Actions["EditCut"]->setShortcuts(QKeySequence::Cut);
 
-  m_Actions["EditCopy"] = new QAction(tr("&Copy"), this);
+  m_Actions["EditCopy"] = new QAction(tr("复制(&C)"), this);
   m_Actions["EditCopy"]->setShortcuts(QKeySequence::Copy);
 
-  m_Actions["EditPaste"] = new QAction(tr("&Paste"), this);
+  m_Actions["EditPaste"] = new QAction(tr("粘贴(&P)"), this);
   m_Actions["EditPaste"]->setShortcuts(QKeySequence::Paste);
 
-  m_Actions["EditPreferences"] = new QAction(tr("Preferences..."), this);
+  m_Actions["EditPreferences"] = new QAction(tr("选项..."), this);
   m_Actions["EditPreferences"]->setMenuRole(QAction::PreferencesRole);
 
 
   //Development menu
-  m_Actions["DevNewSimulator"] = new QAction(tr("New simulator..."), this);
-  m_Actions["DevNewGhostSimulator"] = new QAction(tr("New ghost simulator..."), this);
-  m_Actions["DevNewObserver"] = new QAction(tr("New observer..."), this);
+  m_Actions["DevNewSimulator"] = new QAction(tr("新建模拟器..."), this);
+  m_Actions["DevNewGhostSimulator"] = new QAction(tr("新建虚拟模拟器..."), this);
+  m_Actions["DevNewObserver"] = new QAction(tr("新建观察者..."), this);
 
-  m_Actions["DevOpenSimulator"] = new QAction(tr("Open simulator..."), this);
-  m_Actions["DevOpenObserver"] = new QAction(tr("Open observer..."), this);
+  m_Actions["DevOpenSimulator"] = new QAction(tr("打开模拟器..."), this);
+  m_Actions["DevOpenObserver"] = new QAction(tr("打开观察者..."), this);
 
   m_Actions["DevLaunchDevStudio"] = new QAction("OpenFLUID-DevStudio", this);
   m_Actions["DevLaunchDevStudio"]->setIcon(QIcon(":/icons/wares-development.png"));
 
 
   //Simulation menu
-  m_Actions["WaresRefresh"] = new QAction(tr("Reload simulators and observers"), this);
+  m_Actions["WaresRefresh"] = new QAction(tr("重新加载模拟器和观察者"), this);
   m_Actions["WaresRefresh"]->setShortcut(QKeySequence(Qt::CTRL+Qt::SHIFT+Qt::Key_R));
 
   m_Actions["SimulationRun"] = new QAction(tr("启动模拟"), this);
@@ -174,27 +174,27 @@ void AppActions::createActions()//汉化菜单
 
 
   //View Menu
-  m_Actions["ViewDashboard"] = new QAction(tr("Show/Hide project dashboard"), this);
-  m_Actions["ViewToolbar"] = new QAction(tr("Show/Hide main toolbar"), this);
-  m_Actions["ViewRestore"] = new QAction(tr("Restore default view"), this);
+  m_Actions["ViewDashboard"] = new QAction(tr("显示/隐藏 项目面板"), this);
+  m_Actions["ViewToolbar"] = new QAction(tr("显示/隐藏 主菜单"), this);
+  m_Actions["ViewRestore"] = new QAction(tr("恢复默认视图"), this);
 
 
   //Help menu
-  m_Actions["HelpOnlineWeb"] = new QAction(tr("Web site"), this);
-  m_Actions["HelpOnlineCommunity"] = new QAction(tr("Community site"), this);
+  m_Actions["HelpOnlineWeb"] = new QAction(tr("OpenFLUID官网"), this);
+  m_Actions["HelpOnlineCommunity"] = new QAction(tr("社区站点"), this);
   m_Actions["HelpEmail"] = new QAction(tr("Email"), this);
 
   m_Actions["HelpExamplesOpen"] = new QAction(tr("打开示例工程..."), this);
   m_Actions["HelpExamplesOpen"]->setIcon(QIcon(":/icons/file-open-example.png"));
 
-  m_Actions["HelpExamplesRestore"] = new QAction(tr("Reinstall examples projects"), this);
+  m_Actions["HelpExamplesRestore"] = new QAction(tr("重装示例工程"), this);
 
-  m_Actions["HelpAbout"] = new QAction(tr("About"), this);
+  m_Actions["HelpAbout"] = new QAction(tr("关于"), this);
   m_Actions["HelpAbout"]->setMenuRole(QAction::AboutRole);
 
 
   //Other
-  m_Actions["MarketAccess"] = new QAction(tr("Access to OpenFLUID-Market"), this);
+  m_Actions["MarketAccess"] = new QAction(tr("访问OpenFLUID市场"), this);
   m_Actions["MarketAccess"]->setIcon(QIcon(":/icons/market.png"));
 
 
@@ -225,7 +225,7 @@ QAction* AppActions::action(const std::string& ID) const
                                                               OPENFLUID_CODE_LOCATION);
 
     throw openfluid::base::ApplicationException(Context,
-                                                "Required action \"" + ID + "\" does not exist.");
+                                                "重要操作 \"" + ID + "\" 不存在.");
   }
 }
 
@@ -345,28 +345,28 @@ void AppActions::updateExtensionsActionsAndMenus()
 
   if (mp_SpatialExtensionsMenu->isEmpty())
   {
-    NoneAction = new QAction(tr("(none)"),this);
+    NoneAction = new QAction(tr("(无)"),this);
     NoneAction->setEnabled(false);
     mp_SpatialExtensionsMenu->addAction(NoneAction);
   }
 
   if (mp_ModelExtensionsMenu->isEmpty())
   {
-    NoneAction = new QAction(tr("(none)"),this);
+    NoneAction = new QAction(tr("(无)"),this);
     NoneAction->setEnabled(false);
     mp_ModelExtensionsMenu->addAction(NoneAction);
   }
 
   if (mp_ResultsExtensionsMenu->isEmpty())
   {
-    NoneAction = new QAction(tr("(none)"),this);
+    NoneAction = new QAction(tr("(无)"),this);
     NoneAction->setEnabled(false);
     mp_ResultsExtensionsMenu->addAction(NoneAction);
   }
 
   if (mp_OtherExtensionsMenu->isEmpty())
   {
-    NoneAction = new QAction(tr("(none)"),this);
+    NoneAction = new QAction(tr("(无)"),this);
     NoneAction->setEnabled(false);
     mp_OtherExtensionsMenu->addAction(NoneAction);
   }
@@ -383,12 +383,12 @@ void AppActions::createMenus(MainWindow& MainWin)
   QMenu* Menu;
   QMenu* SubMenu;
 
-  Menu = MainWin.menuBar()->addMenu(tr("&工程"));
+  Menu = MainWin.menuBar()->addMenu(tr("工程(&P)"));
   Menu->addAction(action("ProjectNew"));
   Menu->addAction(action("ProjectOpen"));
 
   // recents
-  mp_RecentProjectsMenu = Menu->addMenu(tr("Open recent"));
+  mp_RecentProjectsMenu = Menu->addMenu(tr("打开最近项目"));
   for (int i=0;i<openfluid::base::PreferencesManager::RecentProjectsLimit;i++)
     mp_RecentProjectsMenu->addAction(m_RecentProjectsActions[i]);
 
@@ -401,7 +401,7 @@ void AppActions::createMenus(MainWindow& MainWin)
   Menu->addAction(action("ProjectQuit"));
 
 
-  Menu = MainWin.menuBar()->addMenu(tr("&编辑"));
+  Menu = MainWin.menuBar()->addMenu(tr("编辑(&E)"));
   Menu->addAction(action("EditCut"));
   Menu->addAction(action("EditCopy"));
   Menu->addAction(action("EditPaste"));
@@ -409,7 +409,7 @@ void AppActions::createMenus(MainWindow& MainWin)
   Menu->addAction(action("EditPreferences"));
 
 
-  mp_DevelopmentMenu = MainWin.menuBar()->addMenu(tr("&开发"));
+  mp_DevelopmentMenu = MainWin.menuBar()->addMenu(tr("开发(&D)"));
   mp_DevelopmentMenu->addAction(action("DevNewSimulator"));
   mp_DevelopmentMenu->addAction(action("DevNewGhostSimulator"));
   mp_DevelopmentMenu->addAction(action("DevNewObserver"));
@@ -420,32 +420,32 @@ void AppActions::createMenus(MainWindow& MainWin)
   mp_DevelopmentMenu->addAction(action("DevLaunchDevStudio"));
 
 
-  mp_SimulationMenu = MainWin.menuBar()->addMenu(tr("&模拟器"));
+  mp_SimulationMenu = MainWin.menuBar()->addMenu(tr("模拟器(&S)"));
   mp_SimulationMenu->addAction(action("WaresRefresh"));
   mp_SimulationMenu->addSeparator();
   mp_SimulationMenu->addAction(action("SimulationRun"));
 
 
-  mp_ExtensionsMenu = MainWin.menuBar()->addMenu(tr("&扩展模块"));
+  mp_ExtensionsMenu = MainWin.menuBar()->addMenu(tr("扩展模块(&X)"));
 
-  mp_SpatialExtensionsMenu = mp_ExtensionsMenu->addMenu(tr("Spatial domain"));
-  mp_ModelExtensionsMenu = mp_ExtensionsMenu->addMenu(tr("Model"));
-  mp_ResultsExtensionsMenu = mp_ExtensionsMenu->addMenu(tr("Results"));
-  mp_OtherExtensionsMenu = mp_ExtensionsMenu->addMenu(tr("Other"));
+  mp_SpatialExtensionsMenu = mp_ExtensionsMenu->addMenu(tr("空间领域"));
+  mp_ModelExtensionsMenu = mp_ExtensionsMenu->addMenu(tr("模型"));
+  mp_ResultsExtensionsMenu = mp_ExtensionsMenu->addMenu(tr("结果"));
+  mp_OtherExtensionsMenu = mp_ExtensionsMenu->addMenu(tr("其它"));
 
 
-  mp_ViewMenu = MainWin.menuBar()->addMenu(tr("&视图"));
+  mp_ViewMenu = MainWin.menuBar()->addMenu(tr("视图(&V)"));
   mp_ViewMenu->addAction(action("ViewDashboard"));
   mp_ViewMenu->addAction(action("ViewToolbar"));
   mp_ViewMenu->addAction(action("ViewRestore"));
 
 
-  Menu = MainWin.menuBar()->addMenu(tr("&帮助"));
-  SubMenu = Menu->addMenu(tr("OpenFLUID online"));
+  Menu = MainWin.menuBar()->addMenu(tr("帮助(&H)"));
+  SubMenu = Menu->addMenu(tr("OpenFLUID在线"));
   SubMenu->addAction(action("HelpOnlineWeb"));
   SubMenu->addAction(action("HelpOnlineCommunity"));
   Menu->addSeparator();
-  SubMenu = Menu->addMenu(tr("Examples"));
+  SubMenu = Menu->addMenu(tr("示例"));
   SubMenu->addAction(action("HelpExamplesOpen"));
   SubMenu->addAction(action("HelpExamplesRestore"));
   Menu->addSeparator();

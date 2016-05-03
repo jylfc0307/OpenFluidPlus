@@ -104,7 +104,7 @@
          <x>0</x>
          <y>0</y>
          <width>278</width>
-         <height>506</height>
+         <height>507</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -427,7 +427,7 @@
               <string notr="true">color : #909090;</string>
              </property>
              <property name="text">
-              <string>Use Ctrl key + mouse wheel for zooming</string>
+              <string>用 Ctrl 键 + 鼠标滚轮进行缩放</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -608,17 +608,17 @@
            </attribute>
            <column>
             <property name="text">
-             <string>Date Time</string>
+             <string>日期</string>
             </property>
            </column>
            <column>
             <property name="text">
-             <string>Unit ID</string>
+             <string>单元ID</string>
             </property>
            </column>
            <column>
             <property name="text">
-             <string>Informations</string>
+             <string>信息</string>
             </property>
            </column>
           </widget>
