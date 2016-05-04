@@ -289,7 +289,7 @@ void ProjectCentral::check()
   else
   {
     m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).updateStatus(PRJ_ERROR);
-    m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).addMessage(tr("Model is empty"));
+    m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).addMessage(tr("模型为空"));
   }
 
   checkSpatialDomain();
@@ -303,7 +303,7 @@ void ProjectCentral::check()
   else
   {
     m_CheckInfos.part(ProjectCheckInfos::PART_MONITORING).updateStatus(PRJ_WARNING);
-    m_CheckInfos.part(ProjectCheckInfos::PART_MONITORING).addMessage(tr("Monitoring is empty"));
+    m_CheckInfos.part(ProjectCheckInfos::PART_MONITORING).addMessage(tr("监控为空"));
   }
 
   checkRunConfig();
@@ -329,7 +329,7 @@ void ProjectCentral::checkGeneratorParam(const std::string& MinParamName,
 
     m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS).updateStatus(PRJ_ERROR);
     m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS)
-                .addMessage(tr("Parameter %1 for %2 has to be a double precision value")
+                .addMessage(tr("%2的参数%1应当为双精度")
                             .arg(QString::fromStdString(MinParamName))
                             .arg(QString::fromStdString(ID)));
   }
@@ -341,7 +341,7 @@ void ProjectCentral::checkGeneratorParam(const std::string& MinParamName,
     TestCompare = false;
     m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS).updateStatus(PRJ_ERROR);
     m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS)
-                .addMessage(tr("Parameter %1 for %2 has to be a double precision value")
+                .addMessage(tr("%2的参数%1应当为双精度")
                             .arg(QString::fromStdString(MaxParamName))
                             .arg(QString::fromStdString(ID)));
   }
@@ -351,7 +351,7 @@ void ProjectCentral::checkGeneratorParam(const std::string& MinParamName,
   {
     m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS).updateStatus(PRJ_ERROR);
     m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS)
-                .addMessage(tr("Parameter %1 is greater or equal to parameter %2 for %3")
+                .addMessage(tr("%3的参数%1大于等于%2")
                             .arg(QString::fromStdString(MinParamName))
                             .arg(QString::fromStdString(MaxParamName))
                             .arg(QString::fromStdString(ID)));
@@ -402,7 +402,7 @@ double ProjectCentral::getParamAsDouble(openfluid::fluidx::ModelItemDescriptor* 
                                                               OPENFLUID_CODE_LOCATION);
 
     throw openfluid::base::ApplicationException(Context,
-                                                "Parameter " + ParamName + " is not set as a double precision value");
+                                                "参数" + ParamName + "应为双精度类型");
   }
 
   double d;
@@ -457,7 +457,7 @@ void ProjectCentral::checkModel()
         {
           m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).updateStatus(PRJ_DISABLED);
           m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF)
-                          .addMessage(tr("Simulator %1 is a ghost")
+                          .addMessage(tr("模拟器%1是虚拟的")
                                       .arg(QString::fromStdString(ID)));
         }
 
@@ -487,7 +487,7 @@ void ProjectCentral::checkModel()
             {
               m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS).updateStatus(PRJ_ERROR);
               m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS)
-                              .addMessage(tr("File %1 required by generator %2 does not exist")
+                              .addMessage(tr("生成器%2需要的文件%1不存在")
                                           .arg(QString::fromStdString(FileNameFromParam))
                                           .arg(QString::fromStdString(ID)));
             }
@@ -500,7 +500,7 @@ void ProjectCentral::checkModel()
             {
               m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS).updateStatus(PRJ_ERROR);
               m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS)
-                              .addMessage(tr("File %1 required by generator %2 does not exist")
+                              .addMessage(tr("生成器%2需要的文件%1不存在")
                                           .arg(QString::fromStdString(FileNameFromParam))
                                           .arg(QString::fromStdString(ID)));
             }
@@ -514,7 +514,7 @@ void ProjectCentral::checkModel()
             {
               m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS).updateStatus(PRJ_ERROR);
               m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS)
-                              .addMessage(tr("File %1 required by generator %2 does not exist")
+                              .addMessage(tr("生成器%2需要的文件%1不存在")
                                           .arg(QString::fromStdString((*itFile)))
                                           .arg(QString::fromStdString(ID)));
             }
@@ -538,7 +538,7 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS)
-                                        .addMessage(tr("Required parameter %1 for simulator %2 is not set")
+                                        .addMessage(tr("模拟器%2需要的参数%1未设置")
                                                     .arg(QString::fromStdString(itParam->DataName))
                                                     .arg(QString::fromStdString(ID)));
           }
@@ -554,7 +554,7 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS).updateStatus(PRJ_WARNING);
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELPARAMS)
-                                        .addMessage(tr("Used parameter %1 for simulator %2 is not set")
+                                        .addMessage(tr("模拟器%2需要的参数%1未设置")
                                                     .arg(QString::fromStdString(itParam->DataName))
                                                     .arg(QString::fromStdString(ID)));
           }
@@ -604,7 +604,7 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS)
-                                .addMessage(tr("Unit class %1 does not exist for attribute %2 required by %3")
+                                .addMessage(tr("空间类%1不存在，%3需要属性%2")
                                             .arg(QString::fromStdString(itReqData->UnitsClass))
                                             .arg(QString::fromStdString(itReqData->DataName))
                                             .arg(QString::fromStdString(ID)));
@@ -614,7 +614,7 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS)
-                                .addMessage(tr("Attribute %1 required on %2 units by %3 does not exist")
+                                .addMessage(tr("%3号空间类%2所需要的属性%1不存在")
                                             .arg(QString::fromStdString(itReqData->DataName))
                                             .arg(QString::fromStdString(itReqData->UnitsClass))
                                             .arg(QString::fromStdString(ID)));
@@ -633,7 +633,7 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS)
-                                .addMessage(tr("Unit class %1 does not exist for attribute %2 produced by %3")
+                                .addMessage(tr("空间类%1不存在，属性%2需要由%3生成")
                                             .arg(QString::fromStdString(itProdData->UnitsClass))
                                             .arg(QString::fromStdString(itProdData->DataName))
                                             .arg(QString::fromStdString(ID)));
@@ -647,8 +647,8 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS)
-                                .addMessage(tr("Attribute %1 produced on %2 units by %3 "
-                                    "is already produced by another simulator")
+                                .addMessage(tr("%3号空间类%2的属性%1"
+                                    "已由其它模拟器生成")
                                             .arg(QString::fromStdString(itProdData->UnitsClass))
                                             .arg(QString::fromStdString(itProdData->DataName))
                                             .arg(QString::fromStdString(ID)));
@@ -659,7 +659,7 @@ void ProjectCentral::checkModel()
       {
         m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).updateStatus(PRJ_ERROR);
         if ((*itModelItem)->getType() == openfluid::fluidx::ModelItemDescriptor::PluggedSimulator)
-          m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).addMessage(tr("Simulator %1 is not available")
+          m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).addMessage(tr("模拟器%1不存在")
                                                                          .arg(QString::fromStdString(ID)));
       }
     }
@@ -915,7 +915,7 @@ void ProjectCentral::checkMonitoring()
       if (SignII == NULL)
       {
         m_CheckInfos.part(ProjectCheckInfos::PART_MONITORING).updateStatus(PRJ_ERROR);
-        m_CheckInfos.part(ProjectCheckInfos::PART_MONITORING).addMessage(tr("Observer %1 is not available")
+        m_CheckInfos.part(ProjectCheckInfos::PART_MONITORING).addMessage(tr("观察者%1不可用")
                                                                          .arg(QString::fromStdString((*itMonitoring)
                                                                                                          ->getID())));
       }
@@ -926,7 +926,7 @@ void ProjectCentral::checkMonitoring()
   if (!AtLeastOneEnabled)
   {
     m_CheckInfos.part(ProjectCheckInfos::PART_MONITORING).updateStatus(PRJ_WARNING);
-    m_CheckInfos.part(ProjectCheckInfos::PART_MONITORING).addMessage(tr("No observer is enabled in monitoring"));
+    m_CheckInfos.part(ProjectCheckInfos::PART_MONITORING).addMessage(tr("监控中没有观察者"));
   }
 }
 

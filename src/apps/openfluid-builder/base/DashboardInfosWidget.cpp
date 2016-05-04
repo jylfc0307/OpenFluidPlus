@@ -123,7 +123,7 @@ void DashboardInfosWidget::refresh()
   ui->SpatialLabel->setText(tr("<u>空间领域:</u> 在 %2 个空间类中有共计 %1 个空间单元")
                             .arg(UnitsCount).arg(UnitsClassesCount));
   ui->DatastoreLabel->setText(tr("<u>数据存储:</u> %1 个项目").arg(DStoreCount));
-  ui->MonitoringLabel->setText(tr("<u>监控:</u> %1 监控器(s)").arg(MonitoringCount));
+  ui->MonitoringLabel->setText(tr("<u>监控:</u> %1 监控器").arg(MonitoringCount));
   ui->SimConfigLabel->setText(tr("<u>运行设置:</u> 总共持续 %1 秒， "
                                  "ΔT值为 %2 秒，%3")
                               .arg(Duration).arg(DeltaT).arg(SchedConstStr));
