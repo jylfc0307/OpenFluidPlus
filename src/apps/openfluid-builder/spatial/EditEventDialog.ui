@@ -104,7 +104,7 @@ font : bold;
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Units class:</string>
+           <string>空间单元:</string>
           </property>
          </widget>
         </item>
@@ -131,7 +131,7 @@ font : bold;
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Unit ID:</string>
+           <string>单元 ID:</string>
           </property>
          </widget>
         </item>
@@ -158,7 +158,7 @@ font : bold;
         <item>
          <widget class="QLabel" name="label_2">
           <property name="text">
-           <string>Date:</string>
+           <string>日期：</string>
           </property>
          </widget>
         </item>
@@ -203,7 +203,7 @@ font : bold;
       <item>
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Associated informations:</string>
+         <string>相关信息：</string>
         </property>
        </widget>
       </item>
@@ -218,7 +218,7 @@ font : bold;
            <enum>QAbstractItemView::SelectRows</enum>
           </property>
           <attribute name="horizontalHeaderVisible">
-           <bool>true</bool>
+           <bool>false</bool>
           </attribute>
           <attribute name="horizontalHeaderStretchLastSection">
            <bool>true</bool>
@@ -228,12 +228,12 @@ font : bold;
           </attribute>
           <column>
            <property name="text">
-            <string>Key</string>
+            <string>键</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Value</string>
+            <string>值</string>
            </property>
           </column>
          </widget>

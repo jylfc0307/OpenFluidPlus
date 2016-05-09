@@ -159,7 +159,7 @@
         <item>
          <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>seconds</string>
+           <string>秒</string>
           </property>
          </widget>
         </item>
@@ -239,7 +239,7 @@
       <item>
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>steps</string>
+         <string>步</string>
         </property>
        </widget>
       </item>

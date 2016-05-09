@@ -121,7 +121,7 @@ font : bold;
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Directory:</string>
+        <string>目录：</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -131,7 +131,7 @@ font : bold;
      <item row="0" column="2">
       <widget class="QPushButton" name="BrowseButton">
        <property name="text">
-        <string>Browse</string>
+        <string>浏览...</string>
        </property>
       </widget>
      </item>
@@ -144,7 +144,7 @@ font : bold;
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Project name:</string>
+        <string>项目名称：</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

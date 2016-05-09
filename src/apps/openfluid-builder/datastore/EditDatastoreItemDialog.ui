@@ -162,7 +162,7 @@ font : bold;
        <item>
         <widget class="QCheckBox" name="UnitsClassCheckBox">
          <property name="text">
-          <string>Units class</string>
+          <string>空间类：</string>
          </property>
         </widget>
        </item>
@@ -203,7 +203,7 @@ font : bold;
      <item>
       <widget class="QGroupBox" name="DataSourceGroupBox">
        <property name="title">
-        <string>Data source</string>
+        <string>内容来源：</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <property name="leftMargin">
@@ -240,7 +240,7 @@ font : bold;
           <item>
            <widget class="QPushButton" name="GeovectorBrowseButton">
             <property name="text">
-             <string>Browse...</string>
+             <string>浏览...</string>
             </property>
            </widget>
           </item>
@@ -268,7 +268,7 @@ font : bold;
           <item>
            <widget class="QPushButton" name="GeorasterBrowseButton">
             <property name="text">
-             <string>Browse...</string>
+             <string>浏览...</string>
             </property>
            </widget>
           </item>
@@ -280,7 +280,7 @@ font : bold;
      <item>
       <widget class="QGroupBox" name="DataDestGroupBox">
        <property name="title">
-        <string>Data destination</string>
+        <string>数据目的地：</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <property name="leftMargin">
@@ -300,7 +300,7 @@ font : bold;
           <item>
            <widget class="QRadioButton" name="CopyRadioButton">
             <property name="text">
-             <string>Copy into dataset root directory</string>
+             <string>复制到数据集根目录</string>
             </property>
            </widget>
           </item>
@@ -311,7 +311,7 @@ font : bold;
           <item>
            <widget class="QRadioButton" name="CopySubdirRadioButton">
             <property name="text">
-             <string>Copy into dataset subdirectory:</string>
+             <string>复制到数据集子目录：</string>
             </property>
            </widget>
           </item>

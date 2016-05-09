@@ -79,7 +79,7 @@ WareWidget::WareWidget(QWidget* Parent, const openfluid::ware::WareID_t& ID,
   if (m_Enabled) ui->EnabledCheckBox->setCheckState(Qt::Checked);
   else ui->EnabledCheckBox->setCheckState(Qt::Unchecked);
 
-  ui->ShowHideParamsLabel->setText(tr("show parameters and informations"));
+  ui->ShowHideParamsLabel->setText(tr("显示变量和信息"));
 
 
   QList<int> SplitSizes;
@@ -194,9 +194,9 @@ void WareWidget::displayParams()
 {
   ui->ParamInfoWidget->setVisible(m_ParamsExpanded);
   if (m_ParamsExpanded)
-    ui->ShowHideParamsLabel->setText(tr("hide parameters and informations"));
+    ui->ShowHideParamsLabel->setText(tr("隐藏变量和信息"));
   else
-    ui->ShowHideParamsLabel->setText(tr("show parameters and informations"));
+    ui->ShowHideParamsLabel->setText(tr("显示变量和信息"));
 }
 
 
@@ -262,14 +262,14 @@ void WareWidget::notifyRemoveClicked()
   {
     QString TypeStr = tr("the generator");
 
-    if (getType() == openfluid::fluidx::WareDescriptor::PluggedSimulator) TypeStr = tr("the simulator");
-    else if (getType() == openfluid::fluidx::WareDescriptor::PluggedObserver) TypeStr = tr("the observer");
+    if (getType() == openfluid::fluidx::WareDescriptor::PluggedSimulator) TypeStr = tr("模拟器");
+    else if (getType() == openfluid::fluidx::WareDescriptor::PluggedObserver) TypeStr = tr("观察者");
 
 
     OK = (QMessageBox::question(QApplication::activeWindow(),
                                 "OpenFLUID-Builder",
-                                tr("You are removing %1 %2.\n"
-                                   "All parameters will be lost.\n\nProceed anyway?")
+                                tr("你正在移除 %1 %2.\n"
+                                   "所有的变量都将会丢失.\n\n确定要继续吗?")
                                 .arg(QString::fromStdString(getID())).arg(TypeStr),
                                 QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
   }
@@ -403,9 +403,9 @@ void WareWidget::updateParameterizationSwitch()
   if (mp_ParamsWidget)
   {
     if (ui->ParameterizationStackWidget->currentIndex() == 0)
-      ui->ParameterizationSwitchLabel->setText(tr("switch to assistant"));
+      ui->ParameterizationSwitchLabel->setText(tr("切换到帮助"));
     else
-      ui->ParameterizationSwitchLabel->setText(tr("switch to list"));
+      ui->ParameterizationSwitchLabel->setText(tr("切换到列表"));
   }
 }
 

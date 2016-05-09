@@ -52,7 +52,7 @@
 AddSimulatorDialog::AddSimulatorDialog(const QStringList& SimIDList, QWidget* Parent) :
   AddWareDialog(Parent)
 {
-  ui->MessageLabel->setText(tr("Add simulator"));
+  ui->MessageLabel->setText(tr("添加模拟器"));
 
   openfluid::machine::SimulatorSignatureRegistry* Reg =
     openfluid::machine::SimulatorSignatureRegistry::instance();
@@ -80,7 +80,7 @@ AddSimulatorDialog::AddSimulatorDialog(const QStringList& SimIDList, QWidget* Pa
 
   connect(ui->WaresListWidget,SIGNAL(itemSelectionChanged()),this,SLOT(updateSignature()));
 
-  setMessage(tr("Select simulator to add"));
+  setMessage(tr("选择需要添加的模拟器"));
 }
 
 
@@ -125,7 +125,7 @@ void AddSimulatorDialog::setMessage(const QString& Msg)
   {
     ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                     .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-    ui->MessageLabel->setText(tr("Add simulator"));
+    ui->MessageLabel->setText(tr("添加模拟器"));
     ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
   }
   else

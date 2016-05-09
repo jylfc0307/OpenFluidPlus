@@ -647,8 +647,8 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALATTRS)
-                                .addMessage(tr("%3号空间类%2的属性%1"
-                                    "已由其它模拟器生成")
+                                .addMessage(tr("%3号空间类%2的属性%1，"
+                                    "它未被其它模拟器生成")
                                             .arg(QString::fromStdString(itProdData->UnitsClass))
                                             .arg(QString::fromStdString(itProdData->DataName))
                                             .arg(QString::fromStdString(ID)));
@@ -706,7 +706,7 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALSTRUCT).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALSTRUCT)
-                            .addMessage(tr("Unit class %1 does not exist for variable %2 produced by %3")
+                            .addMessage(tr("空间单元%1不存在，变量%2由%3提供")
                                         .arg(QString::fromStdString(itData->UnitsClass))
                                         .arg(QString::fromStdString(itData->DataName))
                                         .arg(QString::fromStdString(ID)));
@@ -722,8 +722,8 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF)
-                            .addMessage(tr("Variable %1 on %2 produced by %3 cannot be created "
-                                "because it is created by another simulator or generator")
+                            .addMessage(tr("在由%3提供的%2上无法创建变量%1，"
+                                "它未被其它模拟器或生成器提供")
                                         .arg(QString::fromStdString(itData->DataName))
                                         .arg(QString::fromStdString(itData->UnitsClass))
                                         .arg(QString::fromStdString(ID)));
@@ -740,7 +740,7 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALSTRUCT).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALSTRUCT)
-                            .addMessage(tr("Unit class %1 does not exist for variable %2 produced by %3")
+                            .addMessage(tr("空间单元%1不存在，变量%2由%3提供")
                                         .arg(QString::fromStdString(GenDesc->getUnitsClass()))
                                         .arg(QString::fromStdString(GenDesc->getVariableName()))
                                         .arg(QString::fromStdString(ID)));
@@ -757,8 +757,8 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF)
-                            .addMessage(tr("Variable %1 on %2 produced by %3 is already produced "
-                                "by another simulator or generator")
+                            .addMessage(tr("在由%3提供的%2上的变量%1"
+                                "未由其它模拟器或生成器生成")
                                         .arg(QString::fromStdString(GenDesc->getVariableName()))
                                         .arg(QString::fromStdString(GenDesc->getUnitsClass()))
                                         .arg(QString::fromStdString(ID)));
@@ -775,7 +775,7 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALSTRUCT).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALSTRUCT)
-                            .addMessage(tr("Unit class %1 does not exist for variable %2 produced by %3")
+                            .addMessage(tr("空间单元%1不存在，变量%2由%3提供")
                                         .arg(QString::fromStdString(itData->UnitsClass))
                                         .arg(QString::fromStdString(itData->DataName))
                                         .arg(QString::fromStdString(ID)));
@@ -817,7 +817,7 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALSTRUCT).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_SPATIALSTRUCT)
-                            .addMessage(tr("Unit class %1 does not exist for variable %2 required by %3")
+                            .addMessage(tr("空间单元%1不存在，%3需要变量%2")
                                         .arg(QString::fromStdString(itData->UnitsClass))
                                         .arg(QString::fromStdString(itData->DataName))
                                         .arg(QString::fromStdString(ID)));
@@ -831,8 +831,8 @@ void ProjectCentral::checkModel()
           {
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).updateStatus(PRJ_ERROR);
             m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF)
-                            .addMessage(tr("Variable %1 on %2 required by %3 is not produced "
-                                           "by another simulator or generator")
+                            .addMessage(tr("%3需要的在%2上的变量%1"
+                                           "未由其他生成器或观察者提供")
                                         .arg(QString::fromStdString(itData->DataName))
                                         .arg(QString::fromStdString(itData->UnitsClass))
                                         .arg(QString::fromStdString(ID)));
@@ -846,7 +846,7 @@ void ProjectCentral::checkModel()
   if (!AtLeastOneEnabled)
   {
     m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).updateStatus(PRJ_DISABLED);
-    m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).addMessage(tr("No simulator or generator is enabled in model"));
+    m_CheckInfos.part(ProjectCheckInfos::PART_MODELDEF).addMessage(tr("在模型中没有启用的模拟器或观察者"));
   }
 }
 
@@ -879,8 +879,8 @@ void ProjectCentral::checkDatastore()
     if (!Class.empty() && !Classes.count(Class))
     {
       m_CheckInfos.part(ProjectCheckInfos::PART_DATASTORE).updateStatus(PRJ_WARNING);
-      m_CheckInfos.part(ProjectCheckInfos::PART_DATASTORE).addMessage(tr("Unit class %1 does not exist "
-                                                                         "for datastore item %2")
+      m_CheckInfos.part(ProjectCheckInfos::PART_DATASTORE).addMessage(tr("空间单元%1不存在"
+                                                                         "，检查数据存储%2")
                                                                       .arg(QString::fromStdString(Class))
                                                                       .arg(QString::fromStdString((*itDatastore)
                                                                                                        ->getID())));

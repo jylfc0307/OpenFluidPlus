@@ -72,7 +72,7 @@ ModelWidget::ModelWidget(QWidget* Parent, openfluid::fluidx::AdvancedFluidXDescr
   mp_ModelScene = new ModelScene(m_Model,this);
   ui->GraphicalView->setScene(mp_ModelScene);
 
-  mp_ShowHideGlobalParamsLabel = new openfluid::ui::common::ActionLabel(tr("show"),ui->GlobalParamsWidget);
+  mp_ShowHideGlobalParamsLabel = new openfluid::ui::common::ActionLabel(tr("显示"),ui->GlobalParamsWidget);
   ui->GlobalParamsTitleLayout->insertWidget(1,mp_ShowHideGlobalParamsLabel);
   ui->GlobalParamsManagementWidget->setVisible(false);
 
@@ -80,8 +80,8 @@ ModelWidget::ModelWidget(QWidget* Parent, openfluid::fluidx::AdvancedFluidXDescr
   ui->AddGlobalParamButton->setIcon(QIcon(":/ui/common/icons/add.png"));
   ui->AddGlobalParamButton->setIconSize(QSize(20,20));
 
-  mp_WaresManWidget->ui->AddWareFirstButton->setText(tr("Add simulator"));
-  mp_WaresManWidget->ui->AddWareSecondButton->setText(tr("Add generator"));
+  mp_WaresManWidget->ui->AddWareFirstButton->setText(tr("添加模拟器"));
+  mp_WaresManWidget->ui->AddWareSecondButton->setText(tr("添加生成器"));
 
   connect(mp_ShowHideGlobalParamsLabel,SIGNAL(clicked()),this,SLOT(updateShowHideGlobalParams()));
   connect(ui->AddGlobalParamButton,SIGNAL(clicked()),this,SLOT(addGlobalParam()));
@@ -121,12 +121,12 @@ void ModelWidget::updateShowHideGlobalParams()
   if (ui->GlobalParamsManagementWidget->isVisible())
   {
     ui->GlobalParamsManagementWidget->setVisible(false);
-    mp_ShowHideGlobalParamsLabel->setText(tr("show"));
+    mp_ShowHideGlobalParamsLabel->setText(tr("显示"));
   }
   else
   {
     ui->GlobalParamsManagementWidget->setVisible(true);
-    mp_ShowHideGlobalParamsLabel->setText(tr("hide"));
+    mp_ShowHideGlobalParamsLabel->setText(tr("隐藏"));
   }
 }
 

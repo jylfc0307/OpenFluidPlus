@@ -110,7 +110,7 @@ font : bold;
      <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Project name:</string>
+        <string>项目名称：</string>
        </property>
       </widget>
      </item>
@@ -130,7 +130,7 @@ font : bold;
      <item row="1" column="0">
       <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Description:</string>
+        <string>描述：</string>
        </property>
       </widget>
      </item>
@@ -144,14 +144,14 @@ font : bold;
      <item row="2" column="0">
       <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Author(s):</string>
+        <string>作者：</string>
        </property>
       </widget>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>Creation date:</string>
+        <string>创建日期：</string>
        </property>
       </widget>
      </item>
@@ -165,7 +165,7 @@ font : bold;
      <item row="4" column="0">
       <widget class="QLabel" name="label_6">
        <property name="text">
-        <string>Last modification date:</string>
+        <string>最后修改日期：</string>
        </property>
       </widget>
      </item>

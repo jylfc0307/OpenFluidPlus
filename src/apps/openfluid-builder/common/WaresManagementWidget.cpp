@@ -49,11 +49,11 @@ WaresManagementWidget::WaresManagementWidget(QWidget* Parent,
 {
   ui->setupUi(this);
 
-  mp_ExpandAllWaresLabel = new openfluid::ui::common::ActionLabel(tr("expand all"),this);
+  mp_ExpandAllWaresLabel = new openfluid::ui::common::ActionLabel(tr("展开所有"),this);
   ui->WaresButtonsLayout->addWidget(mp_ExpandAllWaresLabel);
   connect(mp_ExpandAllWaresLabel,SIGNAL(clicked()),this,SLOT(expandAll()));
 
-  mp_CollapseAllWaresLabel = new openfluid::ui::common::ActionLabel(tr("collapse all"),this);
+  mp_CollapseAllWaresLabel = new openfluid::ui::common::ActionLabel(tr("收起所有"),this);
   ui->WaresButtonsLayout->addWidget(mp_CollapseAllWaresLabel);
   connect(mp_CollapseAllWaresLabel,SIGNAL(clicked()),this,SLOT(collapseAll()));
 

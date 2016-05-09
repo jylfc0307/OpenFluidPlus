@@ -80,7 +80,7 @@ void BuilderApp::initialize()
 
   // TODO see if this is moved into ProjectCoordinator or ProjectModule
 
-  mp_Splash->setMessage(tr("Initializing wares paths"));
+  mp_Splash->setMessage(tr("加载应用目录"));
 
   QStringList ExtraPaths = PrefsMgr->getExtraSimulatorsPaths();
   for (int i=0;i<ExtraPaths.size(); i++)
@@ -94,14 +94,14 @@ void BuilderApp::initialize()
 
   // Extensions
 
-  mp_Splash->setMessage(tr("Loading extensions"));
+  mp_Splash->setMessage(tr("加载拓展"));
 
   ExtraPaths = PrefsMgr->getExtraExtensionsPaths();
   ExtensionPluginsManager::instance(ExtraPaths); // initialization parameterized with extra paths
   ExtensionsRegistry::instance()->registerExtensions();
 
 
-  mp_Splash->setMessage(tr("Preparing and configuring UI"));
+  mp_Splash->setMessage(tr("准备与设置用户界面"));
 
   m_Actions.createMenus(m_MainWindow);
   m_Actions.createToolbar(m_MainWindow);

@@ -66,7 +66,7 @@ font : bold;
 </string>
           </property>
           <property name="text">
-           <string>Open an example project</string>
+           <string>打开样例工程</string>
           </property>
          </widget>
         </item>
@@ -84,7 +84,7 @@ font : bold;
       </size>
      </property>
      <property name="text">
-      <string>Available projects:</string>
+      <string>可用的项目：</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -146,8 +146,8 @@ font : bold;
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>316</width>
-          <height>354</height>
+          <width>320</width>
+          <height>386</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">

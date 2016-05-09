@@ -43,7 +43,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="ProjectNameLabel">
        <property name="text">
-        <string>Project name:</string>
+        <string>项目名称：</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -59,7 +59,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Browse...</string>
+        <string>浏览...</string>
        </property>
       </widget>
      </item>
@@ -69,7 +69,7 @@
      <item row="0" column="0">
       <widget class="QLabel" name="Label">
        <property name="text">
-        <string>Working directory:</string>
+        <string>工作目录：</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -79,7 +79,7 @@
      <item row="3" column="0">
       <widget class="QLabel" name="AuthorsLabel">
        <property name="text">
-        <string>Authors:</string>
+        <string>作者：</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -89,7 +89,7 @@
      <item row="2" column="0">
       <widget class="QLabel" name="DescriptionLabel">
        <property name="text">
-        <string>Description:</string>
+        <string>描述：</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
@@ -112,7 +112,7 @@
      <item row="4" column="0" colspan="3">
       <widget class="QGroupBox" name="DataGroupBox">
        <property name="title">
-        <string>Data import</string>
+        <string>数据导入</string>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -129,7 +129,7 @@
           <item row="3" column="0">
            <widget class="QRadioButton" name="DirectoryRadioButton">
             <property name="text">
-             <string>Import from files in directory:</string>
+             <string>从文件夹中的文件导入数据</string>
             </property>
            </widget>
           </item>
@@ -139,7 +139,7 @@
              <string notr="true">font: italic;</string>
             </property>
             <property name="text">
-             <string>(none)</string>
+             <string>（无）</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -155,14 +155,14 @@
           <item row="0" column="1">
            <widget class="QPushButton" name="ProjectButton">
             <property name="text">
-             <string>Browse...</string>
+             <string>浏览...</string>
             </property>
            </widget>
           </item>
           <item row="0" column="0">
            <widget class="QRadioButton" name="ProjectRadioButton">
             <property name="text">
-             <string>Import data from existing project:</string>
+             <string>从已有项目导入数据：</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -175,7 +175,7 @@
              <string notr="true">font: italic;</string>
             </property>
             <property name="text">
-             <string>(none)</string>
+             <string>（无）</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -191,7 +191,7 @@
           <item row="3" column="1">
            <widget class="QPushButton" name="DatadirButton">
             <property name="text">
-             <string>Browse...</string>
+             <string>浏览...</string>
             </property>
            </widget>
           </item>

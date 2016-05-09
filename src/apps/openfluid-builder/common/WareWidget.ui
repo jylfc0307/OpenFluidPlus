@@ -107,7 +107,7 @@
         <item>
          <widget class="QCheckBox" name="EnabledCheckBox">
           <property name="text">
-           <string>Enabled</string>
+           <string>启用</string>
           </property>
          </widget>
         </item>
@@ -289,7 +289,7 @@
                <item>
                 <widget class="QLabel" name="label">
                  <property name="text">
-                  <string>Parameters:</string>
+                  <string>参数:</string>
                  </property>
                 </widget>
                </item>
@@ -374,7 +374,7 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>517</width>
+                      <width>472</width>
                       <height>296</height>
                      </rect>
                     </property>

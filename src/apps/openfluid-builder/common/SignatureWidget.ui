@@ -32,11 +32,11 @@
    <item>
     <widget class="QTabWidget" name="InfosTabWidget">
      <property name="currentIndex">
-      <number>6</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="GeneralTab">
       <attribute name="title">
-       <string>General</string>
+       <string>常规</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <property name="spacing">
@@ -67,8 +67,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>106</width>
-            <height>40</height>
+            <width>739</width>
+            <height>406</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -99,7 +99,7 @@
      </widget>
      <widget class="QWidget" name="ParametersTab">
       <attribute name="title">
-       <string>Parameters</string>
+       <string>参数</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <property name="leftMargin">
@@ -136,22 +136,22 @@
          </attribute>
          <column>
           <property name="text">
-           <string>I/O condition</string>
+           <string>I/O状况</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Name</string>
+           <string>名称</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>SI unit</string>
+           <string>SI单元</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Description</string>
+           <string>描述</string>
           </property>
          </column>
         </widget>
@@ -160,7 +160,7 @@
      </widget>
      <widget class="QWidget" name="ExtrafilesTab">
       <attribute name="title">
-       <string>Extra files</string>
+       <string>额外文件</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_8">
        <property name="leftMargin">
@@ -197,12 +197,12 @@
          </attribute>
          <column>
           <property name="text">
-           <string>I/O condition</string>
+           <string>I/O状态</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Description</string>
+           <string>描述</string>
           </property>
          </column>
         </widget>
@@ -211,7 +211,7 @@
      </widget>
      <widget class="QWidget" name="VariablesTab">
       <attribute name="title">
-       <string>Variables</string>
+       <string>变量</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="leftMargin">
@@ -248,32 +248,32 @@
          </attribute>
          <column>
           <property name="text">
-           <string>I/O condition</string>
+           <string>I/O状态</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Name</string>
+           <string>名称</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Data type</string>
+           <string>数据类型</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>SI unit</string>
+           <string>SI单元</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Units class</string>
+           <string>空间类</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Description</string>
+           <string>描述</string>
           </property>
          </column>
         </widget>
@@ -282,7 +282,7 @@
      </widget>
      <widget class="QWidget" name="AttributesTab">
       <attribute name="title">
-       <string>Attributes</string>
+       <string>属性</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <property name="leftMargin">
@@ -319,27 +319,27 @@
          </attribute>
          <column>
           <property name="text">
-           <string>I/O condition</string>
+           <string>I/O状态</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Name</string>
+           <string>名称</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>SI unit</string>
+           <string>SI单元</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Units class</string>
+           <string>空间类</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Description</string>
+           <string>描述</string>
           </property>
          </column>
         </widget>
@@ -348,7 +348,7 @@
      </widget>
      <widget class="QWidget" name="EventsTab">
       <attribute name="title">
-       <string>Events</string>
+       <string>事件</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_7">
        <property name="leftMargin">
@@ -385,7 +385,7 @@
          </attribute>
          <column>
           <property name="text">
-           <string>Units classes</string>
+           <string>空间类</string>
           </property>
          </column>
         </widget>
@@ -394,7 +394,7 @@
      </widget>
      <widget class="QWidget" name="SpatialGraphTab">
       <attribute name="title">
-       <string>Spatial graph</string>
+       <string>空间图形</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,1">
        <property name="leftMargin">
@@ -444,12 +444,12 @@
          </attribute>
          <column>
           <property name="text">
-           <string>Units class</string>
+           <string>空间类</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Description</string>
+           <string>描述</string>
           </property>
          </column>
         </widget>

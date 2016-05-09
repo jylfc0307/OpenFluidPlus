@@ -41,17 +41,17 @@
      </column>
      <column>
       <property name="text">
-       <string>Type</string>
+       <string>类型</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Units class</string>
+       <string>空间类</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Source</string>
+       <string>来源</string>
       </property>
      </column>
     </widget>

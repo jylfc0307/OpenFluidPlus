@@ -110,7 +110,7 @@ font : bold;
         <item>
          <widget class="QRadioButton" name="ReplaceRadioButton">
           <property name="text">
-           <string>Replace existing values by</string>
+           <string>用此值修改已有值：</string>
           </property>
          </widget>
         </item>
@@ -127,7 +127,7 @@ font : bold;
         <item>
          <widget class="QRadioButton" name="MultRadioButton">
           <property name="text">
-           <string>Multiply existing values by</string>
+           <string>用此值乘以原有值：</string>
           </property>
          </widget>
         </item>
@@ -148,7 +148,7 @@ font : bold;
         <item>
          <widget class="QRadioButton" name="AddRadioButton">
           <property name="text">
-           <string>Add </string>
+           <string>加上</string>
           </property>
          </widget>
         </item>
@@ -158,7 +158,7 @@ font : bold;
         <item>
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>to existing values</string>
+           <string>到原值</string>
           </property>
          </widget>
         </item>
