@@ -100,23 +100,23 @@ void NewProjectDialog::onGlobalCheck()
 
   if (ui->NameEdit->text().isEmpty())
   {
-    setMessage(tr("Project name cannot be empty"));
+    setMessage(tr("项目名称不能为空"));
   }
   else if (QDir(ui->WorkdirLabel->text()+"/"+ui->NameEdit->text()).exists())
   {
-    setMessage(tr("Project already exists"));
+    setMessage(tr("项目已经存在"));
   }
   else if (ui->DataGroupBox->isChecked() &&
            ui->ProjectRadioButton->isChecked() &&
-           ui->ProjectLabel->text() == "(none)")
+           ui->ProjectLabel->text() == "(无)")
   {
-    setMessage(tr("Imported project is not selected"));
+    setMessage(tr("未选择导入的项目"));
   }
   else if (ui->DataGroupBox->isChecked() &&
            ui->DirectoryRadioButton->isChecked() &&
-           ui->DirectoryLabel->text() == "(none)")
+           ui->DirectoryLabel->text() == "(无)")
   {
-    setMessage(tr("Imported data directory is not selected"));
+    setMessage(tr("导入数据目录未选择"));
   }
   else
     setMessage();
@@ -134,7 +134,7 @@ void NewProjectDialog::setMessage(const QString& Msg)
   {
     ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                     .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-    ui->MessageLabel->setText(tr("Creation of a new OpenFLUID project"));
+    ui->MessageLabel->setText(tr("新建一个OpenFLUID项目"));
     ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
   }
   else
@@ -153,7 +153,7 @@ void NewProjectDialog::setMessage(const QString& Msg)
 
 void NewProjectDialog::onWorkdirButtonClicked()
 {
-  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("Select working directory"));
+  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("选择工作目录"));
   if (SelectedDir !=  "")
   {
     QString NativePath = QDir::toNativeSeparators(SelectedDir);
@@ -172,7 +172,7 @@ void NewProjectDialog::onWorkdirButtonClicked()
 
 void NewProjectDialog::onProjectButtonClicked()
 {
-  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("Select project"));
+  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("选择工程"));
   if (SelectedDir !=  "")
   {
     QString NativePath = QDir::toNativeSeparators(SelectedDir);
@@ -186,8 +186,8 @@ void NewProjectDialog::onProjectButtonClicked()
     }
     else
       QMessageBox::critical(this,
-                            tr("Project error"),
-                            tr("%1\n\nis not a valid OpenFLUID project").arg(NativePath));
+                            tr("项目错误"),
+                            tr("%1\n\n不是一个有效的OpenFLUID项目").arg(NativePath));
   }
 }
 
@@ -198,7 +198,7 @@ void NewProjectDialog::onProjectButtonClicked()
 
 void NewProjectDialog::onDatadirButtonClicked()
 {
-  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("Select directory"));
+  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("选择目录"));
   if (SelectedDir !=  "")
   {
     QString NativePath = QDir::toNativeSeparators(SelectedDir);

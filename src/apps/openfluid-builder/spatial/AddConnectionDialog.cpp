@@ -55,8 +55,8 @@ AddConnectionDialog::AddConnectionDialog(const QString& SrcClass, const QString&
   ui->SrcClassLabel->setText(SrcClass);
   ui->SrcIDLabel->setText(SrcID);
 
-  ui->ConnectionComboBox->addItem(tr("to"),BUILDER_CONNCODE_TO);
-  ui->ConnectionComboBox->addItem(tr("from"),BUILDER_CONNCODE_FROM);
+  ui->ConnectionComboBox->addItem(tr("到"),BUILDER_CONNCODE_TO);
+  ui->ConnectionComboBox->addItem(tr("从"),BUILDER_CONNCODE_FROM);
   ui->ConnectionComboBox->addItem(tr("as parent of"),BUILDER_CONNCODE_PARENTOF);
   ui->ConnectionComboBox->addItem(tr("as child of"),BUILDER_CONNCODE_CHILDOF);
 
@@ -99,7 +99,7 @@ void AddConnectionDialog::setMessage(const QString& Msg)
   {
     ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                     .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-    ui->MessageLabel->setText(tr("Add connection between spatial units"));
+    ui->MessageLabel->setText(tr("在空间单元中添加联系"));
     ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
   }
   else
@@ -119,9 +119,9 @@ void AddConnectionDialog::setMessage(const QString& Msg)
 void AddConnectionDialog::checkGlobal()
 {
   if (ui->DestClassComboBox->currentText().isEmpty())
-    setMessage(tr("Destination unit class cannot be empty"));
+    setMessage(tr("目标单元类不能为空"));
   else if (ui->DestIDComboBox->currentText().isEmpty())
-    setMessage(tr("Destination unit ID cannot be empty"));
+    setMessage(tr("目标单元ID不能为空"));
   else
     setMessage();
 }

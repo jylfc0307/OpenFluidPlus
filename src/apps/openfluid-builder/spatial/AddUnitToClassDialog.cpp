@@ -91,9 +91,9 @@ AddUnitToClassDialog::~AddUnitToClassDialog()
 void AddUnitToClassDialog::checkGlobal()
 {
   if (ui->UnitIDEdit->text().isEmpty())
-    setMessage(tr("Unit ID cannot be empty"));
+    setMessage(tr("单元ID不能为空"));
   else if (m_UnitsIDs.contains(ui->UnitIDEdit->text()))
-    setMessage(tr("Unit ID already exists"));
+    setMessage(tr("单元ID已存在"));
   else
   {
     bool OK = true;
@@ -101,7 +101,7 @@ void AddUnitToClassDialog::checkGlobal()
       OK = OK && !(ui->AttrsTableWidget->item(0,i)->text().isEmpty());
 
     if (!OK)
-      setMessage(tr("Wrong attribute(s) value(s)"));
+      setMessage(tr("错误的属性值"));
     else
       setMessage();
   }
@@ -129,7 +129,7 @@ void AddUnitToClassDialog::setMessage(const QString& Msg)
   {
     ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                     .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-    ui->MessageLabel->setText(tr("Add spatial units class"));
+    ui->MessageLabel->setText(tr("添加空间单元类"));
     ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
   }
   else

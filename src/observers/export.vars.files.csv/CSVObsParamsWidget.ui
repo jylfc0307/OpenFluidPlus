@@ -20,7 +20,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Formats:</string>
+      <string>格式:</string>
      </property>
     </widget>
    </item>
@@ -48,32 +48,32 @@
        </attribute>
        <column>
         <property name="text">
-         <string>Name</string>
+         <string>名称</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Col. Sep.</string>
+         <string>分隔符</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Date</string>
+         <string>时间</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Precision</string>
+         <string>精确度</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Header</string>
+         <string>头部</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Comment ch.</string>
+         <string>注释记号</string>
         </property>
        </column>
       </widget>
@@ -173,7 +173,7 @@
    <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Sets:</string>
+      <string>集合:</string>
      </property>
     </widget>
    </item>
@@ -198,27 +198,27 @@
        </attribute>
        <column>
         <property name="text">
-         <string>Name</string>
+         <string>名称</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Units class</string>
+         <string>单元类</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Units IDs</string>
+         <string>单元变量</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Variables</string>
+         <string>变量</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Format</string>
+         <string>格式</string>
         </property>
        </column>
       </widget>

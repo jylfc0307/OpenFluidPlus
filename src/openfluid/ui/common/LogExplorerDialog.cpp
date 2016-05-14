@@ -90,7 +90,7 @@ LogExplorerDialog::~LogExplorerDialog()
 
 void LogExplorerDialog::changeCurrentDirectory()
 {
-  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("Select directory"));
+  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("选择目录"));
 
   if (SelectedDir !=  "")
   {
@@ -346,9 +346,9 @@ void LogExplorerDialog::updateTable(bool WithFiltering)
 #endif
 
   if (ui->LogTableWidget->rowCount())
-    ui->MessagesCountLabel->setText(tr("%1 message(s)").arg(ui->LogTableWidget->rowCount()));
+    ui->MessagesCountLabel->setText(tr("%1条消息").arg(ui->LogTableWidget->rowCount()));
   else
-    ui->MessagesCountLabel->setText(tr("no message"));
+    ui->MessagesCountLabel->setText(tr("无消息"));
 
 }
 

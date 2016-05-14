@@ -94,9 +94,9 @@ AddParamDialog::~AddParamDialog()
 void AddParamDialog::checkGlobal()
 {
   if (ui->NameEdit->text().isEmpty())
-    setMessage(tr("Parameter name cannot be empty"));
+    setMessage(tr("参数不能为空"));
   else if (m_ExistingParams.contains(ui->NameEdit->text()))
-    setMessage(tr("Parameter already exists"));
+    setMessage(tr("参数已存在"));
   else
     setMessage();
 }
@@ -112,7 +112,7 @@ void AddParamDialog::setMessage(const QString& Msg)
   {
     ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                     .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-    ui->MessageLabel->setText(tr("Add parameter"));
+    ui->MessageLabel->setText(tr("添加参数"));
     ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
   }
   else

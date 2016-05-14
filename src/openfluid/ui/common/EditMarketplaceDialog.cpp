@@ -120,21 +120,21 @@ void EditMarketplaceDialog::checkGlobally()
 
   if (ui->NameEdit->text().isEmpty())
   {
-    setMessage(tr("Name of the marketplace cannot be empty"));
+    setMessage(tr("市场的名称不能为空"));
   }
   else if (!m_IsEditMode && m_MPlaces.find(ui->NameEdit->text()) != m_MPlaces.end())
   {
-    setMessage(tr("Name of the marketplace already exists"));
+    setMessage(tr("市场的名称已存在"));
   }
   else if (m_IsEditMode &&
            m_OriginalName != ui->NameEdit->text() &&
            m_MPlaces.find(ui->NameEdit->text()) != m_MPlaces.end())
   {
-    setMessage(tr("Name of the marketplace already exists"));
+    setMessage(tr("市场的名称已存在"));
   }
   else if (ui->URLEdit->text().isEmpty())
   {
-    setMessage(tr("URL of the marketplace cannot be empty"));
+    setMessage(tr("市场的URL不能为空"));
   }
   else
     setMessage();

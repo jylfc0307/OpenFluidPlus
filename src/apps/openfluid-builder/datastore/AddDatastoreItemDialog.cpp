@@ -158,20 +158,20 @@ void AddDatastoreItemDialog::checkGlobal()
 
 
   if (ui->IDEdit->text().isEmpty())
-    setMessage(tr("Item ID cannot be empty"));
+    setMessage(tr("项目ID不能为空"));
   else if (m_ExistingIDs.contains(ui->IDEdit->text()))
-    setMessage(tr("Item ID already exists"));
+    setMessage(tr("项目ID已存在"));
   else if (ui->UnitsClassCheckBox->isChecked() && ui->UnitsClassEdit->text().isEmpty())
-    setMessage(tr("Units class cannot be empty"));
+    setMessage(tr("单元类不能为空"));
   else if (ui->GeovectorRadioButton->isChecked() && ui->GeovectorEdit->text().isEmpty())
-    setMessage(tr("No geovector source file selected"));
+    setMessage(tr("未选择空间向量源文件"));
   else if (ui->GeorasterRadioButton->isChecked() && ui->GeorasterEdit->text().isEmpty())
-    setMessage(tr("No georaster source file selected"));
+    setMessage(tr("未选择空间向量源文件"));
   else if (ui->CopySubdirRadioButton->isChecked() && ui->CopySubdirEdit->text().isEmpty())
-    setMessage(tr("Subdirectory for data destination is empty"));
+    setMessage(tr("目标文件夹的子目录为空"));
   else if (ui->CopySubdirRadioButton->isChecked() &&
            (ui->CopySubdirEdit->text().startsWith("/") || ui->CopySubdirEdit->text().startsWith("\\")))
-    setMessage(tr("Wrong subdirectory name for data destination"));
+    setMessage(tr("目标文件夹的子目录名错误"));
   else
     setMessage();
 }
@@ -187,7 +187,7 @@ void AddDatastoreItemDialog::setMessage(const QString& Msg)
   {
     ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                     .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-    ui->MessageLabel->setText(tr("Add of a datastore item"));
+    ui->MessageLabel->setText(tr("添加一个存储单元"));
     ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
   }
   else
@@ -208,7 +208,7 @@ void AddDatastoreItemDialog::selectVectorFile()
 {
   QString SelectedFile =
       QFileDialog::getOpenFileName(this,
-                                   tr("Select file"),
+                                   tr("选择文件"),
                                    "",
                                    m_OGRFormatsStr);
 
@@ -228,7 +228,7 @@ void AddDatastoreItemDialog::selectRasterFile()
 
   QString SelectedFile =
       QFileDialog::getOpenFileName(this,
-                                   tr("Select file"),
+                                   tr("选择文件"),
                                    "",
                                    m_GDALFormatsStr);
 

@@ -57,7 +57,7 @@ MonitoringWidget::MonitoringWidget(QWidget* Parent, openfluid::fluidx::AdvancedF
   mp_WaresManWidget = new WaresManagementWidget(this,false);
   layout()->addWidget(mp_WaresManWidget);
 
-  mp_WaresManWidget->ui->AddWareFirstButton->setText(tr("Add observer"));
+  mp_WaresManWidget->ui->AddWareFirstButton->setText(tr("添加观察者"));
 
   connect(mp_WaresManWidget->ui->AddWareFirstButton,SIGNAL(clicked()),this,SLOT(addObserver()));
 

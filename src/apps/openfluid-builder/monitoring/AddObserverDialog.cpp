@@ -52,7 +52,7 @@
 AddObserverDialog::AddObserverDialog(QWidget* Parent) :
   AddWareDialog(Parent)
 {
-  ui->MessageLabel->setText(tr("Add observer"));
+  ui->MessageLabel->setText(tr("添加观察者"));
 
   openfluid::machine::ObserverSignatureRegistry* Reg =
     openfluid::machine::ObserverSignatureRegistry::instance();
@@ -75,7 +75,7 @@ AddObserverDialog::AddObserverDialog(QWidget* Parent) :
 
   connect(ui->WaresListWidget,SIGNAL(itemSelectionChanged()),this,SLOT(updateSignature()));
 
-  setMessage(tr("Select observer to add"));
+  setMessage(tr("选择一个观察者来添加"));
 }
 
 
@@ -120,7 +120,7 @@ void AddObserverDialog::setMessage(const QString& Msg)
   {
     ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                     .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-    ui->MessageLabel->setText(tr("Add observer"));
+    ui->MessageLabel->setText(tr("添加观察者"));
     ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
   }
   else

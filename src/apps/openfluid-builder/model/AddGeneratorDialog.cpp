@@ -165,9 +165,9 @@ void AddGeneratorDialog::switchGeneratorOptions()
 void AddGeneratorDialog::checkGlobal()
 {
   if (ui->VarNameEdit->text().isEmpty())
-    setMessage(tr("Variable name cannot be empty"));
+    setMessage(tr("变量不能为空"));
   else if (ui->UnitsClassEdit->text().isEmpty())
-    setMessage(tr("Units class cannot be empty"));
+    setMessage(tr("空间类不能为空"));
   else
     setMessage();
 }
@@ -246,9 +246,9 @@ void AddGeneratorDialog::selectSourcesFile()
   QString CurrentDir = QString::fromStdString(openfluid::base::ProjectManager::instance()->getInputDir());
 
   QString FileName = QFileDialog::getOpenFileName(this,
-                                                  tr("Select sources file"),
+                                                  tr("选择源文件"),
                                                   CurrentDir,
-                                                  tr("All files (*.*)"));
+                                                  tr("所有文件(*.*)"));
   if (FileName.startsWith(CurrentDir))
   {
     ui->SourcesFileEdit->setText(FileName.remove(0,CurrentDir.length()+1));
@@ -256,7 +256,7 @@ void AddGeneratorDialog::selectSourcesFile()
   else
   {
     QMessageBox::critical(QApplication::activeWindow(),"OpenFLUID-Builder",
-                          tr("Choosen file is not located in the input dataset of the project"),QMessageBox::Close);
+                          tr("被选择的文件不在此项目的数据集中"),QMessageBox::Close);
   }
 
 }
@@ -271,9 +271,9 @@ void AddGeneratorDialog::selectDistriFile()
   QString CurrentDir = QString::fromStdString(openfluid::base::ProjectManager::instance()->getInputDir());
 
   QString FileName = QFileDialog::getOpenFileName(this,
-                                                  tr("Select distribution file"),
+                                                  tr("选择分布文件"),
                                                   CurrentDir,
-                                                  tr("All files (*.*)"));
+                                                  tr("所有文件(*.*)"));
   if (FileName.startsWith(CurrentDir))
   {
     ui->DistriFileEdit->setText(FileName.remove(0,CurrentDir.length()+1));
@@ -281,7 +281,7 @@ void AddGeneratorDialog::selectDistriFile()
   else
   {
     QMessageBox::critical(QApplication::activeWindow(),"OpenFLUID-Builder",
-                          tr("Choosen file is not located in the input dataset of the project"),QMessageBox::Close);
+                          tr("被选择的文件不在此项目的数据集中"),QMessageBox::Close);
   }
 
 }

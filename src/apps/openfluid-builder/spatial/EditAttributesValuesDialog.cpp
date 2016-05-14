@@ -113,11 +113,11 @@ void EditAttributesValuesDialog::checkGlobal()
 
 
   if (ui->ReplaceRadioButton->isChecked() && ui->ReplaceEdit->text().isEmpty())
-    setMessage(tr("Replacement value cannot be empty"));
+    setMessage(tr("替换值不能为空"));
   else if (ui->MultRadioButton->isChecked() && ui->MultEdit->text().isEmpty())
-    setMessage(tr("Multiply factor cannot be empty"));
+    setMessage(tr("乘法因数不能为空"));
   else if (ui->AddRadioButton->isChecked() && ui->AddEdit->text().isEmpty())
-    setMessage(tr("Added value cannot be empty"));
+    setMessage(tr("加数不能为空"));
   else
     setMessage();
 }
@@ -152,7 +152,7 @@ void EditAttributesValuesDialog::setMessage(const QString& Msg)
   {
     ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                     .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-    ui->MessageLabel->setText(tr("Edit values of selected attributes"));
+    ui->MessageLabel->setText(tr("修改被选变量的值"));
     ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
   }
   else

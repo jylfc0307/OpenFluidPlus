@@ -135,18 +135,18 @@ void SignatureWidget::updateGeneral(const openfluid::machine::ModelItemSignature
 {
   QString Contents;
 
-  QString PathLabelStr = tr("Plugin path");
+  QString PathLabelStr = tr("插件路径");
 
   if (Signature->Ghost)
-    PathLabelStr = tr("Ghost path");
+    PathLabelStr = tr("虚拟路径");
 
-  Contents += "<b>" + tr("Name") + ":</b> " + convertStdString(Signature->Signature->Name) + "<br/>";
-  Contents += "<b>" + tr("Description") + ":</b> " + convertStdString(Signature->Signature->Description);
+  Contents += "<b>" + tr("名称") + ":</b> " + convertStdString(Signature->Signature->Name) + "<br/>";
+  Contents += "<b>" + tr("描述") + ":</b> " + convertStdString(Signature->Signature->Description);
 
   if (Signature->ItemType == openfluid::fluidx::WareDescriptor::PluggedSimulator)
   {
     Contents += "<hr>";
-    Contents += "<b>" + tr("Author(s)") + ":</b> ";
+    Contents += "<b>" + tr("作者") + ":</b> ";
 
     if (!Signature->Signature->Authors.empty())
       Contents += formatAuthors(Signature->Signature->Authors);
@@ -157,16 +157,16 @@ void SignatureWidget::updateGeneral(const openfluid::machine::ModelItemSignature
     Contents += "<b>" + PathLabelStr + ":</b> " +
                 QDir::toNativeSeparators(convertStdString(Signature->FileFullPath));
     Contents += "<hr>";
-    Contents += "<b>" + tr("Version") + ":</b> " + convertStdString(Signature->Signature->Version) + "<br/>";
+    Contents += "<b>" + tr("版本") + ":</b> " + convertStdString(Signature->Signature->Version) + "<br/>";
 
-    QString StatusStr = tr("experimental");
-    if (Signature->Signature->Status == openfluid::ware::BETA) StatusStr = tr("beta");
-    if (Signature->Signature->Status == openfluid::ware::STABLE) StatusStr = tr("stable");
-    Contents += "<b>" + tr("Status") + ":</b> " + StatusStr + "<br/>";
+    QString StatusStr = tr("试验");
+    if (Signature->Signature->Status == openfluid::ware::BETA) StatusStr = tr("测试");
+    if (Signature->Signature->Status == openfluid::ware::STABLE) StatusStr = tr("稳定");
+    Contents += "<b>" + tr("状态") + ":</b> " + StatusStr + "<br/>";
     Contents += "<hr>";
-    Contents += "<b>" + tr("Domain(s)") + ":</b> " + convertStdString(Signature->Signature->Domain) + "<br/>";
-    Contents += "<b>" + tr("Process(es)") + ":</b> " + convertStdString(Signature->Signature->Process) + "<br/>";
-    Contents += "<b>" + tr("Methods(s)") + ":</b> " + convertStdString(Signature->Signature->Method) + "<br/>";
+    Contents += "<b>" + tr("域") + ":</b> " + convertStdString(Signature->Signature->Domain) + "<br/>";
+    Contents += "<b>" + tr("过程") + ":</b> " + convertStdString(Signature->Signature->Process) + "<br/>";
+    Contents += "<b>" + tr("方法") + ":</b> " + convertStdString(Signature->Signature->Method) + "<br/>";
 
   }
 
@@ -213,11 +213,11 @@ void SignatureWidget::updateParameters(const openfluid::machine::ModelItemSignat
 
   ui->ParametersTableWidget->setRowCount(ReqParams->size()+UsParams->size());
 
-  updateParametersCategory(ReqParams,tr("Required"),0);
-  updateParametersCategory(UsParams,tr("Used"),ReqParams->size());
+  updateParametersCategory(ReqParams,tr("必需"),0);
+  updateParametersCategory(UsParams,tr("已用"),ReqParams->size());
 
   if (ui->ParametersTableWidget->rowCount() > 0)
-    ui->InfosTabWidget->addTab(ui->ParametersTab,tr("Parameters"));
+    ui->InfosTabWidget->addTab(ui->ParametersTab,tr("参数"));
 }
 
 
@@ -253,11 +253,11 @@ void SignatureWidget::updateExtrafiles(const openfluid::machine::ModelItemSignat
 
   ui->ExtrafilesTableWidget->setRowCount(ReqFiles->size()+UsFiles->size());
 
-  updateExtrafilesCategory(ReqFiles,tr("Required"),0);
-  updateExtrafilesCategory(UsFiles,tr("Used"),ReqFiles->size());
+  updateExtrafilesCategory(ReqFiles,tr("必需"),0);
+  updateExtrafilesCategory(UsFiles,tr("已用"),ReqFiles->size());
 
   if (ui->ExtrafilesTableWidget->rowCount() > 0)
-    ui->InfosTabWidget->addTab(ui->ExtrafilesTab,tr("Extra files"));
+    ui->InfosTabWidget->addTab(ui->ExtrafilesTab,tr("额外文件"));
 }
 
 
@@ -314,13 +314,13 @@ void SignatureWidget::updateVariables(const openfluid::machine::ModelItemSignatu
 
   ui->VariablesTableWidget->setRowCount(ProdVars->size()+ReqVars->size()+UsVars->size()+UpdVars->size());
 
-  updateVariablesCategory(ProdVars,tr("Produced"),0);
-  updateVariablesCategory(ReqVars,tr("Required"),ProdVars->size());
-  updateVariablesCategory(UsVars,tr("Used"),ProdVars->size()+ReqVars->size());
-  updateVariablesCategory(UpdVars,tr("Updated"),ProdVars->size()+ReqVars->size()+UsVars->size());
+  updateVariablesCategory(ProdVars,tr("生成"),0);
+  updateVariablesCategory(ReqVars,tr("必需"),ProdVars->size());
+  updateVariablesCategory(UsVars,tr("已用"),ProdVars->size()+ReqVars->size());
+  updateVariablesCategory(UpdVars,tr("已更新"),ProdVars->size()+ReqVars->size()+UsVars->size());
 
   if (ui->VariablesTableWidget->rowCount() > 0)
-    ui->InfosTabWidget->addTab(ui->VariablesTab,tr("Variables"));
+    ui->InfosTabWidget->addTab(ui->VariablesTab,tr("变量"));
 }
 
 
@@ -371,12 +371,12 @@ void SignatureWidget::updateAttributes(const openfluid::machine::ModelItemSignat
 
   ui->AttributesTableWidget->setRowCount(ProdAttrs->size()+ReqAttrs->size()+UsAttrs->size());
 
-  updateAttributesCategory(ProdAttrs,tr("Produced"),0);
-  updateAttributesCategory(ReqAttrs,tr("Required"),ProdAttrs->size());
-  updateAttributesCategory(UsAttrs,tr("Used"),ProdAttrs->size()+ReqAttrs->size());
+  updateAttributesCategory(ProdAttrs,tr("生成"),0);
+  updateAttributesCategory(ReqAttrs,tr("必需"),ProdAttrs->size());
+  updateAttributesCategory(UsAttrs,tr("已用"),ProdAttrs->size()+ReqAttrs->size());
 
   if (ui->AttributesTableWidget->rowCount() > 0)
-    ui->InfosTabWidget->addTab(ui->AttributesTab,tr("Attributes"));
+    ui->InfosTabWidget->addTab(ui->AttributesTab,tr("属性"));
 }
 
 
@@ -399,7 +399,7 @@ void SignatureWidget::updateEvents(const openfluid::machine::ModelItemSignatureI
   }
 
   if (ui->EventsTableWidget->rowCount() > 0)
-    ui->InfosTabWidget->addTab(ui->EventsTab,tr("Events"));
+    ui->InfosTabWidget->addTab(ui->EventsTab,tr("事件"));
 }
 
 
@@ -414,7 +414,7 @@ void SignatureWidget::updateSpatialGraph(const openfluid::machine::ModelItemSign
       &(Signature->Signature->HandledUnitsGraph.UpdatedUnitsClass);
 
   if (!Desc.empty())
-    ui->GraphDescriptionLabel->setText(tr("<b>Overall description</b>")+": "+convertStdString(Desc));
+    ui->GraphDescriptionLabel->setText(tr("<b>概述</b>")+": "+convertStdString(Desc));
 
   ui->GraphTableWidget->setRowCount(UnitsClasses->size());
 
@@ -430,7 +430,7 @@ void SignatureWidget::updateSpatialGraph(const openfluid::machine::ModelItemSign
   }
 
   if (ui->GraphTableWidget->rowCount() > 0 || !Desc.empty())
-    ui->InfosTabWidget->addTab(ui->SpatialGraphTab,tr("Spatial graph"));
+    ui->InfosTabWidget->addTab(ui->SpatialGraphTab,tr("空间图形"));
 
 }
 
@@ -443,11 +443,11 @@ void SignatureWidget::updateGeneral(const openfluid::machine::ObserverSignatureI
 {
   QString Contents;
 
-  Contents += "<b>" + tr("Name") + ":</b> " + convertStdString(Signature->Signature->Name) + "<br/>";
-  Contents += "<b>" + tr("Description") + ":</b> " + convertStdString(Signature->Signature->Description);
+  Contents += "<b>" + tr("名称") + ":</b> " + convertStdString(Signature->Signature->Name) + "<br/>";
+  Contents += "<b>" + tr("描述") + ":</b> " + convertStdString(Signature->Signature->Description);
 
   Contents += "<hr>";
-  Contents += "<b>" + tr("Author(s)") + ":</b> ";
+  Contents += "<b>" + tr("作者") + ":</b> ";
 
   if (!Signature->Signature->Authors.empty())
     Contents += formatAuthors(Signature->Signature->Authors);
@@ -455,14 +455,14 @@ void SignatureWidget::updateGeneral(const openfluid::machine::ObserverSignatureI
     Contents += convertStdString("");
 
   Contents += "<hr>";
-  Contents += "<b>" + tr("Plugin path") + ":</b> " + convertStdString(Signature->FileFullPath);
+  Contents += "<b>" + tr("插件目录") + ":</b> " + convertStdString(Signature->FileFullPath);
   Contents += "<hr>";
-  Contents += "<b>" + tr("Version") + ":</b> " + convertStdString(Signature->Signature->Version) + "<br/>";
+  Contents += "<b>" + tr("版本") + ":</b> " + convertStdString(Signature->Signature->Version) + "<br/>";
 
-  QString StatusStr = tr("experimental");
-  if (Signature->Signature->Status == openfluid::ware::BETA) StatusStr = tr("beta");
-  if (Signature->Signature->Status == openfluid::ware::STABLE) StatusStr = tr("stable");
-  Contents += "<b>" + tr("Status") + ":</b> " + StatusStr + "<br/>";
+  QString StatusStr = tr("试验");
+  if (Signature->Signature->Status == openfluid::ware::BETA) StatusStr = tr("测试");
+  if (Signature->Signature->Status == openfluid::ware::STABLE) StatusStr = tr("稳定");
+  Contents += "<b>" + tr("状态") + ":</b> " + StatusStr + "<br/>";
 
 
   ui->GeneralLabel->setText(Contents);

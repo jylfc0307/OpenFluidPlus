@@ -66,13 +66,13 @@ EditProjectPropertiesDialog::EditProjectPropertiesDialog(QWidget* Parent):
   if (DT.isValid())
     ui->CreationDateLabel->setText(DT.toString("yyyy-MM-dd, hh:mm:ss"));
   else
-    ui->CreationDateLabel->setText(tr("unknown"));
+    ui->CreationDateLabel->setText(tr("未知"));
 
   DT = QDateTime::fromString(QString::fromStdString(PrjMan->getLastModDate()),"yyyyMMdd'T'hhmmss");
   if (DT.isValid())
     ui->LastModDateLabel->setText(DT.toString("yyyy-MM-dd, hh:mm:ss"));
   else
-    ui->LastModDateLabel->setText(tr("unknown"));
+    ui->LastModDateLabel->setText(tr("未知"));
 
 
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
@@ -98,7 +98,7 @@ void EditProjectPropertiesDialog::setMessage()
 {
   ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                   .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-  ui->MessageLabel->setText(tr("Edit project properties"));
+  ui->MessageLabel->setText(tr("编辑工程选项"));
   ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
 }
 

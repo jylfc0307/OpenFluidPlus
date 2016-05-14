@@ -86,7 +86,7 @@ UnitsClassWidget::UnitsClassWidget(const QString& ClassName,
   connect(ui->RemoveButton,SIGNAL(clicked()),this,SLOT(notifyRemoveClicked()));
 
   ui->StyleWidget->setVisible(false);
-  ui->ShowHideStyleLabel->setText(tr("Show map style"));
+  ui->ShowHideStyleLabel->setText(tr("显示地图风格"));
   connect(ui->ShowHideStyleLabel,SIGNAL(clicked()),this,SLOT(toggleShowHideStyle()));
 
   linkToDatastoreItem(DSList);
@@ -177,12 +177,12 @@ void UnitsClassWidget::toggleShowHideStyle()
   if (ui->StyleWidget->isVisible())
   {
     ui->StyleWidget->setVisible(false);
-    ui->ShowHideStyleLabel->setText(tr("Show map style"));
+    ui->ShowHideStyleLabel->setText(tr("显示地图风格"));
   }
   else
   {
     ui->StyleWidget->setVisible(true);
-    ui->ShowHideStyleLabel->setText(tr("Hide map style"));
+    ui->ShowHideStyleLabel->setText(tr("隐藏地图风格"));
   }
 }
 
@@ -251,9 +251,9 @@ void UnitsClassWidget::notifyRemoveClicked()
   {
     OK = (QMessageBox::question(QApplication::activeWindow(),
                                 "OpenFLUID-Builder",
-                                tr("You are removing the %1 units class.\n"
-                                   "All units of class %1 and associated attributes and connections will be lost.\n\n"
-                                   "Proceed anyway?").arg(m_ClassName),
+                                tr("您在删除单元类%1。\n"
+                                   "所有的单元类%1和与之关联的变量将会丢失。\n\n"
+                                   "确认要继续吗？").arg(m_ClassName),
                                 QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
   }
 
@@ -370,7 +370,7 @@ void UnitsClassWidget::linkToDatastoreItem(const std::list<openfluid::fluidx::Da
   }
   else
   {
-    ui->LayerSourceLabel->setText(tr("(no layer to display)"));
+    ui->LayerSourceLabel->setText(tr("(没有能显示的层)"));
     ui->StyleParamsWidget->setEnabled(false);
     ui->VisibleCheckBox->setChecked(false);
   }

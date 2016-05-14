@@ -382,7 +382,7 @@ void SpatialDomainWidget::setActiveClass(const QString& ClassName)
   {
     ui->StructureTabWidget->setVisible(true);
     ui->DataTabWidget->setVisible(true);
-    ui->AddUnitButton->setText(tr("Add unit in %1 class").arg(ClassName));
+    ui->AddUnitButton->setText(tr("在单元类%1中添加单元").arg(ClassName));
   }
 
   refreshClassStructure();
@@ -427,7 +427,7 @@ void SpatialDomainWidget::updateUnitSelection(int Row)
   {
     int ID = ui->IDsListWidget->item(Row)->data(Qt::UserRole).toInt();
 
-    ui->RemoveUnitButton->setText(tr("Remove unit %1 from %2 class").arg(ID).arg(m_ActiveClass));
+    ui->RemoveUnitButton->setText(tr("从%2中删除%1").arg(ID).arg(m_ActiveClass));
 
     const openfluid::fluidx::AdvancedUnitDescriptor& UnitDesc = m_Domain.spatialUnit(m_ActiveClass.toStdString(),ID);
 
@@ -899,9 +899,9 @@ void SpatialDomainWidget::removeUnit()
   {
     OK = (QMessageBox::question(QApplication::activeWindow(),
                                 "OpenFLUID-Builder",
-                                tr("You are removing the unit %1 of class %2.\n"
-                                    "All connections and attributes units related to this unit will be lost.\n\n"
-                                    "Proceed anyway?").arg(ID).arg(m_ActiveClass),
+                                tr("您正在删除单元类%2下的单元%1。\n"
+                                    "所有与之相关的连接关系和属性将要丢失。\n\n"
+                                    "确定吗？").arg(ID).arg(m_ActiveClass),
                                     QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
   }
 
@@ -979,7 +979,7 @@ void SpatialDomainWidget::removeConnection()
   if (ui->ConnectionsTableWidget->selectedItems().isEmpty())
   {
     QMessageBox::critical(QApplication::activeWindow(),QString("OpenFLUID-builder"),
-                          tr("No connection selected for removal"),QMessageBox::Close);
+                          tr("没有选择需要删除的选项"),QMessageBox::Close);
   }
   else
   {
@@ -1000,9 +1000,9 @@ void SpatialDomainWidget::removeConnection()
     {
       OK = (QMessageBox::question(QApplication::activeWindow(),
                                   "OpenFLUID-Builder",
-                                  tr("You are removing the \"%1\" connection\n"
-                                     "between unit %2 of class %3 and unit %4 of class %5.\n\n"
-                                     "Proceed?").arg(ConnStr).arg(SrcID).arg(SrcClass).arg(DestID).arg(DestClass),
+                                  tr("您正在删除连接关系\"%1\"\n"
+                                     "它连接了单元类%3的单元%2和单元类%5单元%4。\n\n"
+                                     "继续吗？").arg(ConnStr).arg(SrcID).arg(SrcClass).arg(DestID).arg(DestClass),
                                       QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
     }
 
@@ -1127,8 +1127,8 @@ void SpatialDomainWidget::editAttributesValues()
           // at least one value is not numeric
           QApplication::restoreOverrideCursor();
           QMessageBox::critical(this,"OpenFLUID-Builder",
-                                tr("At least one attribute value is not a numeric value.\n"
-                                   "Edition of attributes cannot be performed."),
+                                tr("至少有一个变量不是数字。\n"
+                                   "无法进行编辑"),
                                 QMessageBox::Close);
         }
 
@@ -1139,7 +1139,7 @@ void SpatialDomainWidget::editAttributesValues()
   {
     // no attribute selected
     QMessageBox::critical(this,"OpenFLUID-Builder",
-                          tr("No attribute value selected"),QMessageBox::Close);
+                          tr("没有被选择的变量"),QMessageBox::Close);
   }
 }
 
@@ -1155,8 +1155,8 @@ void SpatialDomainWidget::renameAttribute()
   if (AttrsNames.isEmpty())
   {
     QMessageBox::critical(this,"OpenFLUID-Builder",
-                          tr("There is no attribute in the %1 units class.\n"
-                             "Rename cannot be performed.").arg(m_ActiveClass),
+                          tr("在单元类%1中没有变量\n"
+                             "不能进行重命名。").arg(m_ActiveClass),
                           QMessageBox::Close);
   }
   else
@@ -1189,8 +1189,8 @@ void SpatialDomainWidget::removeAttribute()
   if (AttrsNames.isEmpty())
   {
     QMessageBox::critical(this,"OpenFLUID-Builder",
-                          tr("There is no attribute in the %1 units class.\n"
-                              "Rename cannot be performed.").arg(m_ActiveClass),
+                          tr("在单元类%1中没有变量\n"
+                             "不能进行重命名。").arg(m_ActiveClass),
                               QMessageBox::Close);
   }
   else
@@ -1202,9 +1202,9 @@ void SpatialDomainWidget::removeAttribute()
       {
         OK = (QMessageBox::question(QApplication::activeWindow(),
                                     "OpenFLUID-Builder",
-                                    tr("You are removing the attribute %1 of class %2.\n"
-                                        "All %1 values associated to units of class %2 will be lost.\n\n"
-                                        "Proceed anyway?").arg(RemoveDlg.getSelectedOriginalName()).arg(m_ActiveClass),
+                                    tr("您正在删除单元类%2下的变量%1\n"
+                                        "所有关于单元类%2的变量%1都将丢失\n\n"
+                                        "确定继续吗？").arg(RemoveDlg.getSelectedOriginalName()).arg(m_ActiveClass),
                                         QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
       }
 
@@ -1461,10 +1461,10 @@ void SpatialDomainWidget::removeEvents()
   {
     OK = (QMessageBox::question(QApplication::activeWindow(),
                                 "OpenFLUID-Builder",
-                                tr("You are removing one or many spatial event(s).\n"
-                                   "All associated informations will be lost.\n"
+                                tr("您在删除一个或多个空间事件。\n"
+                                   "所有相关的数据都会被删除。\n"
                                    "\n"
-                                   "Proceed anyway?"),
+                                   "无论如何都要继续吗？"),
                                 QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
 
     if (OK)

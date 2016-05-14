@@ -26,7 +26,7 @@
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Current directory:</string>
+         <string>当前目录:</string>
         </property>
        </widget>
       </item>
@@ -46,7 +46,7 @@
       <item>
        <widget class="QPushButton" name="ChangeDirButton">
         <property name="text">
-         <string>Browse...</string>
+         <string>浏览...</string>
         </property>
        </widget>
       </item>
@@ -130,20 +130,20 @@
           <item>
            <widget class="QGroupBox" name="groupBox_2">
             <property name="title">
-             <string>Sources</string>
+             <string>来源</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
               <widget class="QCheckBox" name="AppFilterCheckBox">
                <property name="text">
-                <string>Application(s)</string>
+                <string>应用</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QCheckBox" name="FrameworkFilterCheckBox">
                <property name="text">
-                <string>Framework</string>
+                <string>框架</string>
                </property>
               </widget>
              </item>
@@ -166,7 +166,7 @@
              <item>
               <widget class="QLabel" name="label_2">
                <property name="text">
-                <string>Simulator(s):</string>
+                <string>模拟器:</string>
                </property>
               </widget>
              </item>
@@ -204,7 +204,7 @@
             <item>
              <widget class="QPushButton" name="ApplyFilteringButton">
               <property name="text">
-               <string>Apply</string>
+               <string>应用</string>
               </property>
              </widget>
             </item>
@@ -260,32 +260,32 @@
              </attribute>
              <column>
               <property name="text">
-               <string>Type</string>
+               <string>类型</string>
               </property>
              </column>
              <column>
               <property name="text">
-               <string>Order</string>
+               <string>序号</string>
               </property>
              </column>
              <column>
               <property name="text">
-               <string>Source</string>
+               <string>来源</string>
               </property>
              </column>
              <column>
               <property name="text">
-               <string>Stage</string>
+               <string>状态</string>
               </property>
              </column>
              <column>
               <property name="text">
-               <string>TimeIndex</string>
+               <string>时间索引</string>
               </property>
              </column>
              <column>
               <property name="text">
-               <string>Message</string>
+               <string>消息</string>
               </property>
              </column>
             </widget>
@@ -294,7 +294,7 @@
          </widget>
          <widget class="QGroupBox" name="DetailsGroupBox">
           <property name="title">
-           <string>Details</string>
+           <string>细节</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
@@ -307,8 +307,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>319</width>
-                <height>184</height>
+                <width>329</width>
+                <height>182</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -346,7 +346,7 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_6">
                    <property name="text">
-                    <string>Type:</string>
+                    <string>类型:</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -363,7 +363,7 @@
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_4">
                    <property name="text">
-                    <string>Context:</string>
+                    <string>内容:</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
