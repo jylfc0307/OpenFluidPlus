@@ -90,7 +90,7 @@ void NewslineDownloadWorker::run()
 
 
   bool DownloadSucceeded = false;
-
+/*
   if (openfluid::utils::FileDownloader::downloadToFile(BUILDER_NEWSLINE_SOURCEURL.toStdString()+
                                                        "?request=rss&lang="+m_ShortLocale.toStdString(),
                                                        RSSFile.toStdString()))
@@ -102,7 +102,7 @@ void NewslineDownloadWorker::run()
   {
     DownloadSucceeded = true;
   }
-
+*/
   if (DownloadSucceeded)
   {
     QFile LastUpdF(LastUpdFile);
@@ -123,6 +123,7 @@ void NewslineDownloadWorker::run()
 
 bool NewslineDownloadWorker::isTimeForDownload(const QString& ShortLocale)
 {
+/*
   QDir CacheDir =
       QString::fromStdString(openfluid::base::RuntimeEnvironment::instance()
                                  ->getUserDataPath(BUILDER_NEWSLINE_CACHERELDIR.toStdString()));
@@ -158,7 +159,7 @@ bool NewslineDownloadWorker::isTimeForDownload(const QString& ShortLocale)
        return true;
 
   }
-
+*/
   return false;
 }
 

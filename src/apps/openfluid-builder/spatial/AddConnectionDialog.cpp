@@ -57,8 +57,8 @@ AddConnectionDialog::AddConnectionDialog(const QString& SrcClass, const QString&
 
   ui->ConnectionComboBox->addItem(tr("到"),BUILDER_CONNCODE_TO);
   ui->ConnectionComboBox->addItem(tr("从"),BUILDER_CONNCODE_FROM);
-  ui->ConnectionComboBox->addItem(tr("as parent of"),BUILDER_CONNCODE_PARENTOF);
-  ui->ConnectionComboBox->addItem(tr("as child of"),BUILDER_CONNCODE_CHILDOF);
+  ui->ConnectionComboBox->addItem(tr("父对象"),BUILDER_CONNCODE_PARENTOF);
+  ui->ConnectionComboBox->addItem(tr("子对象"),BUILDER_CONNCODE_CHILDOF);
 
   QStringList Classes = openfluid::tools::toQStringList(mp_Domain->getClassNames());
 
@@ -68,6 +68,9 @@ AddConnectionDialog::AddConnectionDialog(const QString& SrcClass, const QString&
   ui->DestClassComboBox->addItems(Classes);
 
   updateDestIDs();
+
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
 
   connect(ui->DestClassComboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(updateDestIDs()));
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));

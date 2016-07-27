@@ -59,14 +59,12 @@ QWidget(Parent), ui(new Ui::NewsItemWidget)
   ui->DateLabel->setStyleSheet(QString("color : %1;").arg(BUILDER_NEWSLINE_TEXTCOLOR));
   ui->TextLabel->setStyleSheet(QString("color : %1;").arg(BUILDER_NEWSLINE_TEXTCOLOR));
 
-  ui->TitleLabel->setText(QString("<b>%1</b>").arg(Data.Title));
+  ui->TitleLabel->setText("");
 
-  QDateTime DT = QDateTime::fromString(Data.ISODate,"yyyy-MM-dd'T'hh:mm:ss");
-  ui->DateLabel->setText(m_Locale.toString(DT));
+  //QDateTime DT = QDateTime::fromString(Data.ISODate,"yyyy-MM-dd'T'hh:mm:ss");
+  ui->DateLabel->setText("");
 
-  QString HTMLText = Data.Text;
-  HTMLText.replace("&gt;",">");
-  HTMLText.replace("&lt;","<");
+  QString HTMLText = "<p><big>&nbsp;&nbsp;&nbsp;&nbsp;本软件能够模拟气候改变和人为活动影响下的水循环和涝灾损失情况，主要面向水利主管单位的管理人员、从事农田水利工程的工作人员和水利科研工作者等相关用户。建议系统的使用者应当具备一定的农田水利工程专业知识，能够对系统所需的参数进行识别，也能对结果和过程进行专业解读。</big></p>";
 
 
   ui->TextLabel->setText(HTMLText);
@@ -76,7 +74,7 @@ QWidget(Parent), ui(new Ui::NewsItemWidget)
                                  "a:link {color:%1;}"
                                  "</style></head><body>%2</body></html>").arg(BUILDER_NEWSLINE_LINKSCOLOR,HTMLText));*/
 
-  foreach (QString Tag, Data.Tags)
+  /*foreach (QString Tag, Data.Tags)
   {
     QWidget* TagWidget = new QWidget(this);
     TagWidget->setMinimumWidth(75);
@@ -102,7 +100,7 @@ QWidget(Parent), ui(new Ui::NewsItemWidget)
     TagWidget->setContentsMargins(0,0,0,0);
 
     ui->TagsLayout->addWidget(TagWidget);
-  }
+  }*/
   ui->TagsLayout->addStretch();
 }
 

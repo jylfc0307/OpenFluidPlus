@@ -57,6 +57,8 @@ LogExplorerDialog::LogExplorerDialog(QString LogDir, QWidget* Parent):
   ui->HorizontalSplitter->setStretchFactor(1,3);
   ui->VerticalSplitter->setStretchFactor(2,2);
 
+  ui->ButtonBox->button(QDialogButtonBox::Close)->setText("关闭");
+
   connect(ui->ChangeDirButton,SIGNAL(clicked()),this,SLOT(changeCurrentDirectory()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));
 

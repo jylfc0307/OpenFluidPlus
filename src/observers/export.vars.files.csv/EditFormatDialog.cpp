@@ -60,10 +60,10 @@ EditFormatDialog::EditFormatDialog(const QStringList& ExistingFormats,QWidget* P
   ui->CommentCharEdit->setText(QString::fromStdString(m_Format.CommentChar));
 
   // Columns names as data
-  m_HeaderLabels << tr("Columns names as comments") << tr("Columns names as data") << tr("Full") << tr("None");
+  m_HeaderLabels << tr("列名作为注释") << tr("列名作为数据") << tr("完整") << tr("无");
   m_HeaderCodes << CSVFormat::ColnamesAsComment << CSVFormat::ColnamesAsData << CSVFormat::Full << CSVFormat::None;
 
-  m_DateLabels << "ISO" << tr("6 columns") << tr("Time index");
+  m_DateLabels << "ISO" << tr("6列") << tr("依时间顺序");
   m_DateCodes << "ISO" << "6cols" << "timeindex";
 
   ui->HeaderComboBox->addItems(m_HeaderLabels);
@@ -86,6 +86,9 @@ EditFormatDialog::EditFormatDialog(const QStringList& ExistingFormats,QWidget* P
   connect(ui->DateComboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(checkGlobal()));
   connect(ui->CommentCharEdit,SIGNAL(textEdited(const QString&)),this,SLOT(checkGlobal()));
   connect(ui->ColSepEdit,SIGNAL(textEdited(const QString&)),this,SLOT(checkGlobal()));
+
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
 
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));

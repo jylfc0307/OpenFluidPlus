@@ -180,7 +180,7 @@ void AppActions::createActions()//汉化菜单
 
 
   //Help menu
-  m_Actions["HelpOnlineWeb"] = new QAction(tr("OpenFLUID官网"), this);
+  m_Actions["HelpOnlineWeb"] = new QAction(tr("中国水科院"), this);
   m_Actions["HelpOnlineCommunity"] = new QAction(tr("社区站点"), this);
   m_Actions["HelpEmail"] = new QAction(tr("Email"), this);
 

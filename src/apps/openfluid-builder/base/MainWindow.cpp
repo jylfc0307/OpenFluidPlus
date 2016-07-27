@@ -101,7 +101,7 @@ void MainWindow::closeEvent(QCloseEvent* Event)
 void MainWindow::setProjectName(const QString& PrjName)
 {
   if (PrjName.isEmpty())
-    setWindowTitle("灌区农田除涝抗旱减灾系统");
+    setWindowTitle("灌区涝灾预测分析系统");
   else
-    setWindowTitle(QString("OpenFLUID 模拟平台 [ %1 ]").arg(PrjName));
+    setWindowTitle(QString("灌区涝灾预测分析系统 [ %1 ]").arg(PrjName));
 }

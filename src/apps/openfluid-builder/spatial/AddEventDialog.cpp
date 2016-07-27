@@ -110,7 +110,7 @@ void AddEventDialog::checkGlobal()
   }
 
   if (!KeysAreUnique)
-    setMessage(tr("Informations keys are not unique"));
+    setMessage(tr("信息主键冲突"));
   else
     setMessage();
 }

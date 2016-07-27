@@ -69,6 +69,9 @@ EditSetDialog::EditSetDialog(const QStringList& SetNames,
   connect(ui->SelectedVariablesRadioButton,SIGNAL(toggled(bool)),this,SLOT(checkGlobal()));
   connect(ui->SelectedVariablesTextEdit,SIGNAL(textChanged()),this,SLOT(checkGlobal()));
 
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
+
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));
 

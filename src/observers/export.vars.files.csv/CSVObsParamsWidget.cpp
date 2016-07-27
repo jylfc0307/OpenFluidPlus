@@ -456,10 +456,10 @@ void CSVObsParamsWidget::removeSet()
 
 void CSVObsParamsWidget::generateAutomaticFormatAndSets()
 {
-  if (QMessageBox::warning(this,tr("Automatic generation"),
-                           tr("A format and one or more sets configurations will be automatically generated.\n"
-                               "This will remove existing formats and sets.\n\n"
-                               "Proceed anyway?"),QMessageBox::Ok|QMessageBox::Cancel) == QMessageBox::Ok)
+  if (QMessageBox::warning(this,tr("自动生成"),
+                           tr("一个格式以及一个或多个集合的设置将会自动生成。\n"
+                               "这将会删除所有已有的格式数据。\n\n"
+                               "确认要继续吗?"),QMessageBox::Ok|QMessageBox::Cancel) == QMessageBox::Ok)
   {
     clearInternalDataAndWidgets();
     mp_Params->clear();

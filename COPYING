@@ -1,3 +1,25 @@
+灌区涝灾预测分析系统
+====================
+版权所有 2016 中国水利水电科学研究院
+
+灌区涝灾预测分析系统（OpenFLUID Plus）遵循GPL v3协议。（协议内容同OpenFLUID）
+
+ == GNU General Public License Usage ==
+
+  OpenFLUID Plus is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  OpenFLUID Plus is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with OpenFLUID Plus. If not, see <http://www.gnu.org/licenses/>.
+
+=======================================================================
 
 OpenFLUID
 Copyright (c) 2007 INRA - Montpellier SupAgro

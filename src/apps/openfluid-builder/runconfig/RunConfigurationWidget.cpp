@@ -50,9 +50,9 @@ RunConfigurationWidget::RunConfigurationWidget(QWidget* Parent, openfluid::fluid
 {
   ui->setupUi(this);
 
-  ui->ConstraintComboBox->addItem(tr("None"));
-  ui->ConstraintComboBox->addItem(tr("Checked - Simulators scheduling requests are checked to be equal to DeltaT"));
-  ui->ConstraintComboBox->addItem(tr("Forced - Simulators scheduling requests are forced to DeltaT"));
+  ui->ConstraintComboBox->addItem(tr("无"));
+  ui->ConstraintComboBox->addItem(tr("检查 - 检查模拟器调度请求是否为ΔT"));
+  ui->ConstraintComboBox->addItem(tr("强制 - 强制模拟器调度请求为ΔT"));
 
   refresh();
 

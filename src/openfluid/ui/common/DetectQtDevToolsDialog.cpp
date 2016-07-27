@@ -57,6 +57,9 @@ DetectQtDevToolsDialog::DetectQtDevToolsDialog(QWidget* Parent):
 
   ui->ButtonBox->button(QDialogButtonBox::Apply)->setEnabled(!m_FrameworkPath.isEmpty() && !m_DevToolsPath.isEmpty());
 
+  ui->ButtonBox->button(QDialogButtonBox::Apply)->setText("应用");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
+
   connect(ui->ButtonBox, SIGNAL(clicked(QAbstractButton*)),this,SLOT(handleButtonBoxClick(QAbstractButton*)));
   connect(ui->RunButton, SIGNAL(clicked()),this,SLOT(runDetection()));
   connect(ui->BrowseButton, SIGNAL(clicked()),this,SLOT(browseQtRootPath()));
@@ -92,7 +95,7 @@ void DetectQtDevToolsDialog::handleButtonBoxClick(QAbstractButton* Button)
 
 void DetectQtDevToolsDialog::browseQtRootPath()
 {
-  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("Select working directory"));
+  QString SelectedDir = QFileDialog::getExistingDirectory(this,tr("选择工作目录"));
   if (SelectedDir !=  "")
   {
     QString NativePath = QDir::toNativeSeparators(SelectedDir);
@@ -148,7 +151,7 @@ void DetectQtDevToolsDialog::runDetection()
 
   QString qtpathsPath = "";
 
-  ui->DetectionProcessTextEdit->insertHtml("<b>=== "+tr("Searching for qtpaths.exe")+" ===</b><br>");
+  ui->DetectionProcessTextEdit->insertHtml("<b>=== "+tr("查找qtpaths.exe")+" ===</b><br>");
   QApplication::instance()->processEvents();
 
   while (qtpathsPath.isEmpty() && !PotentialQtRootPaths.isEmpty())
@@ -156,7 +159,7 @@ void DetectQtDevToolsDialog::runDetection()
     QString CurrentPath = PotentialQtRootPaths.first();
     PotentialQtRootPaths.removeFirst();
 
-    ui->DetectionProcessTextEdit->insertHtml(tr("Searching in %1... ").arg(QDir::toNativeSeparators(CurrentPath)));
+    ui->DetectionProcessTextEdit->insertHtml(tr("在%1中查找... ").arg(QDir::toNativeSeparators(CurrentPath)));
     QApplication::instance()->processEvents();
 
     if (QFileInfo(CurrentPath).isDir())
@@ -172,9 +175,9 @@ void DetectQtDevToolsDialog::runDetection()
     }
 
     if (qtpathsPath.isEmpty())
-      ui->DetectionProcessTextEdit->insertHtml(tr("not found")+"<br>");
+      ui->DetectionProcessTextEdit->insertHtml(tr("没有找到")+"<br>");
     else
-      ui->DetectionProcessTextEdit->insertHtml(tr("found (%1)").arg(QDir::toNativeSeparators(qtpathsPath))+"<br>");
+      ui->DetectionProcessTextEdit->insertHtml(tr("找到(%1)").arg(QDir::toNativeSeparators(qtpathsPath))+"<br>");
 
     QApplication::instance()->processEvents();
   }
@@ -183,7 +186,7 @@ void DetectQtDevToolsDialog::runDetection()
 
   if (!qtpathsPath.isEmpty())
   {
-    ui->DetectionProcessTextEdit->insertHtml("<b>=== "+tr("Searching for Qt framework path")+" ===</b><br>");
+    ui->DetectionProcessTextEdit->insertHtml("<b>=== "+tr("查找Qt框架路径")+" ===</b><br>");
     QApplication::instance()->processEvents();
 
     QProcess Process;
@@ -198,7 +201,7 @@ void DetectQtDevToolsDialog::runDetection()
       m_FrameworkPath = InstallPrefix+"/bin";
       ui->DetectionProcessTextEdit->insertHtml(
           "<font style='color: green'>"+
-          tr("Qt framework path: %1").arg(QDir::toNativeSeparators(m_FrameworkPath))+
+          tr("Qt框架路径: %1").arg(QDir::toNativeSeparators(m_FrameworkPath))+
           "</font><br>");
       QApplication::instance()->processEvents();
     }
@@ -206,7 +209,7 @@ void DetectQtDevToolsDialog::runDetection()
     {
       ui->DetectionProcessTextEdit->insertHtml(
           "<font style='color: red'>"+
-          tr("Qt framework not found")+
+          tr("Qt框架未找到")+
           "</font><br>");
       QApplication::instance()->processEvents();
     }
@@ -216,7 +219,7 @@ void DetectQtDevToolsDialog::runDetection()
   // find Tools directory and search for mingw in upper directories (gcc.exe, g++.exe, mingw32-make.exe)
   if (!m_FrameworkPath.isEmpty())
   {
-    ui->DetectionProcessTextEdit->insertHtml("<b>=== "+tr("Searching for Qt development tools")+" ===</b><br>");
+    ui->DetectionProcessTextEdit->insertHtml("<b>=== "+tr("查找Qt开发工具")+" ===</b><br>");
     QApplication::instance()->processEvents();
 
     QStringList UpperDirs = qtpathsPath.split("/");
@@ -226,7 +229,7 @@ void DetectQtDevToolsDialog::runDetection()
       UpperDirs.removeLast();
       QString PathToExplore = UpperDirs.join("/");
 
-      ui->DetectionProcessTextEdit->insertHtml(tr("Searching in %1... ").arg(QDir::toNativeSeparators(PathToExplore)));
+      ui->DetectionProcessTextEdit->insertHtml(tr("在%1中查找... ").arg(QDir::toNativeSeparators(PathToExplore)));
       QApplication::instance()->processEvents();
 
       QDirIterator DirIt(PathToExplore,QDirIterator::Subdirectories);
@@ -236,10 +239,10 @@ void DetectQtDevToolsDialog::runDetection()
         if (CurrentDir.exists("gcc.exe") && CurrentDir.exists("g++.exe") && CurrentDir.exists("mingw32-make.exe"))
         {
           m_DevToolsPath = CurrentDir.canonicalPath();
-          ui->DetectionProcessTextEdit->insertHtml(tr("found")+"<br>");
+          ui->DetectionProcessTextEdit->insertHtml(tr("找到")+"<br>");
           ui->DetectionProcessTextEdit->insertHtml(
               "<font style='color: green'>"+
-              tr("Qt development tools path: %1").arg(QDir::toNativeSeparators(m_DevToolsPath))+
+              tr("Qt开发工具路径: %1").arg(QDir::toNativeSeparators(m_DevToolsPath))+
               "</font><br>");
           QApplication::instance()->processEvents();
         }
@@ -247,7 +250,7 @@ void DetectQtDevToolsDialog::runDetection()
 
       if (m_DevToolsPath.isEmpty())
       {
-        ui->DetectionProcessTextEdit->insertHtml(tr("not found")+"<br>");
+        ui->DetectionProcessTextEdit->insertHtml(tr("没有找到")+"<br>");
         QApplication::instance()->processEvents();
       }
     }
@@ -257,7 +260,7 @@ void DetectQtDevToolsDialog::runDetection()
   {
     ui->DetectionProcessTextEdit->insertHtml(
         "<font style='color: red'>"+
-        tr("Qt development tools not found")+
+        tr("Qt开发工具未找到")+
         "</font><br>");
     QApplication::instance()->processEvents();
   }

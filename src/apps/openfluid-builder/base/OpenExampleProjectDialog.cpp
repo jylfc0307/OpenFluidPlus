@@ -80,6 +80,8 @@ OpenExampleProjectDialog::OpenExampleProjectDialog(QWidget *Parent):
       ui->ProjectsListWidget->addItem(ExamplesDirs[i]);
   }
 
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
 
   updateProjectInfo();
 
@@ -112,7 +114,7 @@ void OpenExampleProjectDialog::setMessage(const QString& Msg)
   {
     ui->MessageFrame->setStyleSheet(QString("background-color: %1;")
                                     .arg(openfluid::ui::config::DIALOGBANNER_BGCOLOR));
-    ui->MessageLabel->setText(tr("Open an example project"));
+    ui->MessageLabel->setText(tr("打开一个项目"));
     ui->ButtonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
   }
   else
@@ -133,8 +135,8 @@ void OpenExampleProjectDialog::updateProjectInfo()
 {
   if (ui->ProjectsListWidget->currentRow()<0)
   {
-    setMessage(tr("No project selected"));
-    ui->ProjectInfosLabel->setText("(No project information)");
+    setMessage(tr("没有选择项目"));
+    ui->ProjectInfosLabel->setText("(没有项目信息)");
     ui->ProjectInfosLabel->setStyleSheet("font:italic;");
   }
   else
@@ -149,8 +151,8 @@ void OpenExampleProjectDialog::updateProjectInfo()
     }
     else
     {
-      setMessage(tr("Wrong project format"));
-      ui->ProjectInfosLabel->setText("(No project information)");
+      setMessage(tr("错误的项目格式"));
+      ui->ProjectInfosLabel->setText("(没有项目信息)");
       ui->ProjectInfosLabel->setStyleSheet("font:italic;");
     }
   }

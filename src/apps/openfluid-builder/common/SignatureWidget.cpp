@@ -117,8 +117,8 @@ QString SignatureWidget::formatAuthors(const openfluid::ware::WareSignature::Aut
 
   for (it=itb; it!= ite; ++it)
   {
-    QString Name = convertStdString((*it).first,"unknown");
-    QString Email = convertStdString((*it).second,"no email");
+    QString Name = convertStdString((*it).first,"未知");
+    QString Email = convertStdString((*it).second,"无邮箱");
     Str += Name + " &lt;" + Email + "&gt;";
     if (it!=itl) Str+=", ";
   }

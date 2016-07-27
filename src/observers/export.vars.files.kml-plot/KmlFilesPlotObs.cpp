@@ -56,7 +56,7 @@
 
 BEGIN_OBSERVER_SIGNATURE("export.vars.files.kml-plot")
 
-  DECLARE_NAME("Exports simulation variables to kml files with charts in balloons");
+  DECLARE_NAME("导出模拟变量到具有表格的kml文件");
   // TODO complete description with parameters usage
   DECLARE_DESCRIPTION("");
   DECLARE_VERSION(openfluid::config::FULL_VERSION);

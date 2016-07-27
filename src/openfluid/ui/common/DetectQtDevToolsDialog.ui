@@ -19,21 +19,24 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Qt path:</string>
+        <string>Qt路径:</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLineEdit" name="QtRootPathEdit">
+       <property name="text">
+        <string/>
+       </property>
        <property name="placeholderText">
-        <string>detected if empty</string>
+        <string>如检测到即为空</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="BrowseButton">
        <property name="text">
-        <string>Browse...</string>
+        <string>浏览...</string>
        </property>
       </widget>
      </item>
@@ -42,7 +45,7 @@
    <item>
     <widget class="QPushButton" name="RunButton">
      <property name="text">
-      <string>Run detection...</string>
+      <string>运行检测...</string>
      </property>
     </widget>
    </item>

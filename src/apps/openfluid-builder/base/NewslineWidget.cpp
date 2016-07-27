@@ -59,27 +59,28 @@ NewslineWidget::NewslineWidget(QWidget* Parent):
   ui->ContentsFrame->setStyleSheet(QString("QFrame#ContentsFrame { background-color : %1;}")
                                    .arg(BUILDER_NEWSLINE_BGCOLOR));
 
-  ui->NewslineLabel->setText(QString("<b><big>%1</big></b>").arg(tr("Newsline")));
+  ui->NewslineLabel->setText(QString("<b><big>%1</big>").arg(tr("软件说明")));
   ui->NewslineLabel->setStyleSheet(QString("color : %1;").arg(BUILDER_NEWSLINE_TEXTCOLOR));
 
-  ui->NoNewsLabel->setStyleSheet(QString("color : %1;").arg(BUILDER_NEWSLINE_TEXTCOLOR));
-  ui->NoNewsLabel->setVisible(false);
+  //ui->NoNewsLabel->setStyleSheet(QString("color : %1;").arg(BUILDER_NEWSLINE_TEXTCOLOR));
+  //ui->NoNewsLabel->setVisible(false);
 
-  ui->NewslineContents->setStyleSheet(QString("QWidget#NewslineContents { background-color : %1;}")
-                                      .arg(BUILDER_NEWSLINE_BGCOLOR));
+  //ui->NewslineContents->setStyleSheet(QString("QWidget#NewslineContents { background-color : %1;}")
+  //                                    .arg(BUILDER_NEWSLINE_BGCOLOR));
+  //ui->NewslineContents->setVisible(false);
 
   if (openfluid::base::PreferencesManager::instance()->getLang() != "default")
     NewsItemWidget::setLocale(QLocale(openfluid::base::PreferencesManager::instance()->getLang()));
   else
     NewsItemWidget::setLocale(QLocale(QLocale::English));
-
+/*
   refreshFromCache();
 
   // check if update is needed
   if (NewslineDownloadWorker::isTimeForDownload(NewsItemWidget::getLocale().name().left(2)))
     launchDownload();
-
-  connect(ui->UpdateButton,SIGNAL(clicked()),this,SLOT(launchDownload()));
+*/
+//  connect(ui->UpdateButton,SIGNAL(clicked()),this,SLOT(launchDownload()));
 }
 
 
@@ -99,6 +100,7 @@ NewslineWidget::~NewslineWidget()
 
 void NewslineWidget::setItems(const QList<NewsItemData>& Items)
 {
+    /*
   QBoxLayout* Layout = dynamic_cast<QBoxLayout*>(ui->NewslineContents->layout());
   QLayoutItem* LayoutItem;
 
@@ -124,9 +126,10 @@ void NewslineWidget::setItems(const QList<NewsItemData>& Items)
       Layout->addWidget(SepFrame);
     }
     Layout->addWidget(new NewsItemWidget(IData,this));
+    break;
   }
 
-  Layout->addStretch();
+  Layout->addStretch();*/
 }
 
 

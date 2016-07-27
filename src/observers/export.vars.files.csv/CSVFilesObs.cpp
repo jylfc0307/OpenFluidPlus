@@ -105,18 +105,18 @@ class CSVSetFiles
 
 
 BEGIN_OBSERVER_SIGNATURE("export.vars.files.csv")
-  DECLARE_NAME("Exports simulation variables to CSV files");
-  DECLARE_DESCRIPTION("This observer exports variables to CSV files\n"
-      "Parameters can be\n"
-      "  format.<formatname>.date : the date format using the standard C date format\n"
-      "  format.<formatname>.commentchar : the character for comment lines\n"
-      "  format.<formatname>.header : the header type\n"
-      "  format.<formatname>.precision : the precision for real values\n"
-      "  set.<setname>.unitsclass : the unit class of the set\n"
-      "  set.<setname>.unitsIDs : the unit IDs included in the set. Use * to include all units of the class\n"
-      "  set.<setname>.vars : the variable included in the set, separated by semicolons. "
-         "Use * to include all variables\n"
-      "  set.<setname>.format : the <formatname> used, must be defined by a format parameter");
+  DECLARE_NAME("输出模拟变量到CSV文件");
+  DECLARE_DESCRIPTION("这个观察者能输出变量到CSV文件\n"
+      "可接受的参数有\n"
+      "  format.<格式名称>.date : 使用标准C所设置的格式\n"
+      "  format.<格式名称>.commentchar : 注释所用的符号\n"
+      "  format.<格式名称>.header : 头部的类型\n"
+      "  format.<格式名称>.precision : 浮点数的精度\n"
+      "  set.<集合名称>.unitsclass : 集合中包含的单元类\n"
+      "  set.<集合名称>.unitsIDs : 集合中包含的单元ID。使用 * 包含单元类中的所有单元ID\n"
+      "  set.<集合名称>.vars : 集合中包含的单元类,使用分号分隔。 "
+         "使用 * 来包含所有变量\n"
+      "  set.<集合名称>.format : 使用的<格式名称>,必须用一个格式参数定义");
 
   DECLARE_VERSION(openfluid::config::FULL_VERSION);
   DECLARE_STATUS(openfluid::ware::EXPERIMENTAL);

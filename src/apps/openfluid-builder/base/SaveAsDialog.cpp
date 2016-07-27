@@ -62,6 +62,9 @@ SaveAsDialog::SaveAsDialog(QWidget* Parent) :
 
   projectChanged();
 
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
+
   connect(ui->BrowseButton,SIGNAL(clicked()),this,SLOT(browseClicked()));
   connect(ui->ProjectNameEdit,SIGNAL(textEdited(const QString&)),this,SLOT(projectChanged()));
 

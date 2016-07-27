@@ -360,7 +360,7 @@ void WareSrcContainer::findCMake()
       openfluid::utils::ExternalProgram::CMakeProgram);
 
   if (!CMakeProg.isFound())
-    throw openfluid::base::FrameworkException(OPENFLUID_CODE_LOCATION, "unable to find CMake program");
+    throw openfluid::base::FrameworkException(OPENFLUID_CODE_LOCATION, "无法找到 CMake 程序");
 
   m_CMakeProgramPath = CMakeProg.getFullProgramPath();
 }

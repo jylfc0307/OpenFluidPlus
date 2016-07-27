@@ -55,26 +55,26 @@ EditAttributeNameDialog::EditAttributeNameDialog(EditMode Mode,
 
   if (m_Mode == EDIT_ADD)
   {
-    ui->NewNameLabel->setText(tr("Attribute name:"));
-    ui->DefaultValueLabel->setText(tr("Default value:"));
-    m_DefaultMsg = tr("Add new attribute");
+    ui->NewNameLabel->setText(tr("属性名称:"));
+    ui->DefaultValueLabel->setText(tr("默认值:"));
+    m_DefaultMsg = tr("新建属性");
     connect(ui->NewNameEdit,SIGNAL(textEdited(const QString&)),this,SLOT(checkGlobal()));
     connect(ui->DefaultValueEdit,SIGNAL(textEdited(const QString&)),this,SLOT(checkGlobal()));
   }
   else if (m_Mode == EDIT_RENAME)
   {
-    ui->OriginalNameLabel->setText(tr("Attribute to rename:"));
+    ui->OriginalNameLabel->setText(tr("属性:"));
     ui->OriginalNameComboBox->addItems(AttrsList);
-    ui->NewNameLabel->setText(tr("New attribute name:"));
-    m_DefaultMsg = tr("Rename attribute");
+    ui->NewNameLabel->setText(tr("新名称:"));
+    m_DefaultMsg = tr("属性重命名");
     connect(ui->OriginalNameComboBox,SIGNAL(currentIndexChanged(const QString&)),this,SLOT(checkGlobal()));
     connect(ui->NewNameEdit,SIGNAL(textEdited(const QString&)),this,SLOT(checkGlobal()));
   }
   else if (m_Mode == EDIT_REMOVE)
   {
-    ui->OriginalNameLabel->setText(tr("Attribute to remove:"));
+    ui->OriginalNameLabel->setText(tr("待删除属性:"));
     ui->OriginalNameComboBox->addItems(AttrsList);
-    m_DefaultMsg = tr("Remove attribute");
+    m_DefaultMsg = tr("删除属性");
   }
 
   ui->NewNameEdit->setPlaceholderText(openfluid::ui::config::PLACEHOLDER_REQUIRED);
@@ -87,6 +87,9 @@ EditAttributeNameDialog::EditAttributeNameDialog(EditMode Mode,
                                 m_Mode == EDIT_ADD);
 
   ui->DefaultValueWidget->setVisible(m_Mode == EDIT_ADD);
+
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
 
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));
@@ -116,20 +119,20 @@ void EditAttributeNameDialog::checkGlobal()
   if (m_Mode == EDIT_ADD)
   {
     if (m_AttrsNames.contains(ui->NewNameEdit->text()))
-      setMessage(tr("New attribute name already exists"));
+      setMessage(tr("新属性名称已存在"));
     else if (ui->NewNameEdit->text().isEmpty())
-      setMessage(tr("New attribute name is empty"));
+      setMessage(tr("新属性名称为空"));
     else if (ui->DefaultValueEdit->text().isEmpty())
-      setMessage(tr("Default attribute value is empty"));
+      setMessage(tr("默认属性值为空"));
     else
       setMessage();
   }
   else if (m_Mode == EDIT_RENAME)
   {
     if (m_AttrsNames.contains(ui->NewNameEdit->text()))
-      setMessage(tr("New attribute name already exists"));
+      setMessage(tr("新属性名称已存在"));
     else if (ui->NewNameEdit->text().isEmpty())
-      setMessage(tr("New attribute name is empty"));
+      setMessage(tr("新属性名称为空"));
     else
       setMessage();
   }

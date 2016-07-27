@@ -109,7 +109,7 @@ void WareSrcManager::switchWorkspace(const QString& NewAbsoluteWorkspacePath)
   {
     if (!QDir(Path).mkpath(Path))
       throw openfluid::base::FrameworkException(OPENFLUID_CODE_LOCATION,
-        QString("unable to open or create %1 directory").arg(Path).toStdString());
+        QString("无法打开或创建 %1 目录").arg(Path).toStdString());
   }
 }
 
@@ -123,7 +123,7 @@ QString WareSrcManager::getWareTypePath(WareType WareSrcType)
   if (m_WareTypePathByWareType.contains(WareSrcType))
     return m_WareTypePathByWareType.value(WareSrcType);
 
-  throw openfluid::base::FrameworkException(OPENFLUID_CODE_LOCATION, "unknown source type");
+  throw openfluid::base::FrameworkException(OPENFLUID_CODE_LOCATION, "未知来源类型");
 }
 
 
@@ -145,7 +145,7 @@ QString WareSrcManager::getWarePath(const QString& WareID, openfluid::ware::Plug
       Type = openfluid::waresdev::WareSrcManager::OBSERVER;
       break;
     default:
-      ErrMsg = QObject::tr("Unknown ware type");
+      ErrMsg = QObject::tr("未知的组件类型");
       return "";
   }
 
@@ -155,7 +155,7 @@ QString WareSrcManager::getWarePath(const QString& WareID, openfluid::ware::Plug
   if (Dir.exists(WareID))
     return Dir.filePath(WareID);
 
-  ErrMsg = QObject::tr("Unable to find \"%1\" in the current workspace.").arg(WareID);
+  ErrMsg = QObject::tr("无法在当前工作目录中找到 \"%1\" 。").arg(WareID);
   return "";
 }
 

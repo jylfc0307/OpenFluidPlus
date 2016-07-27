@@ -89,31 +89,31 @@ PreferencesDialog::PreferencesDialog(QWidget* Parent, DisplayMode Mode, const QS
   QTreeWidgetItem *PrefItem;
 
   PrefItem = new QTreeWidgetItem(ui->PrefsTreeWidget);
-  PrefItem->setText(0,tr("Environment"));
+  PrefItem->setText(0,tr("环境"));
   PrefItem->setData(0,Qt::UserRole,ENVIRONMENT_PAGE);
 
   if (m_Mode == MODE_BUILDER || m_Mode == MODE_FULL)
   {
     PrefItem = new QTreeWidgetItem(ui->PrefsTreeWidget);
-    PrefItem->setText(0,tr("Interface"));
+    PrefItem->setText(0,tr("界面"));
     PrefItem->setData(0,Qt::UserRole,BUILDER_PAGE);
 
     PrefItem = new QTreeWidgetItem(ui->PrefsTreeWidget);
-    PrefItem->setText(0,tr("Simulations"));
+    PrefItem->setText(0,tr("模拟"));
     PrefItem->setData(0,Qt::UserRole,SIMULATION_PAGE);
   }
 
   PrefItem = new QTreeWidgetItem(ui->PrefsTreeWidget);
-  PrefItem->setText(0,tr("Development tools"));
+  PrefItem->setText(0,tr("开发工具"));
   PrefItem->setData(0,Qt::UserRole,DEVENV_PAGE);
 
   PrefItem = new QTreeWidgetItem(ui->PrefsTreeWidget);
-  PrefItem->setText(0,tr("Code editor"));
+  PrefItem->setText(0,tr("代码编辑器"));
   PrefItem->setData(0,Qt::UserRole,DEVEDITOR_PAGE);
 
 #if OPENFLUID_MARKET_ENABLED
   PrefItem = new QTreeWidgetItem(ui->PrefsTreeWidget);
-  PrefItem->setText(0,tr("Market"));
+  PrefItem->setText(0,tr("市场"));
   PrefItem->setData(0,Qt::UserRole,MARKET_PAGE);
 #endif
 
@@ -185,6 +185,7 @@ PreferencesDialog::PreferencesDialog(QWidget* Parent, DisplayMode Mode, const QS
 
   ui->PrefsTreeWidget->setCurrentItem(ui->PrefsTreeWidget->topLevelItem(0));
 
+  ui->ButtonBox->button(QDialogButtonBox::Close)->setText("关闭");
 
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));
@@ -301,7 +302,7 @@ void PreferencesDialog::updateLanguage(const QString& Lang)
   openfluid::base::PreferencesManager::instance()->setLang(Lang);
 
   if (ui->LangComboBox->currentIndex() != m_OriginalLangIndex)
-    ui->LangRestartLabel->setText(tr("Restart required"));
+    ui->LangRestartLabel->setText(tr("需要重启"));
   else
     ui->LangRestartLabel->setText("");
 }

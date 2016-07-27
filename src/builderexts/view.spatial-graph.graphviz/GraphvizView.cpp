@@ -84,9 +84,9 @@ void GraphvizView::fitViewToItems()
 void GraphvizView::exportSceneAsPNG()
 {
   QString FileName = QFileDialog::getSaveFileName(this,
-                                                  tr("Export as PNG image file"),
+                                                  tr("导出为PNG文件"),
                                                   "export_spatialgraph.png",
-                                                  tr("PNG Files (*.png)"));
+                                                  tr("PNG文件 (*.png)"));
 
   if (!FileName.isEmpty())
   {
@@ -108,9 +108,9 @@ void GraphvizView::exportSceneAsPNG()
 void GraphvizView::exportSceneAsSVG()
 {
   QString FileName = QFileDialog::getSaveFileName(this,
-                                                  tr("Export as SVG vector file"),
+                                                  tr("导出为SVG文件"),
                                                   "export_spatialgraph.svg",
-                                                  tr("SVG Files (*.svg)"));
+                                                  tr("SVG文件 (*.svg)"));
 
   if (!FileName.isEmpty())
   {

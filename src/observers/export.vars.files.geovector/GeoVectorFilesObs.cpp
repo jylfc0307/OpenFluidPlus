@@ -52,20 +52,20 @@
 
 
 BEGIN_OBSERVER_SIGNATURE("export.vars.files.geovector")
-  DECLARE_NAME("Exports simulation variables to geographical vector files");
-  DECLARE_DESCRIPTION("This observer exports simulation variables to geographical vector files\n"
-      "Parameters can be\n"
-      "  format : the GDAL format for output files (mandatory)"
-      "  outsubdir : the subdirectory to store output files, relative to the output directory (optional)\n"
-      "  geoserie.<seriename>.sourcefile : the sourcefile for geometry of the serie (mandatory)\n"
-      "  geoserie.<seriename>.unitsclass : the unit class of the serie (mandatory)\n"
-      "  geoserie.<seriename>.vars : the list of variables of the serie (mandatory)."
-      "The field name for the variable can be explicitely given by using the varname=>fieldname\n"
-      "  geoserie.<seriename>.when : the time mode for output files production (optional). "
-      "Values for geoserie.<seriename>.when can be init for output at initialization only, "
-        "final for output at finalization only, continuous for continuous output. "
-      "Continuous output can be parameterized with a minimal delay in seconds "
-        "between two outputs (e.g. continuous;7200 for a minimal delay of 2 hours)."
+  DECLARE_NAME("导出模拟变量到空间地理向量文件");
+  DECLARE_DESCRIPTION("这个观察者将模拟变量导出到空间地理向量文件\n"
+      "接受如下参数\n"
+      "  format : 输出文件的GDAL格式 (必填)"
+      "  outsubdir : 输出文件的子目录, 相对于输出目录 (可选)\n"
+      "  geoserie.<序列名>.sourcefile : 序列的几何数据源 (必填)\n"
+      "  geoserie.<序列名>.unitsclass : 序列的单元类 (必填)\n"
+      "  geoserie.<序列名>.vars : 序列的参数列表 (必填)."
+      "变量的field名称可以通过varname=>fieldname来准确指定\n"
+      "  geoserie.<序列名>.when : 输出文件采用的时间模式 (可选). "
+      "为geoserie.<序列名>.when提供的值为init则在初始化阶段, "
+        "提供的值为final则在最后的时候, continuous则是连续. "
+      "在两个连续输出可以被配置为一个最小的延迟"
+        "(例如 continuous;7200 可以设置为一个为2小时的最小延迟)."
       );
 
   DECLARE_VERSION(openfluid::config::FULL_VERSION);

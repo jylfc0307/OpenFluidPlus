@@ -179,7 +179,7 @@ font : bold;
           <item>
            <widget class="QRadioButton" name="DoubleRadioButton">
             <property name="text">
-             <string>Double</string>
+             <string>浮点数</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -192,7 +192,7 @@ font : bold;
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Vector:</string>
+             <string>向量:</string>
             </property>
            </widget>
           </item>
@@ -251,14 +251,14 @@ font : bold;
        <item row="4" column="0" colspan="4">
         <widget class="QStackedWidget" name="OptionsWidget">
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="FixedWidget">
           <layout class="QFormLayout" name="formLayout">
            <item row="0" column="0">
             <widget class="QLabel" name="label_3">
              <property name="text">
-              <string>Value:</string>
+              <string>值:</string>
              </property>
             </widget>
            </item>
@@ -272,7 +272,7 @@ font : bold;
            <item row="0" column="0">
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>Minimum value:</string>
+              <string>最小值:</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -288,7 +288,7 @@ font : bold;
            <item row="1" column="0">
             <widget class="QLabel" name="label_5">
              <property name="text">
-              <string>Maximum value:</string>
+              <string>最大值:</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -365,7 +365,7 @@ font : bold;
            <item row="0" column="0">
             <widget class="QLabel" name="label_6">
              <property name="text">
-              <string>源文件     ：</string>
+              <string>源文件：</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

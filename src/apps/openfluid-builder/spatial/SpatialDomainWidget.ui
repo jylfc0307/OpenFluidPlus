@@ -104,7 +104,7 @@
          <x>0</x>
          <y>0</y>
          <width>278</width>
-         <height>507</height>
+         <height>567</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -145,7 +145,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
@@ -165,14 +165,14 @@
               </font>
              </property>
              <property name="text">
-              <string>Add unit in %1 class</string>
+              <string>在 %1 中添加单元</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="RemoveUnitButton">
              <property name="text">
-              <string>Remove unit %1 from %2 class</string>
+              <string>在 %2 中移除单元 %1</string>
              </property>
             </widget>
            </item>
@@ -210,7 +210,7 @@
                <item>
                 <widget class="QLabel" name="label_3">
                  <property name="text">
-                  <string>Process order:</string>
+                  <string>处理顺序:</string>
                  </property>
                 </widget>
                </item>
@@ -245,7 +245,7 @@
              <item>
               <widget class="QLabel" name="label">
                <property name="text">
-                <string>Connections:</string>
+                <string>连通性:</string>
                </property>
               </widget>
              </item>
@@ -270,17 +270,17 @@
                  </attribute>
                  <column>
                   <property name="text">
-                   <string>Connection type</string>
+                   <string>联通类型</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>Units class</string>
+                   <string>单元类</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>Unit ID</string>
+                   <string>单元ID</string>
                   </property>
                  </column>
                 </widget>

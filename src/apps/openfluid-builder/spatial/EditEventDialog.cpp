@@ -49,7 +49,7 @@ EditEventDialog::EditEventDialog(const QString& ClassName, const QStringList& ID
                                  QWidget* Parent):
   AddEventDialog(ClassName,IDsList,CurrentDateTime,Parent)
 {
-  m_DefaultMsg = tr("Edit of an event");
+  m_DefaultMsg = tr("修改事件");
 
   ui->UnitIDComboBox->setCurrentIndex(ui->UnitIDComboBox->findText(CurrentUnitID));
 
@@ -66,6 +66,9 @@ EditEventDialog::EditEventDialog(const QString& ClassName, const QStringList& ID
     ui->InfosTableWidget->setItem(RowCount,0,new QTableWidgetItem(QString::fromStdString((*it).first)));
     ui->InfosTableWidget->setItem(RowCount,1,new QTableWidgetItem(QString::fromStdString((*it).second)));
   }
+
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
 
   checkGlobal();
 }

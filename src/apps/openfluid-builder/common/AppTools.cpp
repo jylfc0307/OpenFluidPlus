@@ -65,15 +65,15 @@ QString getProjectInfosAsHTML(const QString& ProjectPath, bool IncludeFullPath)
 
     InfosStr += "<table><tr><td valign='middle' width='74px' style='padding: 5px;'>"
                 "<IMG STYLE='vertical-align:middle;' SRC=':/icons/openfluid_icon.png' /></td>"
-                "<td valign='middle' style='padding: 5px;'><i>Project:</i><br>"
+                "<td valign='middle' style='padding: 5px;'><i>项目:</i><br>"
                 "<b><big>"+QString(Name.c_str())+"</big></b></td>"
                 "</tr></table><hr/>";
-    InfosStr += "<i>Description:</i><br>"+QString(Description.c_str())+"<hr/>";
-    InfosStr += "<i>Authors:</i><br>"+QString(Authors.c_str())+"<hr/>";
-    InfosStr += "<i>Creation:</i><br>"+QString(CreationDate.c_str())+"<hr/>";
-    InfosStr += "<i>Last modification:</i><br>"+QString(LastModDate.c_str());
+    InfosStr += "<i>描述:</i><br>"+QString(Description.c_str())+"<hr/>";
+    InfosStr += "<i>作者:</i><br>"+QString(Authors.c_str())+"<hr/>";
+    InfosStr += "<i>创建时间:</i><br>"+QString(CreationDate.c_str())+"<hr/>";
+    InfosStr += "<i>最后修改:</i><br>"+QString(LastModDate.c_str());
     if (IncludeFullPath)
-      InfosStr += "<hr/><i>Project location:</i><br>"+QDir::toNativeSeparators(ProjectPath);
+      InfosStr += "<hr/><i>项目位置:</i><br>"+QDir::toNativeSeparators(ProjectPath);
   }
 
   return InfosStr;

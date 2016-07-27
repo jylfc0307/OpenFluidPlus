@@ -59,7 +59,7 @@
 BEGIN_BUILDEREXT_SIGNATURE("import.spatial-graph.ogr-gdal", openfluid::builderext::MODE_MODAL)
 
   DECLARE_CATEGORY(openfluid::builderext::CAT_SPATIAL)
-  DECLARE_MENUTEXT(QT_TRANSLATE_NOOP("signature","Spatial data import (OGR/GDAL)"))
+  DECLARE_MENUTEXT(QT_TRANSLATE_NOOP("signature","空间数据导入 (OGR/GDAL)"))
 
 END_BUILDEREXT_SIGNATURE
 
@@ -90,7 +90,7 @@ OGRGDALImportExtension::OGRGDALImportExtension() :
 {
   ui->setupUi(this);
 
-  setWindowTitle(tr("Spatial data import (OGR/GDAL)"));
+  setWindowTitle(tr("空间数据导入 (OGR/GDAL)"));
 
   ui->AddFileButton->setIcon(QIcon(":/ui/common/icons/add.png"));
   ui->AddFileButton->setIconSize(QSize(16,16));
@@ -272,10 +272,10 @@ void OGRGDALImportExtension::removeSource()
   if (ui->SourcesTableWidget->currentRow() >= 0)
   {
     if (QMessageBox::question(QApplication::activeWindow(),
-                              "Spatial data import (OGR/GDAL)",
-                              tr("You are about to remove the selected source to import.\n"
-                                  "Import configuration for this source will be lost.\n\n"
-                                  "Proceed anyway?"),
+                              "空间数据导入 (OGR/GDAL)",
+                              tr("您即将移除您选定的数据源。\n"
+                                  "这个数据源的相关配置将会丢失。\n\n"
+                                  "确认要继续吗？"),
                                   QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok)
     {
       m_SourcesInfos.removeAt(ui->SourcesTableWidget->currentRow());
@@ -348,10 +348,10 @@ void OGRGDALImportExtension::cancelImport()
   else
   {
     if (QMessageBox::question(QApplication::activeWindow(),
-                              "Spatial data import (OGR/GDAL)",
-                              tr("You have at least one source configured for import.\n"
-                                  "The configuration(s) will be lost.\n\n"
-                                  "Quit the spatial import anyway?"),
+                              "空间数据导入 (OGR/GDAL)",
+                              tr("您有至少一个待导入数据。\n"
+                                  "所有的配置将会丢失。\n\n"
+                                  "退出导入吗？"),
                                   QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok)
     {
       reject();

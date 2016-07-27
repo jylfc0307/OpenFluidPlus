@@ -116,7 +116,7 @@ font : bold;
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="EnvironmentPage">
         <layout class="QVBoxLayout" name="verticalLayout_11" stretch="0,1">
@@ -185,7 +185,7 @@ font : bold;
                <string notr="true">color : #909090;</string>
               </property>
               <property name="text">
-               <string>The top workspace path will be set as the active workspace path</string>
+               <string>置顶的工作空间将被设置为活动的</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -434,7 +434,7 @@ font : bold;
                <date>
                 <year>1752</year>
                 <month>8</month>
-                <day>10</day>
+                <day>9</day>
                </date>
               </property>
               <property name="displayFormat">
@@ -715,7 +715,7 @@ font : bold;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>383</width>
+                <width>327</width>
                 <height>268</height>
                </rect>
               </property>

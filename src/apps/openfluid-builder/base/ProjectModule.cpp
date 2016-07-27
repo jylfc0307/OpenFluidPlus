@@ -334,10 +334,10 @@ bool ProjectModule::whenOpenAsked()
 
 bool ProjectModule::whenReloadAsked()
 {
-  if (QMessageBox::question(QApplication::activeWindow(),tr("Reload project"),
-                              tr("Reloading project from disk will overwrite all unsaved modifications if any.")+
+  if (QMessageBox::question(QApplication::activeWindow(),tr("重新载入项目"),
+                              tr("重新载入项目将会撤销一切未保存的项目")+
                               "\n\n"+
-                              tr("Proceed anyway?"),
+                              tr("继续吗?"),
                               QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
   {
     emit savePerformed();
@@ -634,16 +634,16 @@ void ProjectModule::whenExtensionAsked(const QString& ID)
       else
       {
         QMessageBox::critical(QApplication::activeWindow(),
-                              tr("Extension error"),
-                              tr("Unknown extension type.\nExtension cannot be instantiated."),
+                              tr("拓展组件错误"),
+                              tr("未知的拓展类型。\n无法实例化拓展组件。"),
                               QMessageBox::Close);
       }
     }
     else
     {
       QMessageBox::warning(QApplication::activeWindow(),
-                           tr("Extension warning"),
-                           tr("Extension is already active."),
+                           tr("拓展组件错误"),
+                           tr("拓展组件已激活"),
                            QMessageBox::Close);
 
     }
@@ -651,8 +651,8 @@ void ProjectModule::whenExtensionAsked(const QString& ID)
   else
   {
     QMessageBox::critical(QApplication::activeWindow(),
-                          tr("Extension error"),
-                          tr("Extension is not registered.\nExtension cannot be instantiated."),
+                          tr("拓展组件错误"),
+                          tr("拓展组件未注册\n无法实例化拓展组件。"),
                           QMessageBox::Close);
   }
 }
@@ -744,8 +744,8 @@ void ProjectModule::whenSrcEditAsked(const QString& ID,openfluid::ware::Pluggabl
     }
     else
       QMessageBox::critical(QApplication::activeWindow(),
-                            tr("Ghost simulator edition error"),
-                            tr("Unable to find ghost simulator"),
+                            tr("虚拟模拟器版本错误"),
+                            tr("无法找到虚拟模拟器"),
                             QMessageBox::Close);
 
   }
@@ -759,7 +759,7 @@ void ProjectModule::whenSrcEditAsked(const QString& ID,openfluid::ware::Pluggabl
       mp_MainWidget->addWorkspaceWareSrcTab(Path);
     else
       QMessageBox::critical(QApplication::activeWindow(),
-                            tr("Source code edition error"),
+                            tr("源代码版本错误"),
                             ErrMsg,
                             QMessageBox::Close);
   }
@@ -779,8 +779,8 @@ void ProjectModule::whenSrcGenerateAsked(const QString& ID)
     mp_MainWidget->newSimulatorFromGhost(Signature);
   else
     QMessageBox::critical(QApplication::activeWindow(),
-                          tr("Source code generation error"),
-                          tr("Unable to find ghost simulator"),
+                          tr("源代码生成错误"),
+                          tr("无法找到虚拟模拟器"),
                           QMessageBox::Close);
 
 }

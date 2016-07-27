@@ -62,6 +62,9 @@ NewProjectDialog::NewProjectDialog(QWidget *Parent):
 
   ui->NameEdit->setPlaceholderText(openfluid::ui::config::PLACEHOLDER_REQUIRED);
 
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
+
   connect(ui->WorkdirButton,SIGNAL(clicked()),this,SLOT(onWorkdirButtonClicked()));
   connect(ui->ProjectButton,SIGNAL(clicked()),this,SLOT(onProjectButtonClicked()));
   connect(ui->DatadirButton,SIGNAL(clicked()),this,SLOT(onDatadirButtonClicked()));

@@ -84,9 +84,11 @@ RunSimulationDialog::RunSimulationDialog(QWidget *Parent, openfluid::fluidx::Flu
 
   ui->setupUi(this);
 
+  ui->ButtonBox->button(QDialogButtonBox::Close)->setText("关闭");
+
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));
 
-  ui->MessageLabel->setText(tr("Run Simulation"));
+  ui->MessageLabel->setText(tr("运行模拟"));
 
   ui->DurationLabel->setText("");
 
@@ -179,8 +181,8 @@ QString RunSimulationDialog::getDurationAsDaysHoursMinsSecsString(openfluid::cor
   Duration /= 60;
   int Hours = (int) (Duration % 24);
   int Days = (int) (Duration / 24);
-  return QString::number(Days)+tr(" day(s), ")+QString::number(Hours)+tr(" hour(s), ")+
-         QString::number(Minutes)+tr(" min(s), ")+QString::number(Seconds)+tr(" sec(s)");
+  return QString::number(Days)+tr(" 天, ")+QString::number(Hours)+tr(" 小时, ")+
+         QString::number(Minutes)+tr(" 分钟, ")+QString::number(Seconds)+tr(" 秒");
 }
 
 
@@ -192,11 +194,11 @@ void RunSimulationDialog::requestAbort()
 {
   if (QMessageBox::question(QApplication::activeWindow(),
                                   "OpenFLUID",
-                                  tr("You are requesting the simulation to abort.\n"
-                                     "Simulation data not written on disk will be lost.\n\nProceed anyway?"),
+                                  tr("你正在终止模拟。\n"
+                                     "未写入磁盘的数据将会丢失\n\n继续吗?"),
                                   QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok)
   {
-    ui->StatusLabel->setText(tr("abort requested"));
+    ui->StatusLabel->setText(tr("已取消"));
     ui->StatusLabel->setStyleSheet(STATUS_STYLE_ABORTREQUEST);
     mp_Listener->requestAbort();
   }
@@ -211,7 +213,7 @@ void RunSimulationDialog::requestSuspendResume()
 {
   if (!mp_Listener->isPausedByUser())
   {
-    ui->StatusLabel->setText(tr("pause requested"));
+    ui->StatusLabel->setText(tr("已暂停"));
     ui->StatusLabel->setStyleSheet(STATUS_STYLE_PAUSEREQUEST);
     ui->PauseButton->setEnabled(false);
   }
@@ -220,7 +222,7 @@ void RunSimulationDialog::requestSuspendResume()
     ui->StopButton->setEnabled(false);
     ui->PauseButton->setIcon(QIcon(":/ui/common/icons/pause.png"));
     ui->StatusLabel->setStyleSheet(STATUS_STYLE_NONE);
-    ui->StatusLabel->setText(tr("running"));
+    ui->StatusLabel->setText(tr("执行中"));
   }
 
   mp_Listener->requestSuspendResume();
@@ -236,7 +238,7 @@ void RunSimulationDialog::validateSuspend()
   ui->PauseButton->setIcon(QIcon(":/ui/common/icons/start.png"));
   ui->PauseButton->setEnabled(true);
   ui->StopButton->setEnabled(true);
-  ui->StatusLabel->setText(tr("paused"));
+  ui->StatusLabel->setText(tr("已暂停"));
   ui->StatusLabel->setStyleSheet(STATUS_STYLE_PAUSED);
 }
 
@@ -303,38 +305,38 @@ void RunSimulationDialog::setStage(openfluid::ui::common::RunSimulationListener:
   if (S == openfluid::ui::common::RunSimulationListener::RUNW_BEFORE)
   {
     ui->StatusLabel->setStyleSheet(STATUS_STYLE_NONE);
-    ui->StatusLabel->setText(tr("not started"));
+    ui->StatusLabel->setText(tr("未开始"));
     ui->StageLabel->setText("-");
   }
   else if (S == openfluid::ui::common::RunSimulationListener::RUNW_PRESIM)
   {
-    ui->StageLabel->setText(tr("pre-simulation"));
+    ui->StageLabel->setText(tr("预处理"));
     ui->StatusLabel->setStyleSheet(STATUS_STYLE_NONE);
-    ui->StatusLabel->setText(tr("running"));
+    ui->StatusLabel->setText(tr("执行中"));
   }
   else if (S == openfluid::ui::common::RunSimulationListener::RUNW_INIT)
   {
-    ui->StageLabel->setText(tr("initialization"));
+    ui->StageLabel->setText(tr("初始化"));
     ui->StatusLabel->setStyleSheet(STATUS_STYLE_NONE);
-    ui->StatusLabel->setText(tr("running"));
+    ui->StatusLabel->setText(tr("执行中"));
   }
   else if (S == openfluid::ui::common::RunSimulationListener::RUNW_RUN)
   {
-    ui->StageLabel->setText(tr("simulation"));
+    ui->StageLabel->setText(tr("模拟"));
     ui->StatusLabel->setStyleSheet(STATUS_STYLE_NONE);
-    ui->StatusLabel->setText(tr("running"));
+    ui->StatusLabel->setText(tr("执行中"));
   }
   else if (S == openfluid::ui::common::RunSimulationListener::RUNW_FINAL)
   {
-    ui->StageLabel->setText(tr("finalization"));
+    ui->StageLabel->setText(tr("收官"));
     ui->StatusLabel->setStyleSheet(STATUS_STYLE_NONE);
-    ui->StatusLabel->setText(tr("running"));
+    ui->StatusLabel->setText(tr("执行中"));
   }
   else if (S == openfluid::ui::common::RunSimulationListener::RUNW_AFTER)
   {
     ui->StageLabel->setText("-");
     ui->StatusLabel->setStyleSheet(STATUS_STYLE_SUCCEEDED);
-    ui->StatusLabel->setText(tr("completed"));
+    ui->StatusLabel->setText(tr("完成"));
   }
 }
 
@@ -349,7 +351,7 @@ void RunSimulationDialog::handleError(QString Msg,openfluid::base::ExceptionCont
   ui->StopButton->setEnabled(false);
 
   ui->StatusLabel->setStyleSheet(STATUS_STYLE_FAILED);
-  ui->StatusLabel->setText(tr("failed due to simulation error"));
+  ui->StatusLabel->setText(tr("模拟出错"));
   ui->StatusLabel->setToolTip(Msg);
 
   ui->ErrorMessageEdit->setText(Msg);
@@ -375,7 +377,7 @@ void RunSimulationDialog::handleUserAbort()
   ui->PauseButton->setEnabled(false);
   ui->StopButton->setEnabled(false);
 
-  ui->StatusLabel->setText(tr("aborted by user"));
+  ui->StatusLabel->setText(tr("用户终止"));
   ui->StatusLabel->setStyleSheet(STATUS_STYLE_ABORTED);
 }
 

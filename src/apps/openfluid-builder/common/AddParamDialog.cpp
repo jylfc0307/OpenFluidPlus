@@ -70,6 +70,9 @@ AddParamDialog::AddParamDialog(const QStringList& ExistingParams,const QStringLi
 
   ui->NameEdit->setPlaceholderText(openfluid::ui::config::PLACEHOLDER_REQUIRED);
 
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
+
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));
 

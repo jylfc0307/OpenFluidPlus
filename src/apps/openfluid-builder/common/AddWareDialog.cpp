@@ -43,6 +43,7 @@
 #include "SignatureWidget.hpp"
 
 #include <QListWidgetItem>
+#include <QPushButton>
 
 
 AddWareDialog::AddWareDialog(QWidget* Parent):
@@ -56,6 +57,9 @@ AddWareDialog::AddWareDialog(QWidget* Parent):
   ui->MainHorizontalLayout->addWidget(mp_SignWidget,0);
 
   ui->WaresListWidget->setIconSize(QSize(24,12));
+
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
 
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));

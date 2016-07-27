@@ -73,6 +73,9 @@ AddGeneratorDialog::AddGeneratorDialog(const QStringList& UnitsClasses, QWidget*
   connect(ui->SourcesBrowseButton,SIGNAL(clicked()),this,SLOT(selectSourcesFile()));
   connect(ui->DistriBrowseButton,SIGNAL(clicked()),this,SLOT(selectDistriFile()));
 
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
+
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));
 

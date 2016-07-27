@@ -198,13 +198,13 @@ void DatastoreWidget::addItem()
               OKToCreateItem =
                   (QMessageBox::question(QApplication::activeWindow(),
                                          "OpenFLUID-Builder",
-                                         tr("The file %1 is about to be copied in the input dataset,\n"
-                                             "as the source file for the added datastore item.\n"
+                                         tr("文件%1将要被复制到空间数据集中,\n"
+                                             "作为数据集的源文件。\n"
                                              "\n"
-                                             "A file with the same name already exists in the input dataset.\n"
-                                             "It will be replaced by the new file.\n"
+                                             "一个同名文件已存在于目录中\n"
+                                             "他将被新的文件覆盖。\n"
                                              "\n"
-                                             "Proceed anyway?").arg(SourceFilename),
+                                             "确认要继续吗?").arg(SourceFilename),
                                              QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
               if (OKToCreateItem)
               {
@@ -226,8 +226,8 @@ void DatastoreWidget::addItem()
           {
             QMessageBox::critical(QApplication::activeWindow(),
                                   "OpenFLUID-Builder",
-                                  tr("OGR driver error while copying geovector file source\n"
-                                     "The datastore item will not be added"),
+                                  tr("复制geovector源文件时OGR驱动产生错误\n"
+                                     "这项空间数据将不会被添加"),
                                   QMessageBox::Close);
             return;
           }
@@ -236,8 +236,8 @@ void DatastoreWidget::addItem()
         {
           QMessageBox::critical(QApplication::activeWindow(),
                                 "OpenFLUID-Builder",
-                                tr("OGR error while copying geovector file source\n"
-                                   "The datastore item will not be added"),
+                                tr("复制geovector源文件时OGR产生错误\n"
+                                   "这项空间数据将不会被添加"),
                                 QMessageBox::Close);
           return;
         }
@@ -264,8 +264,8 @@ void DatastoreWidget::addItem()
             {
               QMessageBox::critical(QApplication::activeWindow(),
                                     "OpenFLUID-Builder",
-                                    tr("GDAL error while copying georaster file source\n"
-                                       "The datastore item will not be added"),
+                                    tr("复制georaster源文件时GDAL产生错误\n"
+                                       "这项空间数据将不会被添加"),
                                     QMessageBox::Close);
               return;
             }
@@ -275,8 +275,8 @@ void DatastoreWidget::addItem()
           {
             QMessageBox::critical(QApplication::activeWindow(),
                                   "OpenFLUID-Builder",
-                                  tr("GDAL driver error while opening georaster file source to copy\n"
-                                     "The datastore item will not be added"),
+                                  tr("复制georaster源文件时GDAL驱动产生错误\n"
+                                     "这项空间数据将不会被添加"),
                                   QMessageBox::Close);
             return;
           }
@@ -285,8 +285,8 @@ void DatastoreWidget::addItem()
         {
           QMessageBox::critical(QApplication::activeWindow(),
                                 "OpenFLUID-Builder",
-                                tr("GDAL error while opening georaster file source to copy\n"
-                                   "The datastore item will not be added"),
+                                tr("打开georaster源文件时GDAL产生错误\n"
+                                   "这项空间数据将不会被添加"),
                                 QMessageBox::Close);
           return;
         }
@@ -354,10 +354,10 @@ void DatastoreWidget::removeItem()
 
     OK = (QMessageBox::question(QApplication::activeWindow(),
                                 "OpenFLUID-Builder",
-                                tr("You are removing %1 item from datastore.\n"
-                                   "This item will not be available anymore, but data will be kept on disk.\n"
+                                tr("您正从空间数据集中删除%1。\n"
+                                   "这个项目将不再可用，但是数据依然会保存在磁盘中。\n"
                                    "\n"
-                                   "Proceed anyway?").arg(DSItemID),
+                                   "确认要继续吗?").arg(DSItemID),
                                 QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
 
     if (OK)

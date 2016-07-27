@@ -16,7 +16,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Format name:</string>
+        <string>格式名称:</string>
        </property>
       </widget>
      </item>
@@ -40,7 +40,7 @@
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>Header:</string>
+            <string>头部:</string>
            </property>
           </widget>
          </item>
@@ -54,7 +54,7 @@
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>Columns separator:</string>
+            <string>分栏分离符:</string>
            </property>
           </widget>
          </item>
@@ -66,7 +66,7 @@
        <item>
         <widget class="QGroupBox" name="DateGroupBox">
          <property name="title">
-          <string>Date format</string>
+          <string>数据格式</string>
          </property>
          <property name="flat">
           <bool>false</bool>
@@ -77,7 +77,7 @@
             <item>
              <widget class="QRadioButton" name="PredefDateRadioButton">
               <property name="text">
-               <string>Predefined:</string>
+               <string>预定义:</string>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -94,7 +94,7 @@
             <item>
              <widget class="QRadioButton" name="CustomDateRadioButton">
               <property name="text">
-               <string>Custom:</string>
+               <string>自定义:</string>
               </property>
              </widget>
             </item>
@@ -111,7 +111,7 @@
          <item>
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>Precision:</string>
+            <string>精度:</string>
            </property>
           </widget>
          </item>
@@ -142,7 +142,7 @@
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>Comment character:</string>
+            <string>注释符号:</string>
            </property>
           </widget>
          </item>
@@ -168,7 +168,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Preview:</string>
+          <string>预览:</string>
          </property>
         </widget>
        </item>

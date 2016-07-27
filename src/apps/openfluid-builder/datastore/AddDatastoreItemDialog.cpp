@@ -66,11 +66,11 @@ AddDatastoreItemDialog::AddDatastoreItemDialog(const QStringList& ExistingUnitsC
 
   m_OGRFormatsStr =
       openfluid::utils::getOGRGDALFormatsForQFileDialogs(openfluid::utils::getOGRFilesDriversForOpenFLUID(),
-                                                         tr("All vector files"));
+                                                         tr("所有矢量文件"));
 
   m_GDALFormatsStr =
       openfluid::utils::getOGRGDALFormatsForQFileDialogs(openfluid::utils::getGDALFilesDriversForOpenFLUID(),
-                                                         tr("All raster files"));
+                                                         tr("所有栅格文件"));
 
   setMessage();
 

@@ -89,6 +89,8 @@ AboutDialog::AboutDialog(QWidget *Parent, const QAction* WebAction, const QActio
   connect(ui->ContactLabel,SIGNAL(clicked()),mp_ContactAction,SLOT(trigger()));
   connect(ui->SwitchLabel,SIGNAL(clicked()),this,SLOT(toggleInfos()));
 
+  ui->ButtonBox->button(QDialogButtonBox::Close)->setText("关闭");
+
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));
 }
@@ -116,15 +118,15 @@ void AboutDialog::toggleInfos()
 
   if (m_InfoIsCredits)
   {
-    ui->DescLabel->setText(tr("Credits")+":");
-    ui->SwitchLabel->setText(tr("View license"));
+    ui->DescLabel->setText(tr("鸣谢")+":");
+    ui->SwitchLabel->setText(tr("查看许可"));
     ui->InfosEdit->setText(openfluid::ui::config::AUTHORS_TEXT);
     ui->InfosEdit->setStyleSheet("font-size: 13px;");
   }
   else
   {
-    ui->DescLabel->setText(tr("License")+":");
-    ui->SwitchLabel->setText(tr("View credits"));
+    ui->DescLabel->setText(tr("许可")+":");
+    ui->SwitchLabel->setText(tr("查看鸣谢"));
     ui->InfosEdit->setStyleSheet("font-size: 12px;");
     ui->InfosEdit->setText(openfluid::ui::config::LICENSE_TEXT);
   }

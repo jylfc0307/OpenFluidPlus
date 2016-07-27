@@ -70,6 +70,9 @@ EditAttributesValuesDialog::EditAttributesValuesDialog(QWidget* Parent):
   connect(ui->MultEdit,SIGNAL(textEdited(const QString&)),this,SLOT(adaptSelection()));
   connect(ui->AddEdit,SIGNAL(textEdited(const QString&)),this,SLOT(adaptSelection()));
 
+  ui->ButtonBox->button(QDialogButtonBox::Ok)->setText("确定");
+  ui->ButtonBox->button(QDialogButtonBox::Cancel)->setText("取消");
+
   connect(ui->ButtonBox,SIGNAL(accepted()),this,SLOT(accept()));
   connect(ui->ButtonBox,SIGNAL(rejected()),this,SLOT(reject()));
 

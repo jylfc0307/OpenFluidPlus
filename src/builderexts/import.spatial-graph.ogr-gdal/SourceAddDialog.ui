@@ -29,7 +29,7 @@
       <item>
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>File:</string>
+         <string>文件:</string>
         </property>
        </widget>
       </item>
@@ -43,7 +43,7 @@
       <item>
        <widget class="QPushButton" name="BrowseButton">
         <property name="text">
-         <string>Browse</string>
+         <string>浏览</string>
         </property>
        </widget>
       </item>
@@ -80,7 +80,7 @@
         <item>
          <widget class="QPushButton" name="ConnectButton">
           <property name="text">
-           <string>Connect</string>
+           <string>连接</string>
           </property>
          </widget>
         </item>
@@ -107,7 +107,7 @@
         <item>
          <widget class="QCheckBox" name="AuthCheckBox">
           <property name="text">
-           <string>Use authentification</string>
+           <string>使用认证信息</string>
           </property>
          </widget>
         </item>
@@ -129,7 +129,7 @@
            <item>
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>Username:</string>
+              <string>用户名:</string>
              </property>
             </widget>
            </item>
@@ -139,7 +139,7 @@
            <item>
             <widget class="QLabel" name="label_5">
              <property name="text">
-              <string>Password:</string>
+              <string>密码:</string>
              </property>
             </widget>
            </item>
@@ -183,7 +183,7 @@
          </font>
         </property>
         <property name="text">
-         <string notr="true">No data source</string>
+         <string notr="true">没有数据源</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -221,7 +221,7 @@
    <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Select layer to import:</string>
+      <string>选择需要导入的层:</string>
      </property>
     </widget>
    </item>
@@ -244,12 +244,12 @@
      </attribute>
      <column>
       <property name="text">
-       <string>Layer name</string>
+       <string>层名</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Geometry type</string>
+       <string>几何类别</string>
       </property>
      </column>
     </widget>

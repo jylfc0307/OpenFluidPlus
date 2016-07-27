@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>User defined paths:</string>
+      <string>用户定义目录:</string>
      </property>
     </widget>
    </item>
@@ -49,7 +49,7 @@
    <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Predefined paths:</string>
+      <string>预定义目录:</string>
      </property>
     </widget>
    </item>

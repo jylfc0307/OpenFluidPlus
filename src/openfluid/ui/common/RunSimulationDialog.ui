@@ -113,7 +113,7 @@ font : bold;
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Simulated duration:</string>
+        <string>模拟时间:</string>
        </property>
       </widget>
      </item>
@@ -162,7 +162,7 @@ font : bold;
        <item>
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>Stage:</string>
+          <string>阶段:</string>
          </property>
         </widget>
        </item>
@@ -189,7 +189,7 @@ font : bold;
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Status:</string>
+          <string>状态:</string>
          </property>
         </widget>
        </item>
@@ -209,7 +209,7 @@ font : bold;
        <item>
         <widget class="openfluid::ui::common::ActionLabel" name="ShowErrorLabel">
          <property name="text">
-          <string>show details</string>
+          <string>详细信息</string>
          </property>
          <property name="indent">
           <number>4</number>
@@ -255,7 +255,7 @@ font : bold;
         <item row="0" column="0">
          <widget class="QLabel" name="ErrorMessageLabel">
           <property name="text">
-           <string>message:</string>
+           <string>信息:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -286,7 +286,7 @@ font : bold;
         <item row="1" column="0">
          <widget class="QLabel" name="ErrorContextLabel">
           <property name="text">
-           <string>context:</string>
+           <string>内容:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -334,7 +334,7 @@ font : bold;
        <item>
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>Warning(s):</string>
+          <string>警告:</string>
          </property>
         </widget>
        </item>

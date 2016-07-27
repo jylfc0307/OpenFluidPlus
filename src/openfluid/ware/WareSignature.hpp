@@ -138,9 +138,9 @@ class OPENFLUID_API WareSignature
         if (it != Authors.begin())
           Str+= ", ";
 
-        Str += openfluid::tools::replaceEmptyString((*it).first,("(unknown author)"));
+        Str += openfluid::tools::replaceEmptyString((*it).first,("(未知作者)"));
         Str += " <";
-        Str += openfluid::tools::replaceEmptyString((*it).second,("(unknown author email)"));
+        Str += openfluid::tools::replaceEmptyString((*it).second,("(未知作者邮箱)"));
         Str += ">";
       }
       return Str;

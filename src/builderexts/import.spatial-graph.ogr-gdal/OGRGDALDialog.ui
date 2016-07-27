@@ -51,7 +51,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Data sources to import:</string>
+             <string>导入文件来源:</string>
             </property>
            </widget>
           </item>
@@ -79,7 +79,7 @@
               </attribute>
               <column>
                <property name="text">
-                <string>Units class</string>
+                <string>单元类</string>
                </property>
               </column>
               <column>
@@ -89,12 +89,12 @@
               </column>
               <column>
                <property name="text">
-                <string>Layer</string>
+                <string>层</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>Geometry type</string>
+                <string>几何类别</string>
                </property>
               </column>
              </widget>
@@ -104,21 +104,21 @@
               <item>
                <widget class="QPushButton" name="AddFileButton">
                 <property name="text">
-                 <string>Add file source</string>
+                 <string>添加文件源</string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QPushButton" name="AddWFSButton">
                 <property name="text">
-                 <string>Add WFS source</string>
+                 <string>添加WFS源</string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QPushButton" name="RemoveButton">
                 <property name="text">
-                 <string>Remove source</string>
+                 <string>移除源</string>
                 </property>
                </widget>
               </item>
@@ -138,7 +138,7 @@
               <item>
                <widget class="QPushButton" name="PrecheckButton">
                 <property name="text">
-                 <string>Precheck import</string>
+                 <string>测试</string>
                 </property>
                </widget>
               </item>
@@ -159,11 +159,11 @@
           <item>
            <widget class="QTabWidget" name="ConfigTabWidget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="StructureTab">
              <attribute name="title">
-              <string>Spatial structure</string>
+              <string>空间结构</string>
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
@@ -187,7 +187,7 @@
                 <item>
                  <widget class="QLabel" name="label_2">
                   <property name="text">
-                   <string>Units class to create:</string>
+                   <string>创建单元类:</string>
                   </property>
                  </widget>
                 </item>
@@ -219,7 +219,7 @@
                    </font>
                   </property>
                   <property name="text">
-                   <string>The units IDs are contained in the &quot;OFLD_ID&quot; field of the layer</string>
+                   <string>单元ID将包含在层的&quot;OFLD_ID&quot;域中</string>
                   </property>
                  </widget>
                 </item>
@@ -259,7 +259,7 @@
                 <item>
                  <widget class="QLabel" name="label_8">
                   <property name="text">
-                   <string>Source field for process order of units:</string>
+                   <string>单元处理顺序的字段:</string>
                   </property>
                  </widget>
                 </item>
@@ -334,7 +334,7 @@
                    </sizepolicy>
                   </property>
                   <property name="text">
-                   <string>Source field for &quot;To&quot; connections:</string>
+                   <string>下游单元编号的字段:</string>
                   </property>
                  </widget>
                 </item>
@@ -367,7 +367,7 @@
                    </sizepolicy>
                   </property>
                   <property name="text">
-                   <string>Source field for &quot;Child of&quot; connections:</string>
+                   <string>上游单元编号的字段:</string>
                   </property>
                  </widget>
                 </item>
@@ -406,7 +406,7 @@
             </widget>
             <widget class="QWidget" name="AttributesTab">
              <attribute name="title">
-              <string>Spatial attributes</string>
+              <string>空间属性</string>
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
@@ -422,7 +422,7 @@
                   <item>
                    <widget class="QLabel" name="label_5">
                     <property name="text">
-                     <string>Source fields to import as attributes:</string>
+                     <string>下列域将被作为属性导入:</string>
                     </property>
                    </widget>
                   </item>
@@ -456,7 +456,7 @@
                   <item>
                    <widget class="QLabel" name="label_6">
                     <property name="text">
-                     <string>Attributes to compute from source:</string>
+                     <string>从数据源中计算的属性:</string>
                     </property>
                    </widget>
                   </item>
@@ -471,7 +471,7 @@
                      <string notr="true">color : #909090;</string>
                     </property>
                     <property name="text">
-                     <string>Correctness and accuracy of computed attributes heavily depends on the coordinates system used in the source layer</string>
+                     <string>属性计算的正确性和精确性极度依赖于源层采用的协调系统</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
@@ -489,7 +489,7 @@
                     <item>
                      <widget class="QCheckBox" name="ComputeAreaCheckBox">
                       <property name="text">
-                       <string>Area as</string>
+                       <string>面积</string>
                       </property>
                      </widget>
                     </item>
@@ -510,7 +510,7 @@
                     <item>
                      <widget class="QCheckBox" name="ComputeLengthCheckBox">
                       <property name="text">
-                       <string>Length  as</string>
+                       <string>长度</string>
                       </property>
                      </widget>
                     </item>
@@ -531,7 +531,7 @@
                     <item>
                      <widget class="QCheckBox" name="ComputeXCentroidCheckBox">
                       <property name="text">
-                       <string>X coord. of centroid as</string>
+                       <string>形心X坐标</string>
                       </property>
                      </widget>
                     </item>
@@ -552,7 +552,7 @@
                     <item>
                      <widget class="QCheckBox" name="ComputeYCentroidCheckBox">
                       <property name="text">
-                       <string>Y coord. of centroid as</string>
+                       <string>形心Y坐标</string>
                       </property>
                      </widget>
                     </item>
@@ -573,7 +573,7 @@
                     <item>
                      <widget class="QCheckBox" name="ComputeZCentroidCheckBox">
                       <property name="text">
-                       <string>Z coord. of centroid as</string>
+                       <string>形心Z坐标</string>
                       </property>
                      </widget>
                     </item>
@@ -613,7 +613,7 @@
             </widget>
             <widget class="QWidget" name="FilesDatastoreTab">
              <attribute name="title">
-              <string>Files and Datastore</string>
+              <string>文件与数据集</string>
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
@@ -640,7 +640,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>Layer is already in project dataset</string>
+                 <string>目标数据集中存在图层</string>
                 </property>
                </widget>
               </item>
@@ -655,7 +655,7 @@
                    <bool>true</bool>
                   </property>
                   <property name="text">
-                   <string>Copy layer in project dataset as file:</string>
+                   <string>作为文件复制层到数据集中:</string>
                   </property>
                  </widget>
                 </item>
@@ -676,7 +676,7 @@
                    <bool>true</bool>
                   </property>
                   <property name="text">
-                   <string>Add layer copy in datastore with ID:</string>
+                   <string>添加数据集中图层所依据的编号数:</string>
                   </property>
                  </widget>
                 </item>

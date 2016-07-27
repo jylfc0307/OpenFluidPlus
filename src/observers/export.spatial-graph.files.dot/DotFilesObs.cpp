@@ -53,15 +53,15 @@
 
 
 BEGIN_OBSERVER_SIGNATURE("export.spatial-graph.files.dot")
-  DECLARE_NAME("Exports spatial graph to Dot files");
-  DECLARE_DESCRIPTION("This observer exports spatial domain graph to Dot files "
-      "and can be post-processed with GraphViz\n"
-      "Parameters can be\n"
-      "  title : the main title of the graph\n"
-      "  when.init : set to 1 to export the graph at initialization time\n"
-      "  when.everytime : set to 1 to export the graph at every simulation time point\n"
-      "  when.final : set to 1 to export the graph at finalization time\n"
-      "  style.<unitsclass>.<attribute> : the value of a Dot attribute for all nodes of a unit class\n");
+  DECLARE_NAME("将空间数据导出到Dot文件");
+  DECLARE_DESCRIPTION("这个观察者将把空间数据导出到Dot文件"
+      "并且可以通过GraphViz进行后续的处理\n"
+      "可接受的参数如下\n"
+      "  title : 图形的标题\n"
+      "  when.init : 置1将在初始化的时候导出\n"
+      "  when.everytime : 置1将在每个时间点导出\n"
+      "  when.final : 置1将在结束的时候导出\n"
+      "  style.<单元类>.<属性> : 该单元类的所有节点都设置此Dot属性值\n");
   DECLARE_VERSION(openfluid::config::FULL_VERSION);
   DECLARE_STATUS(openfluid::ware::EXPERIMENTAL);
 END_OBSERVER_SIGNATURE

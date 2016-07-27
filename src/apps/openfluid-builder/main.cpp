@@ -61,11 +61,9 @@
 
 int main(int argc, char** argv)
 {
-
   try
   {
     INIT_OPENFLUID_APPLICATION_WITH_GUI(argc,argv);
-
 
     openfluid::ui::common::OpenFLUIDSplashScreen Splash(QPixmap(":/images/watsav_splash.png"));//openfluid_splash_builder.png
     Splash.show();

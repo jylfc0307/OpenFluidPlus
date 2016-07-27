@@ -95,7 +95,7 @@ HomeWidget::HomeWidget(QWidget* Parent, const AppActions* Actions):
   ui->ImageLabel->setText("");
   ui->ImageLabel->setPixmap(QPixmap(":/images/watsave_logo.png"));//将此处换做水科院的logo//openfluid_official.png
 
-  ui->VersionLabel->setText(std::string("OpenFLUID v"+openfluid::config::FULL_VERSION).c_str());
+  ui->VersionLabel->setText(std::string("涝灾预测分析系统 v"+openfluid::config::FULL_VERSION).c_str());
 
   ui->URLLabel->setText("<a href=\"http://www.watsave.cn/\">http://www.watsave.cn/</a>");
   connect(ui->URLLabel,SIGNAL(clicked()),Actions->action("HelpOnlineWeb"),SLOT(trigger()));
@@ -128,7 +128,7 @@ HomeWidget::HomeWidget(QWidget* Parent, const AppActions* Actions):
 #endif
 
 #ifdef ENABLE_MARKET_INTEGRATION
-  TheButton = createButton(Actions->action("MarketAccess"),tr("Access to OpenFLUID-Market..."));
+  TheButton = createButton(Actions->action("MarketAccess"),tr("访问 OpenFLUID-Market..."));
   ButtonsLayout->addWidget(TheButton);
 #endif
 

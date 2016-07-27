@@ -131,8 +131,8 @@ bool OutputsWidget::removeDirectory(QDir Dir)
 
 void OutputsWidget::clearOutputDir()
 {
-  if (QMessageBox::warning(this,tr("Delete outputs contents"),
-                           tr("This will delete all files and directories in the output directory.\n\nProceed anyway?"),
+  if (QMessageBox::warning(this,tr("删除输出内容"),
+                           tr("这将删除所有输出数据。\n\n确认吗？"),
                            QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
   {
     QDir OutDir(QString::fromStdString(openfluid::base::ProjectManager::instance()->getOutputDir()));

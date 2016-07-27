@@ -56,7 +56,7 @@
 BEGIN_BUILDEREXT_SIGNATURE("view.spatial-graph.graphviz", openfluid::builderext::MODE_WORKSPACE)
 
   DECLARE_CATEGORY(openfluid::builderext::CAT_SPATIAL)
-  DECLARE_MENUTEXT(QT_TRANSLATE_NOOP("signature","Spatial graph viewer (GraphViz)"))
+  DECLARE_MENUTEXT(QT_TRANSLATE_NOOP("signature","空间图形查看 (GraphViz)"))
 
 END_BUILDEREXT_SIGNATURE
 
@@ -97,9 +97,9 @@ bool GraphvizViewExtension::initialize()
 
   if (!DotProgram.isFound())
   {
-    QMessageBox::critical(this,QString("Error"),tr("GraphViz software (dot) cannot be found!\n"
-                                                   "Please make sure the dot program is accessible in the PATH\n"
-                                                   "and try launching this extension again."),
+    QMessageBox::critical(this,QString("Error"),tr("无法找到GraphViz软件(dot)!\n"
+                                                   "请确认dot程序包含在PATH中\n"
+                                                   "并重新启动本插件！"),
                                                 QMessageBox::Close);
 
     return false;

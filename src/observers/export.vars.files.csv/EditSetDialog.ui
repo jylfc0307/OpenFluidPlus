@@ -16,7 +16,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Set name:</string>
+        <string>集合名称:</string>
        </property>
       </widget>
      </item>
@@ -42,7 +42,7 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Format:</string>
+        <string>格式:</string>
        </property>
       </widget>
      </item>
@@ -54,7 +54,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Spatial units</string>
+      <string>空间单元</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
@@ -62,7 +62,7 @@
         <item>
          <widget class="QLabel" name="label_3">
           <property name="text">
-           <string>Units class:</string>
+           <string>单元类:</string>
           </property>
          </widget>
         </item>
@@ -78,7 +78,7 @@
       <item>
        <widget class="QRadioButton" name="AllUnitsRadioButton">
         <property name="text">
-         <string>All spatial units</string>
+         <string>所有空间单元</string>
         </property>
        </widget>
       </item>
@@ -89,7 +89,7 @@
           <item>
            <widget class="QRadioButton" name="SelectedUnitsRadioButton">
             <property name="text">
-             <string>Listed spatial units:</string>
+             <string>列出的空间单元:</string>
             </property>
            </widget>
           </item>
@@ -119,13 +119,13 @@
    <item>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string>Variables</string>
+      <string>变量</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
        <widget class="QRadioButton" name="AllVariablesRadioButton">
         <property name="text">
-         <string>All variables</string>
+         <string>所有变量</string>
         </property>
        </widget>
       </item>
@@ -136,7 +136,7 @@
           <item>
            <widget class="QRadioButton" name="SelectedVariablesRadioButton">
             <property name="text">
-             <string>Listed variables:</string>
+             <string>列出的变量:</string>
             </property>
            </widget>
           </item>

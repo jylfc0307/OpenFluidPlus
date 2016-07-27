@@ -55,7 +55,7 @@
 
 BEGIN_OBSERVER_SIGNATURE("export.vars.files.kml-anim")
 
-  DECLARE_NAME("Exports simulation variables to time indexed kml files for animation");
+  DECLARE_NAME("导出模拟变量到用时间索引的动画kml文件");
   // TODO complete description with parameters usage
   DECLARE_DESCRIPTION("");
   DECLARE_VERSION(openfluid::config::FULL_VERSION);

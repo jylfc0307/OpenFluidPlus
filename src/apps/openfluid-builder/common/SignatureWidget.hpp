@@ -94,7 +94,7 @@ class SignatureWidget : public QWidget
 
     void clearAllInfos();
 
-    static QString convertStdString(const std::string& Str, const QString& ReplaceStr = "<i>unknown</i>");
+    static QString convertStdString(const std::string& Str, const QString& ReplaceStr = "<i>未知</i>");
 
   public:
 
